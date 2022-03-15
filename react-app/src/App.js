@@ -9,6 +9,8 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import { AllPosts } from './components/Post/GetPosts/GetPosts';
+import { SinglePost } from './components/Post/GetSinglePost/SinglePost'
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,6 +48,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/posts' exact={true} >
           <AllPosts/>
+        </Route>
+        <Route path='/posts/:id' exact={true} >
+          <SinglePost/>
         </Route>
       </Switch>
     </BrowserRouter>

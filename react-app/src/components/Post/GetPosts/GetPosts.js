@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getAllPosts } from "../../../store/posts";
-import "./Posts.css";
 
 export const AllPosts = () => {
   const dispatch = useDispatch();
@@ -20,13 +19,12 @@ export const AllPosts = () => {
       <h1>Posts</h1>
       {postsArr.map((post) => (
         <div className="all-posts-container">
-          <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
-            <div className="post-username">
-              {post?.username}
-            </div>
+          <div className="post-username">{post?.username}</div>
+          <Link key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
               <img
-                height={200}
+                height={300}
+                width ={300}
                 alt={post?.id}
                 src={
                   post?.image_url
@@ -35,7 +33,7 @@ export const AllPosts = () => {
                 }
               />
             </div>
-          </div>
+          </Link>
           <div className="post-description">{post?.description}</div>
         </div>
       ))}
