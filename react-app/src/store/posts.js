@@ -1,5 +1,7 @@
 const GET_POSTS = "posts/GET_POSTS";
 const GET_POST = "posts/GET_POST";
+const CREATE_POST = "posts/CREATE_POST";
+const EDIT_POST = "posts/EDIT_POST";
 
 const getPosts = (posts) => {
   return {
@@ -11,6 +13,20 @@ const getPosts = (posts) => {
 const getPost = (post) => {
   return {
     type: GET_POST,
+    post,
+  };
+};
+
+const addPost = (post) => {
+  return {
+    type: CREATE_POST,
+    post,
+  };
+};
+
+const editPost = (post) => {
+  return {
+    type: EDIT_POST,
     post,
   };
 };
@@ -33,8 +49,33 @@ export const getSinglePost = (id) => async (dispatch) => {
   }
 };
 
+export const createPost = (post) => async (dispatch) => {
+  const res = await fetch(`/api/posts/new`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(post),
+  });
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(addPost(data));
+    return data;
+  }
+};
 
-
+export const editSinglePost = (post) => async (dispatch) => {
+  const res = await fetch(`/api/posts/${post.id}/edit`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(post),
+  });
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(editPost(data));
+    return data;
+  }
+};
 
 export const postsReducer = (state = {}, action) => {
   let newState;
@@ -46,6 +87,14 @@ export const postsReducer = (state = {}, action) => {
       });
       return newState;
     case GET_POST:
+      newState = { ...state };
+      newState[action.post.id] = action.post;
+      return newState;
+    case CREATE_POST:
+      newState = { ...state };
+      newState[action.post.id] = action.post;
+      return newState;
+    case EDIT_POST:
       newState = { ...state };
       newState[action.post.id] = action.post;
       return newState;

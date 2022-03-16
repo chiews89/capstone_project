@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getAllPosts } from "../../../store/posts";
+import { CreatePost } from "../CreatePost/CreatePost";
 
 export const AllPosts = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,9 @@ export const AllPosts = () => {
 
   return (
     <main className="posts-main">
+      <>
+      {CreatePost}
+      </>
       <h1>Posts</h1>
       {postsArr.map((post) => (
         <div className="all-posts-container">

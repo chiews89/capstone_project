@@ -31,3 +31,4 @@ def create_post():
         db.session.commit()
         return new_post.to_dict()
     return {'message': 'Success'}
+
