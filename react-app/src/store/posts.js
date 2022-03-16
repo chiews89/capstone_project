@@ -2,6 +2,7 @@ const GET_POSTS = "posts/GET_POSTS";
 const GET_POST = "posts/GET_POST";
 const CREATE_POST = "posts/CREATE_POST";
 const EDIT_POST = "posts/EDIT_POST";
+const DELETE_POST = "posts/DELETE_POST"
 
 const getPosts = (posts) => {
   return {
@@ -30,6 +31,13 @@ const editPost = (post) => {
     post,
   };
 };
+
+const deletePost = (id) => {
+  return {
+    type: DELETE_POST,
+    id,
+  }
+}
 
 export const getAllPosts = () => async (dispatch) => {
   const res = await fetch("/api/posts/");
@@ -77,6 +85,16 @@ export const editSinglePost = (post) => async (dispatch) => {
   }
 };
 
+export const deleteSinglePost = (id) => async (dispatch) => {
+  const res = await fetch(`/api/posts/delete/${id}`, {
+    method: 'DELETE'
+  })
+  if (res.ok) {
+    await dispatch(deletePost(id))
+    return res
+  }
+}
+
 export const postsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
@@ -98,6 +116,10 @@ export const postsReducer = (state = {}, action) => {
       newState = { ...state };
       newState[action.post.id] = action.post;
       return newState;
+    case DELETE_POST:
+      newState = { ...state }
+      delete newState[action.id]
+      return newState
     default:
       return state;
   }

@@ -32,3 +32,22 @@ def create_post():
         return new_post.to_dict()
     return {'message': 'Success'}
 
+@post_routes.route('/<int:id>/edit', methods=['PUT'])
+def edit_post(id):
+    form = PostForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        edit = Post.query.get(id)
+        edit.user_id = current_user.id
+        edit.image_url = form.data['image_url']
+        edit.description = form.data['description']
+        db.session.commit()
+        return edit.to_dict()
+    return {'message':'Success'}
+
+@post_routes.route('/delete/<int:id>', methods=["DELETE"])
+def delete_post(id):
+    delete = Post.query.get(id)
+    db.session.delete(delete)
+    db.session.commit()
+    return {'message': 'Success'}

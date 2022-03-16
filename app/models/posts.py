@@ -12,7 +12,7 @@ class Post(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
     user = db.relationship('User', back_populates='post')
-    comment = db.relationship('Comment', back_populates='post')
+    comment = db.relationship('Comment', back_populates='post', cascade='all, delete')
 
 
     def to_dict(self):

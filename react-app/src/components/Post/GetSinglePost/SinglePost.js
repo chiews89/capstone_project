@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory} from "react-router-dom";
 import { getSinglePost } from "../../../store/posts";
+import EditPostModal from "../EditPost";
+import { deleteSinglePost } from "../../../store/posts";
 
 export const SinglePost = () => {
   const dispatch = useDispatch();
+  const history = useHistory()
   const { id } = useParams();
 
   const post = useSelector((state) => state.posts[id]);
-
-  console.log("post", post);
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -18,6 +19,12 @@ export const SinglePost = () => {
 
   if (!post) {
     return null;
+  }
+
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    await dispatch(deleteSinglePost(id))
+    history.push(`/posts`)
   }
 
   return (
@@ -36,6 +43,11 @@ export const SinglePost = () => {
       <div className="post-description">
           {post?.description}
       </div>
+      <EditPostModal/>
+      <button className='delete-button' onClick={handleDelete}>
+                Delete Your Post
+        </button>
     </div>
+
   );
 };
