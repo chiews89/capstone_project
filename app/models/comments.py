@@ -1,4 +1,5 @@
 from .db import db
+from datetime import datetime
 
 class Comment(db.Model):
     __tablename__ = 'comments'
@@ -7,10 +8,10 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
     comment = db.Column(db.String, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False)
-    updated_at = db.Column(db.DateTime, nullable=False)
+    created_at = db.Column(db.DateTime,default=datetime.now(), nullable=False)
+    updated_at = db.Column(db.DateTime,default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
-    user = db.relationship('User', back_populates='comment')
+    user = db.relationship('User',  back_populates='comment')
     post = db.relationship('Post', back_populates='comment')
 
 

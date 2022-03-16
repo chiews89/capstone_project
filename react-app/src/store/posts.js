@@ -25,13 +25,16 @@ export const getAllPosts = () => async (dispatch) => {
 };
 
 export const getSinglePost = (id) => async (dispatch) => {
-  const res = await fetch("/api/posts/");
+  const res = await fetch(`/api/posts/${id}`);
   if (res.ok) {
     const data = await res.json();
     dispatch(getPost(data));
     return data;
   }
 };
+
+
+
 
 export const postsReducer = (state = {}, action) => {
   let newState;

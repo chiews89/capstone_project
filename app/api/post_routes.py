@@ -26,8 +26,6 @@ def create_post():
             user_id = current_user.id,
             image_url = form.data['image_url'],
             description = form.data['description'],
-            created_at = datetime.now(),
-            updated_at = datetime.now()
         )
         db.session.add(new_post)
         db.session.commit()

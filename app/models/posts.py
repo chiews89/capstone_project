@@ -1,4 +1,5 @@
 from .db import db
+from datetime import datetime
 
 class Post(db.Model):
     __tablename__ = 'posts'
@@ -7,8 +8,8 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     image_url = db.Column(db.String, nullable=False)
     description = db.Column(db.Text, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False)
-    updated_at = db.Column(db.DateTime, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
+    updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
     user = db.relationship('User', back_populates='post')
     comment = db.relationship('Comment', back_populates='post')
