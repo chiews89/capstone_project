@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import { EditPost } from "./EditPost";
 
-const EditPostModal = () => {
+const EditPostModal = ({postId}) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ const EditPostModal = () => {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditPost onClose={() => setShowModal(false)}/>
+          <EditPost postId={postId} onClose={() => setShowModal(false)}/>
         </Modal>
       )}
     </>

@@ -5,8 +5,8 @@ import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+import UsersList from './components/User/UsersList';
+import User from './components/User/User';
 import { authenticate } from './store/session';
 import { AllPosts } from './components/Post/GetPosts/GetPosts';
 import { SinglePost } from './components/Post/GetSinglePost/SinglePost'
@@ -44,14 +44,11 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
-        <Route path='/posts' exact={true} >
           <AllPosts/>
-        </Route>
-        <Route path='/posts/:id' exact={true} >
+        </ProtectedRoute>
+        <ProtectedRoute path='/posts/:id' exact={true} >
           <SinglePost/>
-        </Route>
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

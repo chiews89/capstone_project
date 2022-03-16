@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editSinglePost } from "../../../store/posts";
 
-export const EditPost = ({ onClose }) => {
+export const EditPost = ({ onClose,postId }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { id } = useParams();
+  // const { id } = useParams();
 
-  const post = useSelector((state) => state.posts[id]);
+  const post = useSelector((state) => state.posts[postId]);
+
+  console.log('post', post)
 
   const [image_url, setImageUrl] = useState(post?.image_url || "");
   const [description, setDescription] = useState(post?.description || "");
@@ -27,6 +29,8 @@ export const EditPost = ({ onClose }) => {
       image_url,
       description,
     };
+
+    
     const updatedPost = await dispatch(editSinglePost(payload));
     if (updatedPost) {
       history.push(`/posts/${post.id}`);
@@ -37,14 +41,9 @@ export const EditPost = ({ onClose }) => {
   return (
     <div className="edit-post-container">
       <form className="edit-post" onSubmit={handleEditPost}>
-        {image_url && <img
-          height={250}
-          width={250}
-          alt={image_url}
-          src={
-            image_url
-          }
-        />}
+      {image_url && (
+          <img height={250} width={250} alt={image_url} src={image_url} onError={(e) => e.target.src='https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo='}/>
+        )}
         <div>
           <label> Image </label>
           <input

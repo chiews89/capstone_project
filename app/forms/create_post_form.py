@@ -6,4 +6,3 @@ class PostForm(FlaskForm):
     user_id = IntegerField('user_id')
     image_url = StringField('Image', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
-    

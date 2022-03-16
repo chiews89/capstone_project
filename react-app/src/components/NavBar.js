@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import LogoutButton from "./auth/LogoutButton";
+import CreatePostModal from "./Post/CreatePost";
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -11,17 +12,15 @@ const NavBar = () => {
       {sessionUser && <ul>
         <li>
           <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            InstaGame
           </NavLink>
+        </li>
+        <li>
+          <CreatePostModal/>
         </li>
         <li>
           <NavLink to="/users" exact={true} activeClassName="active">
             Profile
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/posts" exact={true} activeClassName="active">
-            Posts
           </NavLink>
         </li>
         <li>
