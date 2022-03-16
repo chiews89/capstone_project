@@ -12,6 +12,7 @@ export const SinglePost = () => {
   console.log("post", post);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(getSinglePost(id));
   }, [dispatch, id]);
 
@@ -21,9 +22,10 @@ export const SinglePost = () => {
 
   return (
     <div className="post-detail-container">
+      <p>{post.username}</p>
       <img
-        width={350}
-        height={350}
+        width={500}
+        height={500}
         alt={post?.id}
         src={
           post?.image_url

@@ -27,8 +27,8 @@ export const AllPosts = () => {
           <Link key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
               <img
-                height={300}
-                width ={300}
+                height={500}
+                width ={500}
                 alt={post?.id}
                 src={
                   post?.image_url
