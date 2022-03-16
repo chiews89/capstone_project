@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 import { login } from "../../store/session";
+import SignupFormModal from "./SignupModal";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -40,15 +41,15 @@ const LoginForm = () => {
   }
 
   return (
+    <div>
+
     <form onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <button type="button" className="demo-user-btn" onClick={demoUserLogin}>
-        Try Demo
-      </button>
+      <h1 className="logo">InstaGame</h1>
       <div>
         <label htmlFor="email">Email</label>
         <input
@@ -70,7 +71,14 @@ const LoginForm = () => {
         />
         <button type="submit">Login</button>
       </div>
+      <button type="button" className="demo-user-btn" onClick={demoUserLogin}>
+        Try Demo
+      </button>
     </form>
+      <div>
+        <SignupFormModal />
+      </div>
+    </div>
   );
 };
 

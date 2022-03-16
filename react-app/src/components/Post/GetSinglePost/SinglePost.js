@@ -9,6 +9,7 @@ export const SinglePost = () => {
   const dispatch = useDispatch();
   const history = useHistory()
   const { id } = useParams();
+  const user = useSelector((state) => state.session.user);
 
   const post = useSelector((state) => state.posts[id]);
 
@@ -19,6 +20,10 @@ export const SinglePost = () => {
 
   if (!post) {
     return null;
+  }
+
+  if(!user) {
+    history.push(`/login`)
   }
 
   const handleDelete = async (e) => {

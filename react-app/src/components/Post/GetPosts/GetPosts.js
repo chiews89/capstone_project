@@ -7,6 +7,8 @@ import CreatePostModal from "../CreatePost";
 
 export const AllPosts = () => {
   const dispatch = useDispatch();
+  const history = useHistory()
+  const user = useSelector((state) => state.session.user);
   const { id } = useParams()
 
   const posts = useSelector((state) => state.posts);
@@ -17,7 +19,9 @@ export const AllPosts = () => {
     dispatch(getAllPosts());
   }, [dispatch]);
 
-
+  if(!user) {
+    history.push(`/login`)
+  }
 
   return (
     <main className="posts-main">
