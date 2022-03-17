@@ -19,6 +19,7 @@ class Comment(db.Model):
         return {
             'id': self.id,
             'user_id': self.user_id,
+            'username': self.user.username if self.user else None,
             'post_id': self.post_id,
             'comment': self.comment,
             'created_at': self.created_at,

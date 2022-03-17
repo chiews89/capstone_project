@@ -1,7 +1,6 @@
 from flask import Blueprint, request
 from flask_login import current_user
 from app.models import db, Post
-from datetime import date, datetime
 from app.forms import PostForm
 
 post_routes = Blueprint('posts', __name__)
