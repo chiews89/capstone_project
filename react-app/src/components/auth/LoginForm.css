@@ -1,0 +1,34 @@
+.login-form {
+  background-color: white;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 380px;
+  width: 350px;
+  padding: 10px 0;
+  margin: 0px 0px 10px;
+}
+
+.splash-page {
+  display: flex;
+  margin: 10%;
+  gap: 100px;
+}
+
+.main-pic {
+  width: 350px;
+  height: 500px;
+}
+
+.rotating-pic {
+  width: 350px;
+  height: 500px;
+  left: 140px;
+  /* object-fit: contain; */
+}
+
+.image-container {
+    display: relative;
+    /* width: 450px; */
+}

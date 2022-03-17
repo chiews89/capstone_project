@@ -8,7 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/User/UsersList';
 import User from './components/User/User';
 import { authenticate } from './store/session';
-import { AllPosts } from './components/Post/GetPosts/GetPosts';
+import { AllPosts } from './components/Post/HomePage/HomePage';
 import { SinglePost } from './components/Post/GetSinglePost/SinglePost'
 
 

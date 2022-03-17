@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login } from "../../store/session";
 import SignupFormModal from "./SignupModal";
+import "./LoginForm.css";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -11,7 +12,9 @@ const LoginForm = () => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
-  const mainImage = ['https://thumbor.granitemedia.com/super-smash-bros-ultimate/CRG67jof3fQmviP-nPPv0ypeZds=/480x360/filters:format(webp):quality(80)/granite-web-prod/06/b7/06b7d8be299e4d7ab097d20dd898763e.jpeg']
+  const mainImage = [
+    "https://thumbor.granitemedia.com/super-smash-bros-ultimate/CRG67jof3fQmviP-nPPv0ypeZds=/480x360/filters:format(webp):quality(80)/granite-web-prod/06/b7/06b7d8be299e4d7ab097d20dd898763e.jpeg",
+  ];
   const images = [
     "https://assets.nintendo.com/image/upload/ar_16:9,b_auto,c_pad,dpr_3.0,f_auto,q_auto,w_500/b_rgb:ffffff/v1/ncom/en_US/games/switch/p/pokemon-legends-arceus-switch/hero",
     "https://m.media-amazon.com/images/M/MV5BZjc3MmMzNGItYmEzYy00MWFhLWI0NDQtMWE3Y2Q1NjE1OWRlXkEyXkFqcGdeQXVyNzcyMjAwNTE@._V1_.jpg",
@@ -63,16 +66,18 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={onLogin}>
+    <div className="splash-page">
+      <div className="image-container">
+        <img className="main-pic" alt={mainImage} src={mainImage} />
+        <img className="rotating-pic" alt={imageDisplay} src={imageDisplay} />
+      </div>
+      <form className="login-form" onSubmit={onLogin}>
         <div>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
         <h1 className="logo">InstaGame</h1>
-        <img className="main-pic" height={450} width={300} alt={mainImage} src={mainImage} />
-        <img className="rotating-pic" height={450} width={300} alt={imageDisplay} src={imageDisplay} />
         <div>
           <label htmlFor="email">Email</label>
           <input
@@ -97,10 +102,10 @@ const LoginForm = () => {
         <button type="button" className="demo-user-btn" onClick={demoUserLogin}>
           Try Demo
         </button>
+        <div>
+          <SignupFormModal />
+        </div>
       </form>
-      <div>
-        <SignupFormModal />
-      </div>
     </div>
   );
 };
