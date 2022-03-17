@@ -30,7 +30,7 @@ export const EditPost = ({ onClose,postId }) => {
       description,
     };
 
-    
+
     const updatedPost = await dispatch(editSinglePost(payload));
     if (updatedPost) {
       history.push(`/posts/${post.id}`);
