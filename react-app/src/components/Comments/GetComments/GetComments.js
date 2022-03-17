@@ -11,8 +11,6 @@ export const GetAllComments = () => {
     const comments = useSelector((state) => state.comments)
     const commentsArr = Object.values(comments)
 
-    console.log('commentsArr', commentsArr)
-
     useEffect(() => {
         dispatch(getAllComments())
     }, [dispatch])
@@ -26,8 +24,7 @@ export const GetAllComments = () => {
             <h2>Comments</h2>
             {commentsArr.map((comment) => (
                 <div className="comments-container">
-                    Test
-                    {comment.username} : {comment.comment}
+                    {comment.username}  {comment.comment}
                 </div>
             ))}
         </main>
