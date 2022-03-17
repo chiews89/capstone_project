@@ -3,24 +3,27 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editSinglePost } from "../../../store/posts";
 
-export const EditPost = ({ onClose,postId }) => {
+export const EditPost = ({ onClose, postId }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   // const { id } = useParams();
 
+  const [errorValidator, setErrorValidator] = useState([]);
   const post = useSelector((state) => state.posts[postId]);
-
-  console.log('post', post)
 
   const [image_url, setImageUrl] = useState(post?.image_url || "");
   const [description, setDescription] = useState(post?.description || "");
 
   useEffect(() => {
-    if (post) {
-      setImageUrl(post.image_url);
-      setDescription(post.description);
-    }
-  }, [post]);
+    const errors = [];
+    if (!image_url.length) errors.push("Please provide a valid URL");
+    if (image_url.length > 0 && !image_url.match(/^https?:\/\/.+\/.+$/))
+      errors.push("Please provide a valid URL");
+    if (!description) errors.push("Please provide a description");
+    if (description.length > 100)
+      errors.push("Post cannot be longer than 100 characters");
+    setErrorValidator(errors);
+  }, [image_url, description]);
 
   const handleEditPost = async (e) => {
     e.preventDefault();
@@ -29,7 +32,6 @@ export const EditPost = ({ onClose,postId }) => {
       image_url,
       description,
     };
-
 
     const updatedPost = await dispatch(editSinglePost(payload));
     if (updatedPost) {
@@ -40,9 +42,25 @@ export const EditPost = ({ onClose,postId }) => {
 
   return (
     <div className="edit-post-container">
+      <ul>
+        {errorValidator.map((error) => (
+          <li className="error-list" key={error}>
+            {error}
+          </li>
+        ))}
+      </ul>
       <form className="edit-post" onSubmit={handleEditPost}>
-      {image_url && (
-          <img height={250} width={250} alt={image_url} src={image_url} onError={(e) => e.target.src='https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo='}/>
+        {image_url && (
+          <img
+            height={250}
+            width={250}
+            alt={image_url}
+            src={image_url}
+            onError={(e) =>
+              (e.target.src =
+                "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
+            }
+          />
         )}
         <div>
           <label> Image </label>
@@ -68,7 +86,7 @@ export const EditPost = ({ onClose,postId }) => {
           <button
             className="edit-post-button"
             type="submit"
-            // disabled={errorValidator.length > 0}
+            disabled={errorValidator.length > 0}
           >
             Submit
           </button>
