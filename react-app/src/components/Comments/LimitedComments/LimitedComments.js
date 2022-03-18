@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 export const ThreeComments = ({ post }) => {
@@ -19,6 +19,7 @@ export const ThreeComments = ({ post }) => {
     .reverse();
 
   const slicedArr = filteredArr.slice(0, 3);
+
   if (!user) {
     history.push("/login");
   }

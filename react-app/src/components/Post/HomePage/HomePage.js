@@ -1,13 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useHistory, useParams } from "react-router-dom";
-import { deleteSinglePost } from "../../../store/posts";
-import { GetAllComments } from "../../Comments/GetComments/GetComments";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import SinglePostModal from "../GetSinglePost";
 import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
 
 export const AllPosts = () => {
-  const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
 
@@ -40,12 +37,11 @@ export const AllPosts = () => {
             </div>
           </div>
           <div className="post-description">{post?.description}</div>
-          <ThreeComments post={post}/>
-          <SinglePostModal post={post}/>
-          <CreateNewComment post = {post} />
+          <ThreeComments post={post} />
+          <SinglePostModal post={post} />
+          <CreateNewComment post={post} />
           {user.id === post.user_id && (
-            <div className="edit-delete-buttons">
-            </div>
+            <div className="edit-delete-buttons"></div>
           )}
         </div>
       ))}

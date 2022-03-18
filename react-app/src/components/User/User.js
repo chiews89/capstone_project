@@ -1,37 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import SinglePostModal from "../Post/GetSinglePost";
 
-function User() {
-  const [user, setUser] = useState({});
-  const { userId }  = useParams();
+export const UserProfile = () => {
+  const user = useSelector((state) => state.session.user);
+  const posts = useSelector((state) => state.posts);
+  const postsArr = Object.values(posts).reverse();
 
-  useEffect(() => {
-    if (!userId) {
-      return;
-    }
-    (async () => {
-      const response = await fetch(`/api/users/${userId}`);
-      const user = await response.json();
-      setUser(user);
-    })();
-  }, [userId]);
-
-  if (!user) {
-    return null;
-  }
+  const filteredPost = postsArr.filter((post) => {
+    return post.user_id === user.id;
+  });
 
   return (
-    <ul>
-      <li>
-        <strong>User Id</strong> {userId}
-      </li>
-      <li>
-        <strong>Username</strong> {user.username}
-      </li>
-      <li>
-        <strong>Email</strong> {user.email}
-      </li>
-    </ul>
+    <div className="profile-page">
+      <h1>{user.username}</h1>
+      {filteredPost.map((post) => (
+          <div className="user-posts">
+            <SinglePostModal post={post} />
+          <div key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
+            <div className="post-image">
+              <img
+                height={400}
+                width={400}
+                alt={post?.image_url}
+                src={post?.image_url}
+                onError={(e) =>
+                  (e.target.src =
+                    "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
+                }
+              />
+            </div>
+            <div className="post-description">{post.description}</div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
-}
-export default User;
+};

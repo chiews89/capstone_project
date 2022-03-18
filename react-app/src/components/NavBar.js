@@ -19,7 +19,7 @@ const NavBar = () => {
           <CreatePostModal/>
         </li>
         <li>
-          <NavLink to="/users" exact={true} activeClassName="active">
+          <NavLink to="/profile" exact={true} activeClassName="active">
             Profile
           </NavLink>
         </li>
