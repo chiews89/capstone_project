@@ -7,7 +7,7 @@ import session from './session'
 const rootReducer = combineReducers({
   session,
   posts: postsReducer,
-  comments: commentsReducer,
+  comments: commentsReducer
 });
 
 

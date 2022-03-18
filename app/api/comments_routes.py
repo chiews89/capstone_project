@@ -1,7 +1,8 @@
+from hashlib import new
 from flask import Blueprint, request
 from flask_login import current_user
-from app.models import db, Comment
-from app.forms import PostForm
+from app.forms.create_comment_form import CommentForm
+from app.models import db, Comment, Post
 
 comment_routes = Blueprint('comments', __name__)
 
@@ -11,5 +12,24 @@ def get_comments():
     comments = Comment.query.all()
     return {'comments': [comment.to_dict() for comment in comments]}
 
-# @comment_routes.route('/new', methods=['POST'])
-# def create_comment()
+@comment_routes.route('/new', methods=['POST'])
+def create_comment():
+    form = CommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_comment = Comment(
+            user_id = current_user.id,
+            post_id = form.data['post_id'],
+            comment = form.data['comment']
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        return new_comment.to_dict()
+    return {'message': 'Success'}
+
+@comment_routes.route('/delete/<int:id>', methods=['DELETE'])
+def delete_post(id):
+    delete = Comment.query.get(id)
+    db.session.delete(delete)
+    db.session.commit()
+    return {'message': 'success'}

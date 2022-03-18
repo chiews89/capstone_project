@@ -5,6 +5,7 @@ import { getAllPosts } from "../../../store/posts";
 import EditPostModal from "../EditPost";
 import { deleteSinglePost } from "../../../store/posts";
 import { GetAllComments } from "../../Comments/GetComments/GetComments";
+import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 
 export const AllPosts = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ export const AllPosts = () => {
           </div>
           <div className="post-description">{post?.description}</div>
           <GetAllComments post={post}/>
+          <CreateNewComment post = {post} />
           {user.id === post.user_id && (
             <div className="edit-delete-buttons">
               <EditPostModal postId={post?.id} />
