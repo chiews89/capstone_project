@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { getAllPosts } from "../../../store/posts";
-import EditPostModal from "../EditPost";
 import { deleteSinglePost } from "../../../store/posts";
 import { GetAllComments } from "../../Comments/GetComments/GetComments";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
+import SinglePostModal from "../GetSinglePost";
+import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
 
 export const AllPosts = () => {
   const dispatch = useDispatch();
@@ -13,25 +12,12 @@ export const AllPosts = () => {
   const user = useSelector((state) => state.session.user);
 
   const posts = useSelector((state) => state.posts);
-  const comments = useSelector((state) => state.comments);
 
   const postsArr = Object.values(posts).reverse();
-
-
-
-  useEffect(() => {
-    dispatch(getAllPosts());
-  }, [dispatch]);
 
   if (!user) {
     history.push(`/login`);
   }
-
-  const handleDelete = async (e, postId) => {
-    e.preventDefault();
-    await dispatch(deleteSinglePost(postId));
-    history.push(`/`);
-  };
 
   return (
     <main className="posts-main">
@@ -54,17 +40,11 @@ export const AllPosts = () => {
             </div>
           </div>
           <div className="post-description">{post?.description}</div>
-          <GetAllComments post={post}/>
+          <ThreeComments post={post}/>
+          <SinglePostModal post={post}/>
           <CreateNewComment post = {post} />
           {user.id === post.user_id && (
             <div className="edit-delete-buttons">
-              <EditPostModal postId={post?.id} />
-              <button
-                className="delete-review-button"
-                onClick={(e) => handleDelete(e, post?.id)}
-              >
-                Delete Your Post
-              </button>
             </div>
           )}
         </div>

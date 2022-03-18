@@ -1,22 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { getSinglePost } from "../../../store/posts";
 import EditPostModal from "../EditPost";
 import { deleteSinglePost } from "../../../store/posts";
+import { GetAllComments } from "../../Comments/GetComments/GetComments";
+import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 
-export const SinglePost = () => {
+export const SinglePost = ({ post, setShowModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { id } = useParams();
   const user = useSelector((state) => state.session.user);
-
-  const post = useSelector((state) => state.posts[id]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(getSinglePost(id));
-  }, [dispatch, id]);
 
   if (!post) {
     return null;
@@ -28,8 +21,9 @@ export const SinglePost = () => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    await dispatch(deleteSinglePost(id));
+    await dispatch(deleteSinglePost(post.id));
     history.push(`/`);
+    setShowModal(false)
   };
 
   return (
@@ -46,10 +40,16 @@ export const SinglePost = () => {
         }
       />
       <div className="post-description">{post?.description}</div>
+      <GetAllComments post={post}/>
+      <CreateNewComment post={post}/>
+      {user.id === post.user_id &&
+      <div>
+
       <EditPostModal postId={post?.id} />
       <button className="delete-button" onClick={handleDelete}>
         Delete Your Post
       </button>
+      </div>}
     </div>
   );
 };

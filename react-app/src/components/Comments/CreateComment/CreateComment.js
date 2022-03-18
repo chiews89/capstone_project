@@ -28,7 +28,6 @@ export const CreateNewComment = ({post}) => {
 
     return (
         <form className="new-comment-container" onSubmit={newCommentSubmit}>
-            <h2>Add Comment</h2>
             <label className="comment-label">
                 <input placeholder="Comment"
                 value={comment}

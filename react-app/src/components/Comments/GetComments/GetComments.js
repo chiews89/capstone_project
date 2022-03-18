@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useLocation, useParams } from "react-router-dom";
 import { deleteAComment, getAllComments } from "../../../store/comments";
 
-export const GetAllComments = ({post}) => {
+export const GetAllComments = ({ post }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -13,17 +13,13 @@ export const GetAllComments = ({post}) => {
   const commentsArr = Object.values(comments);
 
   const filteredArr = commentsArr.filter((comment) => {
-    return comment.post_id === post.id
-  })
-
-  useEffect(() => {
-    dispatch(getAllComments());
-  }, [dispatch]);
+    return comment.post_id === post.id;
+  });
 
   const handleCommentDeletion = async (e, commentId) => {
-    e.preventDefault()
-    dispatch(deleteAComment(commentId))
-  }
+    e.preventDefault();
+    dispatch(deleteAComment(commentId));
+  };
 
   if (!user) {
     history.push("/login");
@@ -34,15 +30,17 @@ export const GetAllComments = ({post}) => {
       <h2>Comments</h2>
       {filteredArr.map((comment) => (
         <div key={comment?.id}>
-            <div className="comments-container">
-              {comment.username} {comment.comment}
+          <div className="comments-container">
+            {comment.username} {comment.comment}
+            {user.id === comment.user_id && (
               <button
-                    className="delete-review-button"
-                    onClick={(e) => handleCommentDeletion(e, comment?.id)}
-                  >
-                    Delete Your Comment
-                  </button>
-            </div>
+                className="delete-review-button"
+                onClick={(e) => handleCommentDeletion(e, comment?.id)}
+              >
+                Delete Your Comment
+              </button>
+            )}
+          </div>
         </div>
       ))}
     </main>
