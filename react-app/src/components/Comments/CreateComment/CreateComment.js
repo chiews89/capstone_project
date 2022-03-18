@@ -18,7 +18,6 @@ export const CreateNewComment = ({post}) => {
             post_id: post.id,
             comment,
         }
-        console.log('1111111111111', payload)
         const newComment = await dispatch(createNewComment(payload))
         if (newComment) {
             history.push('/')

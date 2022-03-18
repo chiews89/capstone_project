@@ -23,7 +23,7 @@ export const SinglePost = ({ post, setShowModal }) => {
     e.preventDefault();
     await dispatch(deleteSinglePost(post.id));
     history.push(`/`);
-    setShowModal(false)
+    setShowModal(false);
   };
 
   return (
@@ -40,16 +40,16 @@ export const SinglePost = ({ post, setShowModal }) => {
         }
       />
       <div className="post-description">{post?.description}</div>
-      <GetAllComments post={post}/>
-      <CreateNewComment post={post}/>
-      {user.id === post.user_id &&
-      <div>
-
-      <EditPostModal postId={post?.id} />
-      <button className="delete-button" onClick={handleDelete}>
-        Delete Your Post
-      </button>
-      </div>}
+      <GetAllComments post={post} />
+      <CreateNewComment post={post} />
+      {user.id === post.user_id && (
+        <div>
+          <EditPostModal postId={post?.id} />
+          <button className="delete-button" onClick={handleDelete}>
+            Delete Your Post
+          </button>
+        </div>
+      )}
     </div>
   );
 };

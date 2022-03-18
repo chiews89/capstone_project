@@ -1,5 +1,6 @@
 const GET_COMMENTS = "comments/GET_COMMENTS";
 const CREATE_COMMENT = "comments/CREATE_COMMENT";
+const EDIT_COMMENT = 'comments/EDIT_COMMENT'
 const DELETE_COMMENT = "comments/DELETE_COMMENT";
 
 const getComments = (comments) => {
@@ -15,6 +16,13 @@ const createComment = (comment) => {
     comment,
   };
 };
+
+const editComment = (comment) => {
+  return {
+    type: EDIT_COMMENT,
+    comment
+  }
+}
 
 const deleteComment = (id) => {
   return {
@@ -47,6 +55,20 @@ export const createNewComment = (comment) => async (dispatch) => {
   }
 };
 
+export const editAComment = (comment) => async (dispatch) => {
+  console.log('33333333', comment)
+  const res = await fetch(`/api/comments/${comment.id}/edit`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(comment),
+  });
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(editComment(data));
+    return data;
+  }
+}
+
 export const deleteAComment = (id) => async (dispatch) => {
   const res = await fetch(`/api/comments/delete/${id}`, {
     method: "DELETE",
@@ -67,6 +89,10 @@ export const commentsReducer = (state = {}, action) => {
       });
       return newState;
     case CREATE_COMMENT:
+      newState = { ...state };
+      newState[action.comment.id] = action.comment;
+      return newState;
+    case EDIT_COMMENT:
       newState = { ...state };
       newState[action.comment.id] = action.comment;
       return newState;

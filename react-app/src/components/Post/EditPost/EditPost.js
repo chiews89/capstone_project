@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { editSinglePost } from "../../../store/posts";
 
 export const EditPost = ({ onClose, postId }) => {

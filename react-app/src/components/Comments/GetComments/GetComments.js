@@ -1,7 +1,8 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useHistory, useLocation, useParams } from "react-router-dom";
-import { deleteAComment, getAllComments } from "../../../store/comments";
+import { useHistory } from "react-router-dom";
+import { deleteAComment } from "../../../store/comments";
+import EditCommentModal from "../EditComment";
 
 export const GetAllComments = ({ post }) => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export const GetAllComments = ({ post }) => {
         <div key={comment?.id}>
           <div className="comments-container">
             {comment.username} {comment.comment}
+            <EditCommentModal post={post} commentId={comment}/>
             {user.id === comment.user_id && (
               <button
                 className="delete-review-button"
