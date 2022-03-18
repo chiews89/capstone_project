@@ -16,7 +16,6 @@ export const UserProfile = () => {
       <h1>{user.username}</h1>
       {filteredPost.map((post) => (
         <div className="user-posts">
-          <SinglePostModal post={post} />
           <div key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-image">
               <img
@@ -32,6 +31,7 @@ export const UserProfile = () => {
             </div>
             <div className="post-description">{post.description}</div>
           </div>
+          <SinglePostModal post={post} />
         </div>
       ))}
     </div>

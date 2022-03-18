@@ -9,13 +9,8 @@ const SinglePostModal = ({post}) => {
 
     return (
         <>
-        {location.pathname === '/' && <div>
-
         <button className='nav-login' onClick={() => setShowModal(true)}>view all comments</button>
-        </div>}
-        {location.pathname === '/profile' && <div>
-        <button className='nav-login' onClick={() => setShowModal(true)}>...</button>
-        </div>}
+
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
                 <SinglePost post={post} setShowModal={setShowModal} />
