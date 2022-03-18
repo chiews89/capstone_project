@@ -53,7 +53,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
         <button
           className="create-post-button"
           type="submit"
-          //   disabled={errorValidator.length > 0}
+            disabled={errorValidator.length > 0}
         >
           Submit
         </button>

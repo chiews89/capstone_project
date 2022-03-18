@@ -22,32 +22,32 @@ def seed_comments():
         )
     comment4 = Comment(
         user_id=1,
-        post_id=1,
+        post_id=4,
         comment='I am ready for new adventures too!🛫 ')
     comment5 = Comment(
         user_id=2,
-        post_id=1,
+        post_id=5,
         comment='Love your posts about gaming. Keep posting!',
         created_at=datetime.now(),
         updated_at=datetime.now(),
         )
     comment6 = Comment(
         user_id=3,
-        post_id=2,
+        post_id=6,
         comment='Love gaming! ',
         created_at=datetime.now(),
         updated_at=datetime.now(),
         )
     comment7 = Comment(
         user_id=1,
-        post_id=2,
+        post_id=1,
         comment='😍',
         created_at=datetime.now(),
         updated_at=datetime.now(),
         )
     comment8 = Comment(
         user_id=2,
-        post_id=3,
+        post_id=2,
         comment='Nice!!! My wife an I are going to play this game so much.',
         created_at=datetime.now(),
         updated_at=datetime.now(),
@@ -61,21 +61,21 @@ def seed_comments():
         )
     comment10 = Comment(
         user_id=1,
-        post_id=1,
+        post_id=4,
         comment='Great pic! 👍 ',
         created_at=datetime.now(),
         updated_at=datetime.now(),
         )
     comment11 = Comment(
         user_id=2,
-        post_id=1,
+        post_id=5,
         comment='Looks like a dream game.',
         created_at=datetime.now(),
         updated_at=datetime.now(),
         )
     comment12 = Comment(
         user_id=3,
-        post_id=2,
+        post_id=6,
         comment='I love this game!',
         created_at=datetime.now(),
         updated_at=datetime.now(),

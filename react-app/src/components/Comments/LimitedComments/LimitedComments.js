@@ -25,7 +25,7 @@ export const ThreeComments = ({ post }) => {
   }
   return (
     <main className="comments-main">
-      <h2>{postComments?.length} Comments </h2>
+      <h2 className="number-comments">{postComments?.length} Comments </h2>
       {slicedArr.map((comment) => (
         <div key={comment?.id}>
           <div className="comments-container">

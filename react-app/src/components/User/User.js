@@ -15,8 +15,8 @@ export const UserProfile = () => {
     <div className="profile-page">
       <h1>{user.username}</h1>
       {filteredPost.map((post) => (
-          <div className="user-posts">
-            <SinglePostModal post={post} />
+        <div className="user-posts">
+          <SinglePostModal post={post} />
           <div key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-image">
               <img

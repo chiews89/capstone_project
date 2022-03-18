@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { createNewComment } from "../../../store/comments";
+import './CreateComment.css'
 
 export const CreateNewComment = ({post}) => {
     const dispatch = useDispatch()
-    const history = useHistory()
 
     const user = useSelector((state) => state.session.user?.id)
 
     const [comment, setComment] = useState('')
+
 
     const newCommentSubmit = async (e) => {
         e.preventDefault()
@@ -29,6 +30,7 @@ export const CreateNewComment = ({post}) => {
         <form className="new-comment-container" onSubmit={newCommentSubmit}>
             <label className="comment-label">
                 <input placeholder="Comment"
+                className="comment-input"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 />
@@ -36,13 +38,10 @@ export const CreateNewComment = ({post}) => {
             <button
           className="create-post-button"
           type="submit"
-        //   disabled={errorValidator.length > 0}
+          disabled={comment.length < 1}
         >
-          Submit
+          Post
         </button>
-        {/* <button className="cancel-add-button" type="true" onClick={onClose}>
-          Cancel
-        </button> */}
         </form>
     )
 }

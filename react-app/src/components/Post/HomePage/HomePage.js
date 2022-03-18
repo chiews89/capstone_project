@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import SinglePostModal from "../GetSinglePost";
 import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
+import "./HomePage.css";
 
 export const AllPosts = () => {
   const history = useHistory();
@@ -12,21 +13,24 @@ export const AllPosts = () => {
 
   const postsArr = Object.values(posts).reverse();
 
+  const filteredPost = postsArr.filter((post) => {
+    return post.user_id !== user.id;
+  });
+
   if (!user) {
     history.push(`/login`);
   }
 
   return (
     <main className="posts-main">
-      <h1>Posts</h1>
-      {postsArr.map((post) => (
+      {filteredPost.map((post) => (
         <div className="all-posts-container">
           <div className="post-username">{post?.username}</div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
               <img
-                height={400}
-                width={400}
+                height={550}
+                width={550}
                 alt={post?.image_url}
                 src={post?.image_url}
                 onError={(e) =>
@@ -36,13 +40,20 @@ export const AllPosts = () => {
               />
             </div>
           </div>
-          <div className="post-description">{post?.description}</div>
-          <ThreeComments post={post} />
-          <SinglePostModal post={post} />
-          <CreateNewComment post={post} />
-          {user.id === post.user_id && (
-            <div className="edit-delete-buttons"></div>
-          )}
+          <div className="post-user-description">
+            <div className="post-d-user">{post?.username}</div>
+            <div className="post-description-u">{post?.description}</div>
+          </div>
+          <div className="last-three-comments">
+            <ThreeComments post={post} />
+          </div>
+          <div className="post-details">
+            <SinglePostModal post={post} />
+          </div>
+          <div className="add-comment-container">
+            <i className="fa-solid fa-face-laugh-beam"></i>{" "}
+            <CreateNewComment post={post} />
+          </div>
         </div>
       ))}
     </main>
