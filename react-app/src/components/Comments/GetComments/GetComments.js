@@ -3,30 +3,45 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { getAllComments } from "../../../store/comments";
 
-export const GetAllComments = () => {
-    const dispatch = useDispatch()
-    const history = useHistory()
+export const GetAllComments = ({post}) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-    const user = useSelector((state) => state.session.user)
-    const comments = useSelector((state) => state.comments)
-    const commentsArr = Object.values(comments)
+  const user = useSelector((state) => state.session.user);
+  const comments = useSelector((state) => state.comments);
+  const posts = useSelector((state) => state.posts);
 
-    useEffect(() => {
-        dispatch(getAllComments())
-    }, [dispatch])
+  const commentsArr = Object.values(comments);
 
-    if (!user) {
-        history.push('/login')
-    }
+  const filteredArr = commentsArr.filter((comment) => {
+    return comment.post_id === post.id
+  })
 
-    return (
-        <main className="comments-main">
-            <h2>Comments</h2>
-            {commentsArr.map((comment) => (
-                <div className="comments-container">
-                    {comment.username}  {comment.comment}
-                </div>
-            ))}
-        </main>
-    )
-}
+  console.log('222222', filteredArr)
+
+  console.log('1111111111', post)
+
+  const postsArr = Object.values(posts)
+  console.log("posts", postsArr);
+
+  useEffect(() => {
+    dispatch(getAllComments());
+  }, [dispatch]);
+
+  if (!user) {
+    history.push("/login");
+  }
+
+  return (
+    <main className="comments-main">
+      <h2>Comments</h2>
+      {filteredArr.map((comment) => (
+        <div key={comment?.id}>
+            <div className="comments-container">
+              {comment.username} {comment.comment}
+            </div>
+        </div>
+      ))}
+    </main>
+  );
+};

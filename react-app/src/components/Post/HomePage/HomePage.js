@@ -12,8 +12,11 @@ export const AllPosts = () => {
   const user = useSelector((state) => state.session.user);
 
   const posts = useSelector((state) => state.posts);
+  const comments = useSelector((state) => state.comments);
 
   const postsArr = Object.values(posts).reverse();
+
+
 
   useEffect(() => {
     dispatch(getAllPosts());
@@ -50,7 +53,7 @@ export const AllPosts = () => {
             </div>
           </div>
           <div className="post-description">{post?.description}</div>
-          <GetAllComments/>
+          <GetAllComments post={post}/>
           {user.id === post.user_id && (
             <div className="edit-delete-buttons">
               <EditPostModal postId={post?.id} />
