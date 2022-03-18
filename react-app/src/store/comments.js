@@ -56,7 +56,6 @@ export const createNewComment = (comment) => async (dispatch) => {
 };
 
 export const editAComment = (comment) => async (dispatch) => {
-  console.log('33333333', comment)
   const res = await fetch(`/api/comments/${comment.id}/edit`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },

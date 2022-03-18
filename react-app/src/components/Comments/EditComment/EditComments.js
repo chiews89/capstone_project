@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { editAComment } from "../../../store/comments";
 
 export const EditComment = ({ post, commentId, onClose }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const user = useSelector((state) => state.session.user);
-  const postId = useSelector((state) => state.posts)
-  const comments = useSelector((state) => state.comments[commentId]);
 
-  const [comment, setComment] = useState(comments?.comment || "");
+  const [comment, setComment] = useState(commentId?.comment || "");
   const [errorValidator, setErrorValidator] = useState([]);
 
   useEffect(() => {
@@ -28,7 +24,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
     post_id: post.id,
     comment,
     };
-    console.log('22222222222', payload)
+
     const updatedComment = await dispatch(editAComment(payload));
     if (updatedComment) {
         onClose(false)
@@ -45,8 +41,10 @@ export const EditComment = ({ post, commentId, onClose }) => {
         ))}
       </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
-        <label className="comment-label">
+        <label>
+            Comment {" "}
           <input
+            className="comment-label"
             placeholder="Comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
@@ -59,9 +57,9 @@ export const EditComment = ({ post, commentId, onClose }) => {
         >
           Submit
         </button>
-        {/* <button className="cancel-add-button" type="true" onClick={onClose}>
+        <button className="cancel-add-button" type="true" onClick={onClose}>
           Cancel
-        </button> */}
+        </button>
       </form>
     </div>
   );
