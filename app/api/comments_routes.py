@@ -31,7 +31,6 @@ def create_comment():
 def edit_comments(id):
     form = CommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    print('%%%%%%%%%%%%%%%%%%', request.data)
     if form.validate_on_submit():
         edit = Comment.query.get(id)
         edit.user_id = current_user.id

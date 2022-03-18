@@ -33,7 +33,7 @@ export const GetAllComments = ({ post }) => {
         <div key={comment?.id}>
           <div className="comments-container">
             {comment.username} {comment.comment}
-            <EditCommentModal post={post} commentId={comment}/>
+            {user.id === comment.user_id && <EditCommentModal post={post} commentId={comment}/>}
             {user.id === comment.user_id && (
               <button
                 className="delete-review-button"
