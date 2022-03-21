@@ -22,7 +22,6 @@ export const SinglePost = ({ post, setShowModal }) => {
   const handleDelete = async (e) => {
     e.preventDefault();
     await dispatch(deleteSinglePost(post.id));
-    history.push(`/`);
     setShowModal(false);
   };
 

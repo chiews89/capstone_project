@@ -21,7 +21,7 @@ export const CreateNewComment = ({post}) => {
         }
         const newComment = await dispatch(createNewComment(payload))
         if (newComment) {
-
+            setComment('')
         }
     }
 

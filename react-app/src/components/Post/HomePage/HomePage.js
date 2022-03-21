@@ -13,17 +13,13 @@ export const AllPosts = () => {
 
   const postsArr = Object.values(posts).reverse();
 
-  const filteredPost = postsArr.filter((post) => {
-    return post.user_id !== user.id;
-  });
-
   if (!user) {
     history.push(`/login`);
   }
 
   return (
     <main className="posts-main">
-      {filteredPost.map((post) => (
+      {postsArr.map((post) => (
         <div className="all-posts-container">
           <div className="post-username">{post?.username}</div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
