@@ -1,11 +1,9 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { deleteAComment } from "../../../store/comments";
 import EditCommentModal from "../EditComment";
 
 export const GetAllComments = ({ post }) => {
-  const dispatch = useDispatch();
   const history = useHistory();
 
   const user = useSelector((state) => state.session.user);
@@ -17,10 +15,6 @@ export const GetAllComments = ({ post }) => {
     return comment.post_id === post.id;
   });
 
-  const handleCommentDeletion = async (e, commentId) => {
-    e.preventDefault();
-    dispatch(deleteAComment(commentId));
-  };
 
   if (!user) {
     history.push("/login");
@@ -34,14 +28,7 @@ export const GetAllComments = ({ post }) => {
           <div className="comments-container">
             {comment.username} {comment.comment}
             {user.id === comment.user_id && <EditCommentModal post={post} commentId={comment}/>}
-            {user.id === comment.user_id && (
-              <button
-                className="delete-review-button"
-                onClick={(e) => handleCommentDeletion(e, comment?.id)}
-              >
-                Delete Your Comment
-              </button>
-            )}
+
           </div>
         </div>
       ))}

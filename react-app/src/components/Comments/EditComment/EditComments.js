@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { editAComment } from "../../../store/comments";
+import { deleteAComment } from "../../../store/comments";
 
 export const EditComment = ({ post, commentId, onClose }) => {
   const dispatch = useDispatch();
@@ -12,23 +13,28 @@ export const EditComment = ({ post, commentId, onClose }) => {
   useEffect(() => {
     const errors = [];
 
-    if (!comment) errors.push("Please delete instead");
+    if (!comment) errors.push("Please delete comment");
     setErrorValidator(errors);
   }, [comment]);
 
   const handleEditComment = async (e) => {
     e.preventDefault();
     const payload = {
-    id: commentId.id,
-    user_id: user.id,
-    post_id: post.id,
-    comment,
+      id: commentId.id,
+      user_id: user.id,
+      post_id: post.id,
+      comment,
     };
 
     const updatedComment = await dispatch(editAComment(payload));
     if (updatedComment) {
-        onClose(false)
+      onClose(false);
     }
+  };
+
+  const handleCommentDeletion = async (e, commentId) => {
+    e.preventDefault();
+    dispatch(deleteAComment(commentId));
   };
 
   return (
@@ -42,7 +48,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
       </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
         <label>
-            Comment {" "}
+          Comment
           <input
             className="comment-label"
             placeholder="Comment"
@@ -50,15 +56,18 @@ export const EditComment = ({ post, commentId, onClose }) => {
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
-        <button
-          className="create-post-button"
-          type="submit"
-            disabled={errorValidator.length > 0}
-        >
-          Submit
+        <button className="create-post-button" type="submit" disabled={comment.length < 1}>
+          Edit Comment
         </button>
         <button className="cancel-add-button" type="true" onClick={onClose}>
           Cancel
+        </button>
+
+        <button
+          className="delete-review-button"
+          onClick={(e) => handleCommentDeletion(e, commentId?.id)}
+        >
+          Delete Your Comment
         </button>
       </form>
     </div>

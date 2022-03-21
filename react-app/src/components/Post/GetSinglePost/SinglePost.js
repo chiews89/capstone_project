@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import EditPostModal from "../EditPost";
-import { deleteSinglePost } from "../../../store/posts";
 import { GetAllComments } from "../../Comments/GetComments/GetComments";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
+import DeletePostModal from "../DeletePost";
 
 export const SinglePost = ({ post, setShowModal }) => {
-  const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
 
@@ -19,14 +17,14 @@ export const SinglePost = ({ post, setShowModal }) => {
     history.push(`/login`);
   }
 
-  const handleDelete = async (e) => {
-    e.preventDefault();
-    await dispatch(deleteSinglePost(post.id));
-    setShowModal(false);
-  };
 
   return (
     <div className="post-detail-container">
+      {user.id === post.user_id && (
+        <div>
+          <DeletePostModal post={post} setShowModal={setShowModal}/>
+        </div>
+      )}
       <p>{post.username}</p>
       <img
         height={400}
@@ -41,14 +39,6 @@ export const SinglePost = ({ post, setShowModal }) => {
       <div className="post-description">{post?.description}</div>
       <GetAllComments post={post} />
       <CreateNewComment post={post} />
-      {user.id === post.user_id && (
-        <div>
-          <EditPostModal postId={post?.id} />
-          <button className="delete-button" onClick={handleDelete}>
-            Delete Your Post
-          </button>
-        </div>
-      )}
     </div>
   );
 };

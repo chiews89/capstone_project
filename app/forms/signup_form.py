@@ -22,7 +22,7 @@ def username_exists(form, field):
 
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired(), Length(min=3, max=30, message='Username must be more than 3 characters and less than 30 characters'), username_exists])
-    email = StringField('email', validators=[DataRequired(message='this is a test'),Length(min=3, max=30, message='Email must be more than 3 characters and less than 30 characters'), Email(message='Please enter a valid email'), user_exists])
-    password = StringField('password', validators=[DataRequired(), Length(min=3, max=30, message='Password must be more than 3 characters and less than 20 characters'), EqualTo('repeat_password', message='Passwords must match.')])
-    repeat_password = StringField('repeat_password', validators=[DataRequired(), EqualTo('password', message='Passwords must match')])
+        'username', validators=[DataRequired(message='Username cannot be blank'), Length(min=3, max=20, message='Username must be more than 3 characters and less than 20 characters'), username_exists])
+    email = StringField('email', validators=[DataRequired(message='Email cannot be blank'),Length(min=3, max=30, message='Email must be more than 3 characters and less than 30 characters'), Email(message='Please enter a valid email'), user_exists])
+    password = StringField('password', validators=[DataRequired(message='Password cannot be blank'), Length(min=3, max=30, message='Password must be more than 3 characters and less than 20 characters'), EqualTo('repeat_password', message='Passwords must match.')])
+    repeat_password = StringField('repeat_password', validators=[DataRequired(message='Confirm password cannot be blank'), EqualTo('password', message='Passwords must match')])

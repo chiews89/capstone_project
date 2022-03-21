@@ -8,7 +8,7 @@ const EditCommentModal = ({post, commentId}) => {
   return (
     <>
       <button className="edit-post-modal" onClick={() => setShowModal(true)}>
-        Edit Comment
+      <i class="fa-solid fa-ellipsis"></i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

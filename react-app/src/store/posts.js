@@ -86,11 +86,11 @@ export const editSinglePost = (post) => async (dispatch) => {
 };
 
 export const deleteSinglePost = (id) => async (dispatch) => {
-  const res = await fetch(`/api/posts/delete/${id}`, {
+  const res = await fetch(`/api/posts/delete/${id.id}`, {
     method: 'DELETE'
   })
   if (res.ok) {
-    await dispatch(deletePost(id))
+    await dispatch(deletePost(id.id))
     return res
   }
 }

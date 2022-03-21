@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { editSinglePost } from "../../../store/posts";
 
-export const EditPost = ({ onClose, postId }) => {
+export const EditPost = ({ onClose, post, setShowModal }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
-  // const { id } = useParams();
 
   const [errorValidator, setErrorValidator] = useState([]);
-  const post = useSelector((state) => state.posts[postId]);
 
   const [image_url, setImageUrl] = useState(post?.image_url || "");
   const [description, setDescription] = useState(post?.description || "");
@@ -36,6 +32,7 @@ export const EditPost = ({ onClose, postId }) => {
     const updatedPost = await dispatch(editSinglePost(payload));
     if (updatedPost) {
       onClose(false);
+      setShowModal(false)
     }
   };
 
