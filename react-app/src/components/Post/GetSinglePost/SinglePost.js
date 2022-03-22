@@ -17,15 +17,16 @@ export const SinglePost = ({ post, setShowModal }) => {
     history.push(`/login`);
   }
 
-
   return (
     <div className="post-detail-container">
       {user.id === post.user_id && (
         <div>
-          <DeletePostModal post={post} setShowModal={setShowModal}/>
+          <DeletePostModal post={post} setShowModal={setShowModal} />
         </div>
       )}
-      <p>{post.username}</p>
+          <div className="post-username">
+            <i className="fa-solid fa-circle-user"></i> {post?.username}
+          </div>
       <img
         height={400}
         width={400}
@@ -38,7 +39,10 @@ export const SinglePost = ({ post, setShowModal }) => {
       />
       <div className="post-description">{post?.description}</div>
       <GetAllComments post={post} />
-      <CreateNewComment post={post} />
+      <div className="add-comment-container">
+        <i className="fa-solid fa-face-laugh-beam"></i>{" "}
+        <CreateNewComment post={post} />
+      </div>
     </div>
   );
 };

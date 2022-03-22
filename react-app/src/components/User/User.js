@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import SinglePostModal from "../Post/GetSinglePost";
+import './User.css'
 
 export const UserProfile = () => {
   const user = useSelector((state) => state.session.user);
@@ -15,9 +16,9 @@ export const UserProfile = () => {
     <div className="profile-page">
       <h1>{user.username}</h1>
       {filteredPost.map((post) => (
-        <div className="user-posts">
-          <div key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
-            <div className="post-image">
+        <ul className="user-posts">
+          <li key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
+            <li className="post-image">
               <img
                 height={400}
                 width={400}
@@ -28,11 +29,11 @@ export const UserProfile = () => {
                     "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
                 }
               />
-            </div>
-            <div className="post-description">{post.description}</div>
-          </div>
+            </li>
+            <li className="post-description">{post.description}</li>
+          </li>
           <SinglePostModal post={post} />
-        </div>
+        </ul>
       ))}
     </div>
   );

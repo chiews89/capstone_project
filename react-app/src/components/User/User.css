@@ -1,0 +1,14 @@
+.post-image {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.user-posts {
+    /* height: 30vh; */
+    flex-grow: 0;
+  }
+
+.post-image {
+    /* object-fit: cover; */
+    /* vertical-align: bottom; */
+  }

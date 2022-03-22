@@ -29,7 +29,8 @@ export const ThreeComments = ({ post }) => {
       {slicedArr.map((comment) => (
         <div key={comment?.id}>
           <div className="comments-container">
-            {comment.username} {comment.comment}
+            <i className="fa-solid fa-circle-user"></i> {comment.username}{" "}
+            {comment.comment}
           </div>
         </div>
       ))}

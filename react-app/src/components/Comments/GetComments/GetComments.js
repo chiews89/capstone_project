@@ -1,4 +1,3 @@
-
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import EditCommentModal from "../EditComment";
@@ -15,7 +14,6 @@ export const GetAllComments = ({ post }) => {
     return comment.post_id === post.id;
   });
 
-
   if (!user) {
     history.push("/login");
   }
@@ -26,9 +24,11 @@ export const GetAllComments = ({ post }) => {
       {filteredArr.map((comment) => (
         <div key={comment?.id}>
           <div className="comments-container">
+            <i className="fa-solid fa-circle-user"></i> {' '}
             {comment.username} {comment.comment}
-            {user.id === comment.user_id && <EditCommentModal post={post} commentId={comment}/>}
-
+            {user.id === comment.user_id && (
+              <EditCommentModal post={post} commentId={comment} />
+            )}
           </div>
         </div>
       ))}
