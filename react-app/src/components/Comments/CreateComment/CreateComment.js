@@ -29,7 +29,7 @@ export const CreateNewComment = ({post}) => {
     return (
         <form className="new-comment-container" onSubmit={newCommentSubmit}>
             <label className="comment-label">
-                <input placeholder="Comment"
+                <input placeholder="Add a comment..."
                 className="comment-input"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}

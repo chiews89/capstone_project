@@ -8,7 +8,7 @@ const CreatePostModal = () => {
   return (
     <>
       <button className="create-post-modal" onClick={() => setShowModal(true)}>
-        Create Post
+      <i class="fa-solid fa-plus"></i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 14px;
-  box-shadow: 0 0 10px grey;
+  /* box-shadow: 0 0 10px grey; */
   border: 1px solid rgb(191, 182, 182);
   margin: 30px 0px 20px 0px;
 }
@@ -44,29 +44,28 @@
   font-size: 14px;
 }
 
-.post-images {
-    border: 2px solid orange;
-    border: 0;
+.post-image {
+  border-radius: 14px;
 }
 
 .add-comment-container {
     display: flex;
     flex-direction: row;
     border-radius: 14px;
-    box-shadow: 0 0 10px grey;
+    border: 1px solid gray;
     width: 100%;
 }
 
-.post-details {
-    margin: 10px;
-}
 
 .comments-container {
-    margin: 10px;
+    margin-left: 4px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .comment-input {
   border-radius: 14px;
+  border: none;
 
   padding-bottom: 12px;
   padding-left: 2px;
@@ -78,4 +77,6 @@
 .create-post-button {
   border-radius: 14px;
   padding-left: 3px;
+  background-color: white;
+  border: none;
 }

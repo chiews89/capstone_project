@@ -1,19 +1,19 @@
 .navbar-main {
   display: flex;
-  cursor: pointer;
+  height: 37px;
   justify-content: space-between;
-  border: 2px solid red;
-}
-
-.create-post-modal {
-    margin-left: 70%;
-}
-
-.navbar-logout {
-    font-size: 30px;
+  border: 1px solid rgb(191, 182, 182);
 }
 
 .navbar-name {
-    color: #f1651f;
-    font-family: 'Arial', sans-serif;font-size: 30px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 30px;
+}
+
+.create-post-modal {
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid grey;
+  background-color: white;
 }

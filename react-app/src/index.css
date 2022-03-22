@@ -8,3 +8,23 @@
     border: none;
     background-color: white;
 }
+
+ul {
+    list-style-type: none;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+}
+textarea:focus {
+    outline: none !important;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.site-logo {
+    width: 100px;
+    height: 100%;
+}

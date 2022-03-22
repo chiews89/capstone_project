@@ -27,8 +27,8 @@ export const AllPosts = () => {
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
               <img
-                height={550}
-                width={550}
+                height={650}
+                width={650}
                 alt={post?.image_url}
                 src={post?.image_url}
                 onError={(e) =>
@@ -45,11 +45,11 @@ export const AllPosts = () => {
             </div>
             <div className="post-description-u">{post?.description}</div>
           </div>
-          <div className="last-three-comments">
-            <ThreeComments post={post} />
-          </div>
           <div className="post-details">
             <SinglePostModal post={post} />
+          </div>
+          <div className="last-three-comments">
+            <ThreeComments post={post} />
           </div>
           <div className="add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>{" "}

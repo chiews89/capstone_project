@@ -48,7 +48,6 @@ export const EditComment = ({ post, commentId, onClose }) => {
       </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
         <label>
-          Comment
           <input
             className="comment-label"
             placeholder="Comment"
@@ -56,7 +55,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
-        <button className="create-post-button" type="submit" disabled={comment.length < 1}>
+        <button className="create-post-button" type="submit">
           Edit Comment
         </button>
         <button className="cancel-add-button" type="true" onClick={onClose}>

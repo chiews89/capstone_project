@@ -1,35 +1,35 @@
-.post-image {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.user-posts {
-  /* height: 30vh; */
-  flex-grow: 0;
-}
-
-.post-image {
-  /* object-fit: cover; */
-  /* vertical-align: bottom; */
-}
-
 .user-icon {
-  font-size: 24px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.home-button-icon {
+  color: black;
+  font-size: 30px;
+}
+.user-icon-button {
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  background-color: white;
 }
 
 .profile-dropdown {
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 0 10px grey;
+  border-radius: 14px;
   height: 40px;
   padding: 10px;
   position: absolute;
   right: 0px;
   top: 50px;
-  width: 50px;
+  width: 45px;
 }
 
 .profile-dropdown ul {
   list-style: none;
-  padding: 0;
+}
+
+.fa-house {
+  text-decoration: none;
+  color: black;
 }

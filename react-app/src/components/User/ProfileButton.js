@@ -25,9 +25,7 @@ export const ProfileButton = () => {
   return (
     <>
       <button className="user-icon-button" onClick={openMenu}>
-        <div className="user-icon">
-          <i className="fa-solid fa-circle-user"></i>
-        </div>
+        <i className="fa-solid fa-circle-user"></i>
       </button>
       {showMenu && (
         <div className="profile-dropdown">

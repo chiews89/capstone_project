@@ -20,7 +20,7 @@
   width: 350px;
   height: 500px;
   border-radius: 14px;
-  box-shadow: 0 0 10px grey;
+  /* box-shadow: 0 0 10px grey; */
 }
 
 .rotating-pic {
@@ -28,7 +28,7 @@
   height: 500px;
 z-index: 100px;
   border-radius: 14px;
-  box-shadow: 0 0 10px grey;
+  /* box-shadow: 0 0 10px grey; */
   /* object-fit: contain; */
 }
 
