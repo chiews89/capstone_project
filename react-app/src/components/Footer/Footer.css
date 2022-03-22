@@ -21,9 +21,9 @@
     padding: 0;
 }
 
-.technologies {
+.created-with {
     font-size: 16px;
-    flex-direction: row;
+    grid-template-columns: auto;
 }
 
 .footer-links {

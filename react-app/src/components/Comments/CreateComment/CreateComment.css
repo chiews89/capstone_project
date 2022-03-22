@@ -15,7 +15,6 @@
 
 .create-post-button {
     width: 20%;
-    border: 1px solid gray;
 }
 
 .comment-input {
@@ -24,5 +23,5 @@
 
 .fa-face-laugh-beam {
     margin: 5px;
-    font-size: 24px;
+    font-size: 30px;
 }

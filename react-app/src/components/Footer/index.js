@@ -14,7 +14,7 @@ export const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <div className='technologies'>
+                <div className='created-with'>
                     <p>Created With</p>
                     <ul>
                         <li>JavaScript</li>

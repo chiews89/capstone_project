@@ -24,9 +24,9 @@ export const SinglePost = ({ post, setShowModal }) => {
           <DeletePostModal post={post} setShowModal={setShowModal} />
         </div>
       )}
-          <div className="post-username">
-            <i className="fa-solid fa-circle-user"></i> {post?.username}
-          </div>
+      <div className="post-username">
+        <i className="fa-solid fa-circle-user"></i> {post?.username}
+      </div>
       <img
         height={400}
         width={400}
@@ -37,7 +37,10 @@ export const SinglePost = ({ post, setShowModal }) => {
             "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
         }
       />
-      <div className="post-description">{post?.description}</div>
+      <div className="post-description">
+        <div>{post?.username}</div>
+        <div>{post?.description}</div>
+      </div>
       <GetAllComments post={post} />
       <div className="add-comment-container">
         <i className="fa-solid fa-face-laugh-beam"></i>{" "}

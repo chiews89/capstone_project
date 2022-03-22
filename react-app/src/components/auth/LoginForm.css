@@ -36,3 +36,12 @@ z-index: 100px;
     display: relative;
     /* width: 450px; */
 }
+
+.error-list {
+  color: #a61a2e;
+  font-weight: 400;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
+    Arial, sans-serif;
+  transition: opacity 200ms ease-in;
+  text-align: center;
+}
