@@ -4,32 +4,27 @@ import { NavLink } from "react-router-dom";
 import LogoutButton from "./auth/LogoutButton";
 import CreatePostModal from "./Post/CreatePost";
 import "./NavBar.css";
-
+import { ProfileButton } from "./User/ProfileButton"
 const NavBar = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
   return (
     <nav>
       {sessionUser && (
-        <div className="navbar-main">
-          <div className="navbar-name">
+        <ul className="navbar-main">
+          <li className="navbar-name">
             <NavLink to="/" exact={true} activeClassName="active">
               InstaGame
             </NavLink>
-          </div>
-          <div className="create-post-modal">
+          </li>
+          <li className="create-post-modal">
             <CreatePostModal />
-          </div>
-          <div className="navbar-profile">
-            <NavLink to="/profile" exact={true} activeClassName="active">
-              <i className="fa-solid fa-circle-user"></i> {' '}
-              Profile
-            </NavLink>
-          </div>
-          <div className="navbar-logout">
-            <LogoutButton />
-          </div>
-        </div>
+          </li>
+          <li className="navbar-profile">
+              <ProfileButton user={sessionUser} />
+
+          </li>
+        </ul>
       )}
     </nav>
   );

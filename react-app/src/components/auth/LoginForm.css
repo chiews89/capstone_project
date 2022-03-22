@@ -19,12 +19,16 @@
 .main-pic {
   width: 350px;
   height: 500px;
+  border-radius: 14px;
+  box-shadow: 0 0 10px grey;
 }
 
 .rotating-pic {
   width: 350px;
   height: 500px;
-  left: 140px;
+z-index: 100px;
+  border-radius: 14px;
+  box-shadow: 0 0 10px grey;
   /* object-fit: contain; */
 }
 

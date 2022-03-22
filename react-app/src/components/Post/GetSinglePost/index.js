@@ -16,8 +16,7 @@ const SinglePostModal = ({ post }) => {
 
   return (
     <>
-      <button className="nav-login" onClick={() => setShowModal(true)}>
-        {" "}
+      <button className="view-comments" onClick={() => setShowModal(true)}>
         <div className="number-comments">View all {postComments?.length} comments</div>
       </button>
 

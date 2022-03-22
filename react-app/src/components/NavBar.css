@@ -1,5 +1,19 @@
-.nav-main {
-    flex-direction: row;
-    border: 2px blue;
+.navbar-main {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  border: 2px solid red;
+}
 
+.create-post-modal {
+    margin-left: 70%;
+}
+
+.navbar-logout {
+    font-size: 30px;
+}
+
+.navbar-name {
+    color: #f1651f;
+    font-family: 'Arial', sans-serif;font-size: 30px;
 }
