@@ -6,11 +6,16 @@
 .comment-label {
     width: 100%;
 }
+.single-add-comment-container {
+    display: flex;
+    
+}
 
 .new-comment-container {
     width: 100%;
     display: flex;
     flex-direction: row;
+    border: 1px solid gray;
 }
 
 .create-comment-button {

@@ -22,6 +22,8 @@
   display: flex;
   height: 25px;
   flex-direction: row;
+  inline-size: 600px;
+  width: 400px;
   font-weight: 600;
   font-size: 18px;
   margin: 0px 0px 5px 0px;
@@ -54,13 +56,25 @@
   display: flex;
   flex-direction: row;
   border: 1px solid gray;
-  width: 100%;
+  width: 649px;
+}
+.comments-main {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 400px;
+}
+
+.post-detail-container {
+  width: 400px;
 }
 
 .comments-container {
   margin-top: 5px;
   margin-bottom: 15px;
   margin-left: 5px;
+  overflow-wrap:break-word;
+  width: 650px;
 }
 
 .comment-input {
@@ -97,6 +111,15 @@
 .post-description {
   margin-top: 5px;
   margin-bottom: 10px;
+  width: 400px;
+  inline-size: 400px;
+}
+.post-description-text {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 400px;
+  inline-size: 400px;
+  overflow-wrap:break-word;
 }
 
 .cancel-add-button {
@@ -306,15 +329,30 @@
 }
 
 .edit-comment-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   border: none;
+
   background-color: white;
   margin-left: 5px;
   margin-top: 2px;
 }
 
 .single-post-comments-container {
+  flex-direction: row;
   margin-top: 5px;
+  width: 400px;
+  inline-size: 400px;
+  overflow-wrap:break-word;
   margin-bottom: 5px;
+}
+
+
+.single-post-comment {
+  width: 400px;
+  inline-size: 400px;
+  overflow-wrap:break-word;
 }
 
 .home-page-username {

@@ -10,7 +10,7 @@
   }
 
   #modal-background {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -23,7 +23,7 @@
     border: 1px gray;
     display: flex;
     margin: 0 auto;
-    max-width: 484px;
+    max-width: 400px;
     padding: 32px 32px 32px 32px;
     position: absolute;
   }

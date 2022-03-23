@@ -21,11 +21,11 @@ export const SinglePost = ({ post, setShowModal }) => {
     <div className="post-detail-container">
       <div className="post-username">
         <i className="fa-solid fa-circle-user"></i> {post?.username}
-      {user.id === post.user_id && (
-        <div className="delete-post-icon">
-          <DeletePostModal post={post} setShowModal={setShowModal} />
-        </div>
-      )}
+        {user.id === post.user_id && (
+          <div className="delete-post-icon">
+            <DeletePostModal post={post} setShowModal={setShowModal} />
+          </div>
+        )}
       </div>
       <img
         height={400}
@@ -39,11 +39,11 @@ export const SinglePost = ({ post, setShowModal }) => {
       />
       <div className="post-description">
         <i className="fa-solid fa-circle-user"></i>
-        {post?.username} {' '}
-        {post?.description}
+        {post?.username}{" "}
+        <div className="post-description-text">{post?.description}</div>
       </div>
       <GetAllComments post={post} />
-      <div className="add-comment-container">
+      <div className="single-add-comment-container">
         <i className="fa-solid fa-face-laugh-beam"></i>{" "}
         <CreateNewComment post={post} />
       </div>

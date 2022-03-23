@@ -14,6 +14,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
     const errors = [];
 
     if (!comment) errors.push("Please delete comment instead");
+    if (comment.length > 100) errors.push("Comment cannot be longer than 100 characters");
     setErrorValidator(errors);
   }, [comment]);
 

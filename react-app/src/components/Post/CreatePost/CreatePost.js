@@ -18,7 +18,7 @@ export const CreatePost = ({ onClose }) => {
       errors.push("Image file must be a jpeg jpg gif or png");
     if (!description) errors.push("Please provide a description");
     if (description.length > 100)
-      errors.push("Post cannot be longer than 100 characters");
+      errors.push("Description cannot be longer than 100 characters");
     setErrorValidator(errors);
   }, [image_url, description]);
 

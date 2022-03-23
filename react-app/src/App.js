@@ -11,6 +11,7 @@ import { authenticate } from "./store/session";
 import { AllPosts } from "./components/Post/HomePage/HomePage";
 import { getAllComments } from "./store/comments";
 import { getAllPosts } from "./store/posts";
+import { ErrorPage } from "./components/404Page/404Page";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -45,6 +46,9 @@ function App() {
         <ProtectedRoute path="/" exact={true}>
           <AllPosts />
         </ProtectedRoute>
+        <Route>
+          <ErrorPage />
+        </Route>
       </Switch>
       <Footer/>
     </BrowserRouter>
