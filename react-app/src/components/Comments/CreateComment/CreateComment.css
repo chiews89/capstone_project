@@ -13,8 +13,10 @@
     flex-direction: row;
 }
 
-.create-post-button {
+.create-comment-button {
     width: 20%;
+    border: none;
+    background-color: white;
 }
 
 .comment-input {

@@ -41,7 +41,7 @@ export const AllPosts = () => {
           <div className="post-user-description">
             <div className="post-d-user">
               <i className="fa-solid fa-circle-user"></i>
-              {' '}{post?.username}
+             {post?.username}
             </div>
             <div className="post-description-u">{post?.description}</div>
           </div>

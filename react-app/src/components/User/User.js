@@ -16,9 +16,9 @@ export const UserProfile = () => {
     <div className="profile-page">
       <h1>{user.username}</h1>
       {filteredPost.map((post) => (
-        <ul className="user-posts">
-          <li key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
-            <li className="post-image">
+        <div className="user-posts-container">
+          <div key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
+            <div className="profile-post-image">
               <img
                 height={400}
                 width={400}
@@ -29,11 +29,11 @@ export const UserProfile = () => {
                     "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
                 }
               />
-            </li>
-            <li className="post-description">{post.description}</li>
-          </li>
+            </div>
+            <div className="post-description">{post.description}</div>
           <SinglePostModal post={post} />
-        </ul>
+          </div>
+        </div>
       ))}
     </div>
   );

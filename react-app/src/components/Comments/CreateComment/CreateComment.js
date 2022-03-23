@@ -50,7 +50,7 @@ export const CreateNewComment = ({ post }) => {
         />
       </label>
       <button
-        className="create-post-button"
+        className="create-comment-button"
         type="submit"
         disabled={comment.length < 1 || comment.length >= 100}
       >

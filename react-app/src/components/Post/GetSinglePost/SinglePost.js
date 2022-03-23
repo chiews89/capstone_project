@@ -38,8 +38,9 @@ export const SinglePost = ({ post, setShowModal }) => {
         }
       />
       <div className="post-description">
-        <div>{post?.username}</div>
-        <div>{post?.description}</div>
+        <i className="fa-solid fa-circle-user"></i>
+        {post?.username} {' '}
+        {post?.description}
       </div>
       <GetAllComments post={post} />
       <div className="add-comment-container">
