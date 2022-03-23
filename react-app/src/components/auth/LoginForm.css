@@ -160,6 +160,6 @@
   font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
     Arial, sans-serif;
   transition: opacity 200ms ease-in;
-  margin-left: 70px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }

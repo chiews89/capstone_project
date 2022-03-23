@@ -24,7 +24,7 @@ export const AllPosts = () => {
       {postsArr.map((post) => (
         <div className="all-posts-container">
           <div className="post-username">
-            <i className="fa-solid fa-circle-user"></i> {'  '}{post?.username}
+            <i className="fa-solid fa-circle-user"></i>{post?.username}
           </div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
@@ -50,11 +50,11 @@ export const AllPosts = () => {
           <div className="post-details">
             <SinglePostModal post={post} />
           </div>
-          <div className="created-at">
-            {post.created_at.slice(5, 17)}
-          </div>
           <div className="last-three-comments">
             <ThreeComments post={post} />
+          </div>
+          <div className="created-at">
+            {post.created_at.slice(5, 17)}
           </div>
           <div className="add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>{" "}

@@ -19,13 +19,13 @@ export const SinglePost = ({ post, setShowModal }) => {
 
   return (
     <div className="post-detail-container">
+      <div className="post-username">
+        <i className="fa-solid fa-circle-user"></i> {post?.username}
       {user.id === post.user_id && (
-        <div>
+        <div className="delete-post-icon">
           <DeletePostModal post={post} setShowModal={setShowModal} />
         </div>
       )}
-      <div className="post-username">
-        <i className="fa-solid fa-circle-user"></i> {post?.username}
       </div>
       <img
         height={400}

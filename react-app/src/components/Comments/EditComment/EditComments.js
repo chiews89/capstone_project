@@ -13,7 +13,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
   useEffect(() => {
     const errors = [];
 
-    if (!comment) errors.push("Please delete comment");
+    if (!comment) errors.push("Please delete comment instead");
     setErrorValidator(errors);
   }, [comment]);
 
