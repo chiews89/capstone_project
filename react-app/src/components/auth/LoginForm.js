@@ -72,7 +72,7 @@ const LoginForm = () => {
         <img className="rotating-pic" alt={imageDisplay} src={imageDisplay} />
       </div>
       <div className="login-container">
-        <div className="login-form-logo">InstaGame</div>
+        <div className="login-form-logo"><img className ='login-site-logo' src="/static/Instagame-Logo.png" alt="/static/Instagame-Logo.png" /></div>
         <form className="login-form" onSubmit={onLogin}>
           <div className="errors">
             {errors.map((error, ind) => (
@@ -81,7 +81,6 @@ const LoginForm = () => {
           </div>
           <div className="login-email-password">
             <label className="login-form-label" htmlFor="email">
-              Email
             </label>
             <input
               className="login-form-input"
@@ -92,7 +91,6 @@ const LoginForm = () => {
               onChange={updateEmail}
             />
             <label className="login-form-label" htmlFor="password">
-              Password
             </label>
             <input
               className="login-form-input"
@@ -104,7 +102,7 @@ const LoginForm = () => {
             />
             <div className="login-btn-container">
               <button className="login-btn" type="submit">
-                Login
+                Log In
               </button>
             </div>
             <div className="demo-user-btn-container">
@@ -122,10 +120,10 @@ const LoginForm = () => {
           <div className="home-signup-from-login">
             <h3 className="no-account">
               Don't have an account?
-            </h3>
-          </div>
           <div>
             <SignupFormModal />
+          </div>
+            </h3>
           </div>
         </div>
       </div>

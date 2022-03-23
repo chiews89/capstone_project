@@ -1,20 +1,36 @@
 
 .navbar-main {
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(214,214,214);
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
   display: flex;
-  height: 37px;
-  /* width: 100px; */
+  flex-direction: row;
   justify-content: space-between;
-  border: 1px solid rgb(191, 182, 182);
+  margin:auto;
+  height: 37px;
 }
 
 .navbar-name {
+  margin-left: 500px;
   text-decoration: none;
-  color: #000000;
   font-size: 30px;
 }
 
 .create-post-modal {
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
   background-color: white;
+}
+
+.navbar-profile {
+  margin-right: 500px;
+  text-decoration: none;
+}
+
+.site-logo {
+  width: 125px;
 }

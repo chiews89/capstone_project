@@ -30,8 +30,8 @@ export const ProfileButton = () => {
       {showMenu && (
         <div className="profile-dropdown">
           <ul>
-            <li className="order-history-li">
-              <NavLink to="/profile" exact={true} className="order-history">
+            <li className="profile-button-li">
+              <NavLink to="/profile" exact={true} className="profile-button">
                 Profile
               </NavLink>
             </li>

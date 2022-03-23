@@ -1,14 +1,13 @@
 .splash-page {
-  margin-top: 80px;
+  margin-top: 160px;
   display: flex;
-  background-color: rgba(var(--b3f,250,250,250),1);
   margin-bottom: 100px;
+  margin-left: 50px;
 }
 
 .login-container {
   margin-top: 5%;
   margin-left: 15%;
-  /* margin-bottom: 15%; */
   width: 360px;
   height: 360px;
   box-sizing: border-box;
@@ -17,9 +16,7 @@
 }
 
 .login-form-logo {
-  font-family: "Cookie", cursive;
   font-size: 40px;
-  /* margin-top: 10%; */
   margin-bottom: 5%;
   margin-left: 20%;
   color: rgb(34, 34, 34);
@@ -37,9 +34,11 @@
 .login-form-input {
   box-sizing: border-box;
   border: 1px solid rgb(214, 214, 214);
-  border-radius: 4px;
-  width: 50%;
-  height: 25px;
+  background: rgba(var(--b3f,250,250,250),1);
+  padding: 5px;
+  border-radius: 2px;
+  width: 60%;
+  height: 40px;
 }
 .login-form-label {
   margin-top: 20px;
@@ -50,7 +49,7 @@
 }
 
 .login-btn-container {
-  margin-top: 17px;
+  margin-top: 25px;
   margin-bottom: 15px;
 }
 
@@ -67,8 +66,9 @@
   padding-right: 10px;
   margin: auto;
   text-align: center;
-  width: 60px;
-  background-color: rgb(0, 138, 240);
+  width: 220px;
+  height: 33px;
+  background-color: rgb(49, 152, 232);
   color: white;
   border: 1px solid white;
   border-radius: 4px;
@@ -93,10 +93,16 @@
   margin: auto;
   text-align: center;
   width: auto;
-  background-color: rgb(0,138,240);
+  background-color: rgb(49, 152, 232);
   color: white;
   border: 1px solid white;
   border-radius: 4px;
+}
+.signup-form-container {
+  border: 1px solid rgb(214, 214, 214);
+  margin-top: 45px;
+  height: 50px;
+  background-color: white;
 }
 
 .signup-form-button {
@@ -105,18 +111,28 @@
   border: none;
   font-size: 15px;
   font-weight: 700;
-  color: rgb(0, 138, 240);
-  background-color: rgb(250, 250, 250);
+  margin-left: 5px;
+  color: rgb(49, 152, 232);
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
 }
 
 .no-account {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 14px;
+  justify-content: center;
   color: rgb(34,34,34);
   display: flex;
   flex-direction: row;
+}
+
+.login-site-logo {
+  width: 210px;
+  height: 75px;
+  border-radius: 2px;
+  background-color: white;
 }
 
 .main-pic {
@@ -131,7 +147,7 @@
   background-color: rgb(250, 250, 250);
 }
 
-.error-list {
+.errors {
   color: #a61a2e;
   font-weight: 400;
   font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
