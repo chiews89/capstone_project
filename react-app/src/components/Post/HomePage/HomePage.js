@@ -13,7 +13,7 @@ export const AllPosts = () => {
 
   const postsArr = Object.values(posts).reverse();
 
-  window.scrollTo(0,0)
+  window.scrollTo(0, 0);
 
   if (!user) {
     history.push(`/login`);
@@ -24,7 +24,10 @@ export const AllPosts = () => {
       {postsArr.map((post) => (
         <div className="all-posts-container">
           <div className="post-username">
-            <i className="fa-solid fa-circle-user"></i>{post?.username}
+            <div className="username-icon-home">
+              <i className="fa-solid fa-circle-user"></i>
+            </div>
+            <div className="home-page-username">{post?.username}</div>
           </div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
@@ -43,7 +46,7 @@ export const AllPosts = () => {
           <div className="post-user-description">
             <div className="post-d-user">
               <i className="fa-solid fa-circle-user"></i>
-             {post?.username}
+              {post?.username}
             </div>
             <div className="post-description-u">{post?.description}</div>
           </div>
@@ -53,9 +56,7 @@ export const AllPosts = () => {
           <div className="last-three-comments">
             <ThreeComments post={post} />
           </div>
-          <div className="created-at">
-            {post.created_at.slice(5, 17)}
-          </div>
+          <div className="created-at">{post.created_at.slice(5, 17)}</div>
           <div className="add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>{" "}
             <CreateNewComment post={post} />

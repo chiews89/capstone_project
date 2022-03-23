@@ -74,7 +74,7 @@ const LoginForm = () => {
       <div className="login-container">
         <div className="login-form-logo"><img className ='login-site-logo' src="/static/Instagame-Logo.png" alt="/static/Instagame-Logo.png" /></div>
         <form className="login-form" onSubmit={onLogin}>
-          <div className="errors">
+          <div className="login-form-errors">
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}

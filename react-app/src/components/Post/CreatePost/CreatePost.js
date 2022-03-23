@@ -59,7 +59,7 @@ export const CreatePost = ({ onClose }) => {
           />
         )}
         <div>
-          <label> Image </label>
+          <label className="add-image-label"> Image </label>
           <input
             id="form-label-image"
             placeholder="Image"
@@ -69,7 +69,7 @@ export const CreatePost = ({ onClose }) => {
           />
         </div>
         <div>
-          <label> Description </label>
+          <label className="add-description-label"> Description </label>
           <textarea
             id="form-label-description"
             placeholder="Description"

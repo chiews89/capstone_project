@@ -22,7 +22,7 @@ export const GetAllComments = ({ post }) => {
     <main className="comments-main">
       {filteredArr.map((comment) => (
         <div key={comment?.id}>
-          <div className="comments-container">
+          <div className="single-post-comments-container">
             <i className="fa-solid fa-circle-user"></i> {' '}
             {comment.username} {comment.comment}
             {user.id === comment.user_id && (

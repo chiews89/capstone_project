@@ -8,7 +8,7 @@ const DeletePostModal = ({ post, setShowModal }) => {
   return (
     <>
       <button className="delete-post-modal" onClick={() => openModal(true)}>
-        <i class="fa-solid fa-ellipsis"></i>
+        <i className='ellipsis' class="fa-solid fa-ellipsis"></i>
       </button>
       {showModal && (
         <Modal onClose={() => openModal(false)}>

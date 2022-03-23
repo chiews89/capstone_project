@@ -12,12 +12,12 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
 
   useEffect(() => {
     const errors = [];
-    if (!image_url.length) errors.push("Please provide a valid URL");
-    if (image_url.length > 0 && !image_url.match(/^https?:\/\/.+\/.+$/))
-      errors.push("Please provide a valid URL");
+    if (!image_url.length) errors.push("Image file must be a jpeg jpg gif or png");
+    if (image_url.length > 0 && !image_url.match(/\.(jpeg|jpg|gif|png)$/))
+      errors.push("Image file must be a jpeg jpg gif or png");
     if (!description) errors.push("Please provide a description");
     if (description.length > 100)
-      errors.push("Post cannot be longer than 100 characters");
+      errors.push("Description cannot be longer than 100 characters");
     setErrorValidator(errors);
   }, [image_url, description]);
 
@@ -59,7 +59,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
           />
         )}
         <div>
-          <label> Image </label>
+          <label className="add-image-label"> Image </label>
           <input
             id="form-label-image"
             placeholder="Image"
@@ -69,7 +69,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
           />
         </div>
         <div>
-          <label> Description </label>
+          <label className="add-description-label"> Description </label>
           <textarea
             id="form-label-description"
             placeholder="Description"

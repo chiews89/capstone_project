@@ -18,7 +18,7 @@ export const ThreeComments = ({ post }) => {
     })
     .reverse();
 
-  const slicedArr = filteredArr.slice(0, 3);
+  const slicedArr = filteredArr.slice(0, 1);
 
   if (!user) {
     history.push("/login");

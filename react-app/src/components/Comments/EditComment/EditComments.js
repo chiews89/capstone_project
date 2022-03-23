@@ -41,7 +41,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
     <div className="edit-comment-container">
       <ul>
         {errorValidator.map((error) => (
-          <li className="error-list" key={error}>
+          <li className="comments-errors" key={error}>
             {error}
           </li>
         ))}
@@ -49,7 +49,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
       <form className="edit-comment" onSubmit={handleEditComment}>
         <label>
           <input
-            className="comment-label"
+            id="comment-label"
             placeholder="Comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}

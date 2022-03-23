@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .all-posts-container {
@@ -21,6 +20,7 @@
   background-color: #ffffff;
   text-transform: capitalize;
   display: flex;
+  height: 25px;
   flex-direction: row;
   font-weight: 600;
   font-size: 18px;
@@ -28,11 +28,11 @@
 }
 
 .post-user-description {
-    display: flex;
-    flex-direction: row;
-    margin-left: 0%;
-    margin-top: 10px;
-    margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 0%;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 .post-d-user {
   background-color: #ffffff;
@@ -50,18 +50,17 @@
   margin-left: 5px;
 }
 
-
 .add-comment-container {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid gray;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid gray;
+  width: 100%;
 }
 
 .comments-container {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 5px;
 }
 
 .comment-input {
@@ -70,9 +69,9 @@
   padding-left: 2px;
 }
 .number-comments {
-  color: rgba(var(--f52,142,142,142),1);
-    margin-left: 5px;
-    margin-bottom: 10px;
+  color: rgba(var(--f52, 142, 142, 142), 1);
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
 
 .create-post-button {
@@ -98,7 +97,6 @@
 .post-description {
   margin-top: 5px;
   margin-bottom: 10px;
-
 }
 
 .cancel-add-button {
@@ -280,12 +278,21 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.comments-errors {
+  color: #000000;
+  font-weight: 400;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
+    Arial, sans-serif;
+  transition: opacity 200ms ease-in;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .created-at {
   font-size: 14px;
   margin-left: 5px;
   margin-bottom: 15px;
-  color: rgba(var(--f52,142,142,142),1);
+  color: rgba(var(--f52, 142, 142, 142), 1);
 }
 
 .delete-post-icon {
@@ -303,4 +310,75 @@
   background-color: white;
   margin-left: 5px;
   margin-top: 2px;
+}
+
+.single-post-comments-container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.home-page-username {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.username-icon-home {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.add-image-label {
+  font-size: 16px;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.add-description-label {
+  font-size: 16px;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.sign-up-labels {
+  font-size: 16px;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+#form-label-image {
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+}
+#form-label-description {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+  resize: none;
+  border: 1px solid gray;
+}
+#comment-label {
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  resize: none;
+  border: 1px solid gray;
+}
+#sign-up-form-inputs {
+  width: 100%;
+  height: 25px;
+  margin-bottom: 10px;
+  resize: none;
+  border: 1px solid gray;
 }
