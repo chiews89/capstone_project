@@ -1,36 +1,24 @@
-import React from 'react';
+import React from "react";
 
-import './Footer.css';
+import "./Footer.css";
 
 export const Footer = () => {
-    return (
-        <div className='footer'>
-            <div className='footer-content'>
-                <div className='created-by'>
-                    <p>Created By</p>
-                    <ul>
-                        <li>
-                            <a href='https://github.com/chiews89' target='_blank' rel='noopener noreferrer' className='footer-links'>Chiew Saetern</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className='created-with'>
-                    <p>Created With</p>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>CSS</li>
-                        <li>React</li>
-                        <li>Redux</li>
-                        <li>Flask</li>
-                        <li>SQLAlchemy</li>
-                        <li>Alembic</li>
-                        <li>PostgreSQL</li>
-                    </ul>
-                </div>
-            </div>
-            <div className='footer-bottom'>
-                <div className='footer-copyright'>© 2022 InstaGame</div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="footer">
+    <ul className="footer-created-with">
+        <li className="created-with">Javasctipt</li>
+        <li className="created-with">Python</li>
+        <li className="created-with">Flask</li>
+        <li className="created-with">React</li>
+        <li className="created-with">Redux</li>
+        <li className="created-with">SQLAlchemy</li>
+        <li className="created-with">PostgreSQL</li>
+    </ul>
+    <div className="footer-created-by">
+        <p className="footer-owner">Chiew Saetern</p>
+        <a className="github-icon" href="https://github.com/chiews89"><i className="fab fa-github-square"></i></a>
+        <a className="linkedin-icon" href="https://www.linkedin.com/in/chiew-saetern-7a255b95/"><i className="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+  );
 };
