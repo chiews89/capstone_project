@@ -36,7 +36,6 @@
   background-color: #ffffff;
   text-transform: capitalize;
   font-weight: 600;
-  /* margin: 0px 10px 10px 0px; */
   font-size: 18px;
 }
 
@@ -46,22 +45,15 @@
   font-weight: 400;
   margin: 3px 0px 10px 0px;
   font-size: 14px;
+  margin-left: 5px;
 }
 
-.post-image {
-  /* border-radius: 14px; */
-}
 
 .add-comment-container {
     display: flex;
     flex-direction: row;
-    /* border-radius: 14px; */
     border: 1px solid gray;
     width: 100%;
-}
-
-h2 {
-  margin-left: 4px;
 }
 
 .comments-container {
@@ -71,7 +63,6 @@ h2 {
 }
 
 .comment-input {
-  /* border-radius: 14px; */
   border: none;
 
   padding-bottom: 12px;
@@ -82,12 +73,205 @@ h2 {
 }
 
 .create-post-button {
-  /* border-radius: 14px; */
-  padding-left: 3px;
-  /* background-color: white; */
-  /* border: none; */
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: left;
+  width: auto;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 
 .post-description {
   margin-left: 5px;
+}
+
+.cancel-add-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: left;
+  width: auto;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.edit-post-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: left;
+  width: auto;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.edit-post-modal {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: 134px;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.delete-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: left;
+  width: auto;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.edit-comment-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: 70px;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.delete-comment-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: 70px;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.cancel-edit-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: 70px;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.sign-up-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: auto;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.edit-errors {
+  color: #000000;
+  font-weight: 400;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
+    Arial, sans-serif;
+  transition: opacity 200ms ease-in;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-errors {
+  color: #000000;
+  font-weight: 400;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
+    Arial, sans-serif;
+  transition: opacity 200ms ease-in;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

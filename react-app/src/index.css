@@ -25,6 +25,6 @@ textarea:focus {
 }
 
 .site-logo {
-    width: 125px;
+    max-width: 125px;
     height: 100%;
 }

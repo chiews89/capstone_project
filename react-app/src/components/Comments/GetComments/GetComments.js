@@ -20,7 +20,6 @@ export const GetAllComments = ({ post }) => {
 
   return (
     <main className="comments-main">
-      <h2>Comments</h2>
       {filteredArr.map((comment) => (
         <div key={comment?.id}>
           <div className="comments-container">

@@ -40,7 +40,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
     <div className="edit-post-container">
       <ul>
         {errorValidator.map((error) => (
-          <li className="error-list" key={error}>
+          <li className="edit-errors" key={error}>
             {error}
           </li>
         ))}

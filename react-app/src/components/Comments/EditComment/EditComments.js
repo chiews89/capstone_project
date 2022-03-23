@@ -60,17 +60,17 @@ export const EditComment = ({ post, commentId, onClose }) => {
           type="submit"
           disabled={comment.length < 1 || comment.length >= 100}
         >
-          Edit Comment
+          Edit
         </button>
-        <button className="cancel-add-button" type="true" onClick={onClose}>
+        <button className="cancel-edit-button" type="true" onClick={onClose}>
           Cancel
         </button>
 
         <button
-          className="delete-review-button"
+          className="delete-comment-button"
           onClick={(e) => handleCommentDeletion(e, commentId?.id)}
         >
-          Delete Your Comment
+          Delete
         </button>
       </form>
     </div>

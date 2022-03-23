@@ -16,9 +16,9 @@ export const UserProfile = () => {
     <div>
       <div className="profile-page-header">
 
-      <h1>{user.username}</h1>
       <i className="fa-solid fa-circle-user"></i>
       </div>
+      <h1 className="profile-page-name">{user.username}</h1>
       <div className="profile-page">
         {filteredPost.map((post) => (
           <div className="user-posts-container">

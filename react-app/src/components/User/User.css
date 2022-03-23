@@ -18,6 +18,10 @@
   background-color: white;
 }
 
+.profile-page-name {
+  margin: 100px;
+  text-align: center;
+}
 
 .fa-house {
   text-decoration: none;
@@ -27,7 +31,7 @@
 .profile-page {
   padding-left: 80px;
   display: flex;
-  width: 1400px;
+  width: 1800px;
   flex-wrap: wrap;
 }
 
@@ -39,4 +43,50 @@
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.profile-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: 70px;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.logout-button {
+  line-height: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
+  width: auto;
+  background-color: rgb(49, 152, 232);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.profile-button-li {
+  margin-top: 10px;
+  background-color: none;
 }

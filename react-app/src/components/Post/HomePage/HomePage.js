@@ -24,7 +24,7 @@ export const AllPosts = () => {
       {postsArr.map((post) => (
         <div className="all-posts-container">
           <div className="post-username">
-            <i className="fa-solid fa-circle-user"></i> {post?.username}
+            <i className="fa-solid fa-circle-user"></i> {'  '}{post?.username}
           </div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">

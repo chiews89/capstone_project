@@ -9,7 +9,7 @@
   margin-top: 5%;
   margin-left: 15%;
   width: 360px;
-  height: 360px;
+  height: 400px;
   box-sizing: border-box;
   border: 1px solid rgb(214, 214, 214);
   background-color: rgb(255, 255, 255);
@@ -34,7 +34,7 @@
 .login-form-input {
   box-sizing: border-box;
   border: 1px solid rgb(214, 214, 214);
-  background: rgba(var(--b3f,250,250,250),1);
+  background: rgba(var(--b3f, 250, 250, 250), 1);
   padding: 5px;
   border-radius: 2px;
   width: 60%;
@@ -100,7 +100,7 @@
 }
 .signup-form-container {
   border: 1px solid rgb(214, 214, 214);
-  margin-top: 45px;
+  margin-top: 65px;
   height: 50px;
   background-color: white;
 }
@@ -123,7 +123,7 @@
   font-weight: 300;
   margin-top: 14px;
   justify-content: center;
-  color: rgb(34,34,34);
+  color: rgb(34, 34, 34);
   display: flex;
   flex-direction: row;
 }
@@ -135,23 +135,31 @@
   background-color: white;
 }
 
+.image-container {
+  display: flex;
+  margin-left: 100px;
+}
+
 .main-pic {
   width: 350px;
-  height: 100%;
+  margin-top: 80px;
+  height: 500px;
   background-color: rgb(250, 250, 250);
 }
 
 .rotating-pic {
   width: 350px;
-  height: 100%;
+  margin-top: 80px;
+  height: 500px;
   background-color: rgb(250, 250, 250);
 }
 
 .errors {
-  color: #a61a2e;
+  color: #000000;
   font-weight: 400;
   font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
     Arial, sans-serif;
   transition: opacity 200ms ease-in;
-  text-align: center;
+  margin-left: 70px;
+  margin-top: 20px;
 }
