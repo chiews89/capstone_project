@@ -71,41 +71,64 @@ const LoginForm = () => {
         <img className="main-pic" alt={mainImage} src={mainImage} />
         <img className="rotating-pic" alt={imageDisplay} src={imageDisplay} />
       </div>
-      <form className="login-form" onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
+      <div className="login-container">
+        <div className="login-form-logo">InstaGame</div>
+        <form className="login-form" onSubmit={onLogin}>
+          <div className="errors">
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div className="login-email-password">
+            <label className="login-form-label" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="login-form-input"
+              name="email"
+              type="text"
+              placeholder="Your email here..."
+              value={email}
+              onChange={updateEmail}
+            />
+            <label className="login-form-label" htmlFor="password">
+              Password
+            </label>
+            <input
+              className="login-form-input"
+              name="password"
+              type="password"
+              placeholder="Your password here..."
+              value={password}
+              onChange={updatePassword}
+            />
+            <div className="login-btn-container">
+              <button className="login-btn" type="submit">
+                Login
+              </button>
+            </div>
+            <div className="demo-user-btn-container">
+              <button
+                type="button"
+                className="demo-user-btn"
+                onClick={demoUserLogin}
+              >
+                Demo
+              </button>
+            </div>
+          </div>
+        </form>
+        <div className="signup-form-container">
+          <div className="home-signup-from-login">
+            <h3 className="no-account">
+              Don't have an account?
+            </h3>
+          </div>
+          <div>
+            <SignupFormModal />
+          </div>
         </div>
-        <h1 className="logo">InstaGame</h1>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            name="email"
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={updatePassword}
-          />
-          <button type="submit">Login</button>
-        </div>
-        <button type="button" className="demo-user-btn" onClick={demoUserLogin}>
-          Try Demo
-        </button>
-        <div>
-          <SignupFormModal />
-        </div>
-      </form>
+      </div>
     </div>
   );
 };

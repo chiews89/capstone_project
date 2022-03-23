@@ -13,6 +13,8 @@ export const AllPosts = () => {
 
   const postsArr = Object.values(posts).reverse();
 
+  window.scrollTo(0,0)
+
   if (!user) {
     history.push(`/login`);
   }

@@ -1,9 +1,10 @@
 .footer {
-    background-color: #929292;
+    background-color: #ffffff;
+    border: 1px solid gray;
 }
 
 .footer-content {
-    color: white;
+    color: gray;
     display: flex;
     justify-content: space-evenly;
 }
