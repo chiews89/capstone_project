@@ -22,7 +22,7 @@
   text-transform: capitalize;
   font-weight: 600;
   font-size: 18px;
-  margin: 10px 0px 10px 10px;
+  margin: 5px 0px 5px 5px;
 }
 
 .post-user-description {
@@ -69,7 +69,9 @@
   padding-left: 2px;
 }
 .number-comments {
-    margin: 10px;
+  color: rgba(var(--f52,142,142,142),1);
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 .create-post-button {
@@ -93,6 +95,8 @@
 }
 
 .post-description {
+  margin-top: 5px;
+  margin-bottom: 10px;
   margin-left: 5px;
 }
 
@@ -274,4 +278,11 @@
   transition: opacity 200ms ease-in;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.created-at {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  color: rgba(var(--f52,142,142,142),1);
 }

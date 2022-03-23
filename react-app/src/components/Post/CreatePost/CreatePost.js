@@ -40,7 +40,7 @@ export const CreatePost = ({ onClose }) => {
       <h2>Create A Post</h2>
       <ul>
         {errorValidator.map((error) => (
-          <li className="error-list" key={error}>
+          <li className="create-errors" key={error}>
             {error}
           </li>
         ))}

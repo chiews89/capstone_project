@@ -33,31 +33,29 @@ export const CreateNewComment = ({ post }) => {
   };
 
   return (
-    <div className="create-comment-container">
+    <form className="new-comment-container" onSubmit={newCommentSubmit}>
       <ul>
         {errorValidator.map((error) => (
-          <li className="create-errors" key={error}>
+          <li className="comment-errors" key={error}>
             {error}
           </li>
         ))}
       </ul>
-      <form className="new-comment-container" onSubmit={newCommentSubmit}>
-        <label className="comment-label">
-          <input
-            placeholder="Add a comment..."
-            className="comment-input"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-        </label>
-        <button
-          className="create-comment-button"
-          type="submit"
-          disabled={comment.length < 1 || comment.length >= 100}
-        >
-          Post
-        </button>
-      </form>
-    </div>
+      <label className="comment-label">
+        <input
+          placeholder="Add a comment..."
+          className="comment-input"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+      </label>
+      <button
+        className="create-comment-button"
+        type="submit"
+        disabled={comment.length < 1 || comment.length >= 100}
+      >
+        Post
+      </button>
+    </form>
   );
 };

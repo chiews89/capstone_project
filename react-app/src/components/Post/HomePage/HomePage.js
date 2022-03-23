@@ -50,6 +50,9 @@ export const AllPosts = () => {
           <div className="post-details">
             <SinglePostModal post={post} />
           </div>
+          <div className="created-at">
+            {post.created_at.slice(5, 17)}
+          </div>
           <div className="last-three-comments">
             <ThreeComments post={post} />
           </div>
