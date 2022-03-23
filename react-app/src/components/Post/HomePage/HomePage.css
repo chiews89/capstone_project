@@ -297,3 +297,10 @@
   border: none;
   background-color: white;
 }
+
+.edit-comment-modal {
+  border: none;
+  background-color: white;
+  margin-left: 5px;
+  margin-top: 2px;
+}
