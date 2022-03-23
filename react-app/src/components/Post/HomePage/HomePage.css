@@ -1,7 +1,7 @@
 .posts-main {
   display: flex;
-  margin-top: 40px;
-  margin-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 80px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
