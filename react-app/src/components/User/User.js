@@ -15,8 +15,12 @@ export const UserProfile = () => {
   return (
     <div className="profile-page-container">
       <div className="profile-page-header">
+        <div className="profile-user-picture">
+        <i class="fa-solid fa-user"></i>
+        </div>
         <div className="profile-page-name">{user.username}</div>
         <div className="post-count">{filteredPost?.length}</div>
+        <div className="post-count-text">Post</div>
       </div>
       <div className="profile-page">
         {filteredPost.map((post) => (

@@ -57,7 +57,7 @@ flex-direction: row;
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  text-transform: capitalize;
+  width: 645px;
   font-weight: 600;
   font-size: 18px;
 }
@@ -127,7 +127,7 @@ flex-direction: row;
 }
 .number-comments {
   color: rgba(var(--f52, 142, 142, 142), 1);
-  margin-left: 7px;
+  margin-left: 5px;
   margin-bottom: 10px;
 }
 
