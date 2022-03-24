@@ -19,10 +19,10 @@
   background-color: #ffffff;
   text-transform: capitalize;
   display: flex;
-  height: 25px;
+  height: 30px;
   flex-direction: row;
   inline-size: 600px;
-  width: 400px;
+  width: 650px;
   font-weight: 600;
   font-size: 18px;
   margin: 0px 0px 5px 0px;
@@ -38,6 +38,7 @@
 }
 .single-post-username-display {
   margin-left: 5px;
+  margin-top: 5px;
 }
 
 .single-post-user {
@@ -64,12 +65,13 @@ flex-direction: row;
 .post-d-username-display {
   margin-left: 5px;
   margin-right: 5px;
+  margin-top: 2px;
 }
 
 .post-description-u {
   background-color: #ffffff;
   font-weight: 400;
-  margin: 3px 0px 10px 0px;
+  margin: 6px 0px 10px 0px;
   font-size: 14px;
   width: 570px;
   inline-size: 570px;
@@ -111,9 +113,13 @@ flex-direction: row;
 .comments-container-username-display {
   font-weight: 600;
   margin-left: 5px;
+  margin-top: 2px;
   margin-right: 5px;
 }
 
+.comments-container-comments-display {
+  margin-top: 2px;
+}
 .comment-input {
   border: none;
   padding-bottom: 12px;
@@ -121,7 +127,7 @@ flex-direction: row;
 }
 .number-comments {
   color: rgba(var(--f52, 142, 142, 142), 1);
-  margin-left: 5px;
+  margin-left: 7px;
   margin-bottom: 10px;
 }
 
@@ -155,12 +161,14 @@ flex-direction: row;
   margin-bottom: 10px;
   width: 330px;
   inline-size: 330px;
+  margin-top: 5px;
   overflow-wrap: break-word;
 }
 
 .post-description-username-display {
   font-weight: 600;
   margin-left: 5px;
+  margin-top: 5px;
   margin-right: 5px;
 }
 
@@ -383,24 +391,26 @@ flex-direction: row;
   width: 400px;
   inline-size: 375px;
   overflow-wrap: break-word;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .single-post-comment-username-display {
   font-weight: 600;
   margin-left: 5px;
+  margin-top: 5px;
   margin-right: 5px;
 }
 
 .single-post-comment {
   width: 350px;
+  margin-top: 5px;
   inline-size: 300px;
   overflow-wrap: break-word;
 }
 
 .home-page-username {
   margin-left: 5px;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .username-icon-home {

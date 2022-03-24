@@ -8,10 +8,6 @@ export const ThreeComments = ({ post }) => {
 
   const commentsArr = Object.values(comments);
 
-  const postComments = commentsArr.filter(
-    (comments) => comments.post_id === post.id
-  );
-
   const filteredArr = commentsArr
     .filter((comment) => {
       return comment.post_id === post.id;
@@ -32,7 +28,9 @@ export const ThreeComments = ({ post }) => {
             <div className="comments-container-username-display">
               {comment.username}
             </div>
-            {comment.comment}
+            <div className="comments-container-comments-display">
+              {comment.comment}
+            </div>
           </div>
         </div>
       ))}

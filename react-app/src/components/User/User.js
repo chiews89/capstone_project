@@ -13,12 +13,11 @@ export const UserProfile = () => {
   });
 
   return (
-    <div>
+    <div className="profile-page-container">
       <div className="profile-page-header">
-
-      <i className="fa-solid fa-circle-user"></i>
+        <div className="profile-page-name">{user.username}</div>
+        <div className="post-count">{filteredPost?.length}</div>
       </div>
-      <h1 className="profile-page-name">{user.username}</h1>
       <div className="profile-page">
         {filteredPost.map((post) => (
           <div className="user-posts-container">

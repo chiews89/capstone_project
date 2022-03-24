@@ -92,9 +92,24 @@
 .profile-button-li {
   margin-top: 10px;
   background-color: none;
-  margin-bottom: ;
 }
 
-.fa-solid fa-ellipsi {
+.fa-solid.fa-circle-user {
   font-size: 24px;
+}
+
+.profile-page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-page-name {
+  
+}
+
+.post-count {
+  font-size: 24px;
+  height: 5px;
 }
