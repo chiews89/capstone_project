@@ -32,39 +32,48 @@
   text-transform: capitalize;
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
   justify-content: space-between;
   font-weight: 600;
 }
+.single-post-username-display {
+  margin-left: 5px;
+}
 
 .single-post-user {
-  margin-right: 200px;
+display: flex;
+flex-direction: row;
 }
 
 .post-user-description {
   display: flex;
   flex-direction: row;
-  margin-left: 0%;
   margin-top: 10px;
+  width: 525px;
   margin-left: 5px;
 }
 .post-d-user {
+  display: flex;
+  flex-direction: row;
   background-color: #ffffff;
   text-transform: capitalize;
   font-weight: 600;
   font-size: 18px;
 }
 
+.post-d-username-display {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .post-description-u {
-  display: flex;
-  flex-direction: row;
   background-color: #ffffff;
   font-weight: 400;
   margin: 3px 0px 10px 0px;
   font-size: 14px;
-  width: 575px;
-  inline-size: 575px;
+  width: 570px;
+  inline-size: 570px;
   overflow-wrap: break-word;
-  margin-left: 5px;
 }
 
 .add-comment-container {
@@ -77,10 +86,10 @@
   max-height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
+  margin-bottom: 5px;
   width: 400px;
 }
 .comments-main-limit {
-
   width: 630px;
 }
 
@@ -90,11 +99,19 @@
 }
 
 .comments-container {
+  display: flex;
+  flex-direction: row;
   margin-top: 5px;
   margin-bottom: 15px;
   margin-left: 5px;
   overflow-wrap: break-word;
   width: 640px;
+}
+
+.comments-container-username-display {
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .comment-input {
@@ -129,17 +146,22 @@
 }
 
 .post-description {
+  display: flex;
   margin-top: 5px;
-  margin-bottom: 10px;
   width: 400px;
   inline-size: 400px;
 }
 .post-description-text {
-  margin-top: 5px;
   margin-bottom: 10px;
-  width: 400px;
-  inline-size: 400px;
+  width: 330px;
+  inline-size: 330px;
   overflow-wrap: break-word;
+}
+
+.post-description-username-display {
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .cancel-add-button {
@@ -355,17 +377,24 @@
 }
 
 .single-post-comments-container {
+  display: flex;
   flex-direction: row;
   margin-top: 5px;
   width: 400px;
-  inline-size: 400px;
+  inline-size: 375px;
   overflow-wrap: break-word;
   margin-bottom: 5px;
 }
 
+.single-post-comment-username-display {
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .single-post-comment {
-  width: 400px;
-  inline-size: 400px;
+  width: 350px;
+  inline-size: 300px;
   overflow-wrap: break-word;
 }
 

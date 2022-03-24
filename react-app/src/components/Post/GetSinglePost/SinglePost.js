@@ -20,13 +20,10 @@ export const SinglePost = ({ post, setShowModal }) => {
   return (
     <div className="post-detail-container">
       <div className="single-post-username">
-
-
         <div className="single-post-user">
           <i className="fa-solid fa-circle-user"></i>
-          {post?.username}
-
-          </div>
+          <div className="single-post-username-display">{post?.username}</div>
+        </div>
         {user.id === post.user_id && (
           <div className="delete-post-icon">
             <DeletePostModal post={post} setShowModal={setShowModal} />
@@ -45,7 +42,9 @@ export const SinglePost = ({ post, setShowModal }) => {
       />
       <div className="post-description">
         <i className="fa-solid fa-circle-user"></i>
-        {post?.username}{" "}
+        <div className="post-description-username-display">
+          {post?.username}{" "}
+        </div>
         <div className="post-description-text">{post?.description}</div>
       </div>
       <GetAllComments post={post} />
