@@ -1,134 +1,91 @@
-# Flask React Project
+# InstaGame
 
-This is the starter for the Flask React project.
+* This is a loose clone of Instagram which allows gamers to post their gaming images and view and comment other users images.
 
-## Getting started
+## Live Site
 
-1. Clone this repository (only this branch)
+* https://aa-instagame.herokuapp.com/
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+## Technologies Used:
 
-2. Install dependencies
+* Javascript | Python | Node.js | NPM | Flask | SQLAlchemy | Postgres | Alembic | Git | HTML / JSX | CSS | React | Redux | Heroku | Docker
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+## Features:
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+* Full CRUD Features for Posts
+* Full CRUD Features for Commenting on posts
+* User Profile to view all user posts
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+## Future Features
 
-   ```bash
-   pipenv shell
-   ```
+* Likes on Posts
+* Follow Users
+* Search by Users
 
-   ```bash
-   flask db upgrade
-   ```
+## Installation
 
-   ```bash
-   flask seed all
-   ```
+1.Clone repo
 
-   ```bash
-   flask run
-   ```
+* git clone https://github.com/chiews89/instagame.git
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+2.Install dependencies on the backend
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+* pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+3.Install dependencies on the frontend
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
+* cd react-app
+* npm install
 
-## Deploy to Heroku
+4.Enter pipenv shell
 
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
+* pipenv shell
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+5.Run backend server
 
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
+* cd into instagame
+* flask run
 
-   ```bash
-   heroku login
-   ```
+6.Run frontend server
 
-6. Login to the heroku container registry
+* cd into react-app
+* npm start
 
-   ```bash
-   heroku container:login
-   ```
+7.Access localhost
 
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
+* open localhost:3000
 
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
+## Screen Shots
 
-9. Release your docker container to heroku
+## Splash Page:
 
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
+![image](https://user-images.githubusercontent.com/90011085/159961731-03818bdd-26d2-4add-98f8-73d941ad20c4.png)
 
-10. set up your database
+## Home Page:
 
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
+![image](https://user-images.githubusercontent.com/90011085/159961904-4f3627f7-42a2-4945-ac1a-504c91bea870.png)
 
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
+## Post Detail Modal:
 
-12. profit
+![image](https://user-images.githubusercontent.com/90011085/159962173-1181a273-79cd-45e3-8807-57a4fe53311f.png)
 
-### For M1 Mac users
+## Profile Page:
 
-(Replaces **Step 8**)
+![image](https://user-images.githubusercontent.com/90011085/159962431-d30394da-62a4-4340-8600-f3b4a4c2f19c.png)
 
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
+## Create Post Modal:
 
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
+![image](https://user-images.githubusercontent.com/90011085/159963002-0281d689-9802-40dd-95b1-a3d14022673a.png)
 
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
+## Edit Post Modal:
 
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+![image](https://user-images.githubusercontent.com/90011085/159963061-0df8e002-796a-4cd9-84c0-ec818250d2a0.png)
 
-3. Use docker to push the image to the Heroku container registry:
+## Edit Delete Modal
 
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+![image](https://user-images.githubusercontent.com/90011085/159963531-769cd233-7ce1-4351-9a3a-476528dc3090.png)
+
+## 404 Page:
+
+![image](https://user-images.githubusercontent.com/90011085/159969147-1f315bb8-1282-46ea-860b-9bd5a053e8c9.png)
+
