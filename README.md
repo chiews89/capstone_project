@@ -87,5 +87,5 @@
 
 ## 404 Page:
 
-![image](https://user-images.githubusercontent.com/90011085/159969147-1f315bb8-1282-46ea-860b-9bd5a053e8c9.png)
+![image](https://user-images.githubusercontent.com/90011085/159970037-8d934db4-4a89-42ae-95c4-afb473ff34f1.png)
 
