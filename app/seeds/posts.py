@@ -45,6 +45,27 @@ def seed_posts():
         created_at=datetime.now(),
         updated_at=datetime.now(),
     )
+    post6 = Post(
+        user_id=1,
+        image_url="https://assets.nintendo.com/image/upload/ar_16:9,b_auto,c_pad,dpr_3.0,f_auto,q_auto,w_500/b_rgb:ffffff/v1/ncom/en_US/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero",
+        description="What a amazing game!",
+        created_at=datetime.now(),
+        updated_at=datetime.now(),
+    )
+    post6 = Post(
+        user_id=1,
+        image_url="https://www.denofgeek.com/wp-content/uploads/2021/03/Zelda-and-Link.jpg?resize=768%2C432",
+        description="Woah! This game is amazing!",
+        created_at=datetime.now(),
+        updated_at=datetime.now(),
+    )
+    post6 = Post(
+        user_id=1,
+        image_url="https://i.insider.com/560ebbe7dd0895325c8b458e?width=1000&format=jpeg&auto=webp",
+        description="Classic!",
+        created_at=datetime.now(),
+        updated_at=datetime.now(),
+    )
 
     db.session.add(post1)
     db.session.add(post2)
