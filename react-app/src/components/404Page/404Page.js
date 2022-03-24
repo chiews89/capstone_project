@@ -1,17 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./404Page.css";
 
 export const ErrorPage = () => {
   return (
     <div className="error-image">
-      <NavLink to="/" exact={true} ClassName="error-link">
-        <img
-          src="https://s3.envato.com/files/10065422/Extra%20Previews/02_Preview2.png"
-          alt="https://cdn.dribbble.com/users/1032175/screenshots/10443661/media/fec824878513ddc5d185401b8c3da727.png?compress=1&resize=1000x750&vertical=tope"
-          className="missing-page-message"
-        ></img>
-      </NavLink>
+      <img
+        src="https://2.bp.blogspot.com/-L7MbIq11CDo/WaL_gloVqfI/AAAAAAAAA3Q/R5LDkY_Bx1csgMcH6fkMbblbMYJLKNOeQCLcBGAs/s1600/dead_link_by_mr_sage-d78unho.png"
+        alt="https://2.bp.blogspot.com/-L7MbIq11CDo/WaL_gloVqfI/AAAAAAAAA3Q/R5LDkY_Bx1csgMcH6fkMbblbMYJLKNOeQCLcBGAs/s1600/dead_link_by_mr_sage-d78unho.png"
+        className="missing-page-message"
+      ></img>
     </div>
   );
 };
