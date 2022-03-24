@@ -19,7 +19,7 @@ export const SinglePost = ({ post, setShowModal }) => {
 
   return (
     <div className="post-detail-container">
-      <div className="post-username">
+      <div className="single-post-username">
         <i className="fa-solid fa-circle-user"></i> {post?.username}
         {user.id === post.user_id && (
           <div className="delete-post-icon">

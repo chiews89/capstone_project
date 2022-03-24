@@ -24,7 +24,7 @@ export const ThreeComments = ({ post }) => {
     history.push("/login");
   }
   return (
-    <main className="comments-main">
+    <main className="comments-main-limit">
       {slicedArr.map((comment) => (
         <div key={comment?.id}>
           <div className="comments-container">
