@@ -48,14 +48,14 @@ export const EditComment = ({ post, commentId, onClose }) => {
         ))}
       </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
-        <label>
+        <label className="add-image-label">Comment
+        </label>
           <input
             id="comment-label"
             placeholder="Comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-        </label>
         <button
           className="edit-comment-button"
           type="submit"

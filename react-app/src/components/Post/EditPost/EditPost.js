@@ -12,9 +12,9 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
 
   useEffect(() => {
     const errors = [];
-    if (!image_url.length) errors.push("Image file must be a jpeg jpg gif or png");
+    if (!image_url.length) errors.push("Image file must end in a jpeg/jpg/gif/png format");
     if (image_url.length > 0 && !image_url.match(/\.(jpeg|jpg|gif|png)$/))
-      errors.push("Image file must be a jpeg jpg gif or png");
+      errors.push("Image file must end in a jpeg/jpg/gif/png format");
     if (!description) errors.push("Please provide a description");
     if (description.length > 100)
       errors.push("Description cannot be longer than 100 characters");
