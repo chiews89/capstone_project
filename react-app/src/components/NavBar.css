@@ -15,14 +15,15 @@
   justify-content: space-around;
   height: 37px;
 
+
 }
 .navbar-content {
   width: 100%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 37px;
+
 }
 
 .navbar-name {
