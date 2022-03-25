@@ -412,6 +412,7 @@ margin-right: 5px;
 
 .username {
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .comment {

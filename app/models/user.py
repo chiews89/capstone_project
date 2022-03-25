@@ -7,9 +7,9 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), nullable=False, unique=True)
-    email = db.Column(db.String(30), nullable=False, unique=True)
-    hashed_password = db.Column(db.String(30), nullable=False)
+    username = db.Column(db.String(40), nullable=False, unique=True)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    hashed_password = db.Column(db.String(255), nullable=False)
 
     post = db.relationship('Post', back_populates='user')
     comment = db.relationship('Comment', back_populates='user')
