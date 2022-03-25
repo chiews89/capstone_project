@@ -41,7 +41,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <form className='sign-up-form-modal' onSubmit={onSignUp}>
       <div className='create-errors'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>

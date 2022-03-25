@@ -489,3 +489,27 @@ flex-direction: row;
   resize: none;
   border: 1px solid gray;
 }
+
+.sign-up-form-modal {
+  min-width: 400px;
+}
+
+.new-post-container {
+  width: 400px;
+}
+
+.new-post-form {
+  width: 400px;
+}
+
+.edit-comment {
+  width: 350px;
+}
+
+.edit-post-container {
+  width: 400px;
+}
+
+.edit-post {
+  width: 400px;
+}

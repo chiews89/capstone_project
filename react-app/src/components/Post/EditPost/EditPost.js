@@ -49,8 +49,8 @@ export const EditPost = ({ onClose, post, setShowModal, setModal }) => {
       <form className="edit-post" onSubmit={handleEditPost}>
         {image_url && (
           <img
-            height={250}
-            width={250}
+            height={400}
+            width={400}
             alt={image_url}
             src={image_url}
             onError={(e) =>

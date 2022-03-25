@@ -48,8 +48,8 @@ export const CreatePost = ({ onClose }) => {
       <div className="new-post-form">
         {image_url && (
           <img
-            height={250}
-            width={250}
+            height={400}
+            width={400}
             alt={image_url}
             src={image_url}
             onError={(e) =>
