@@ -16,7 +16,7 @@ export const EditPost = ({ onClose, post, setShowModal, setModal }) => {
     if (image_url.length > 0 && !image_url.match(/\.(jpeg|jpg|gif|png)$/))
       errors.push("Image file must end in a jpeg/jpg/gif/png format");
     if (!description) errors.push("Please provide a description");
-    if (description.length > 100)
+    if (description.length >= 100)
       errors.push("Description cannot be longer than 100 characters");
     setErrorValidator(errors);
   }, [image_url, description]);

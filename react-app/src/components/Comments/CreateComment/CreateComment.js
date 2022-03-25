@@ -14,7 +14,7 @@ export const CreateNewComment = ({ post }) => {
 
   useEffect(() => {
     const errors = [];
-    if (comment.length > 100)
+    if (comment.length >= 100)
       errors.push("Comments cannot be longer than 100 characters");
     setErrorValidator(errors);
   }, [comment]);
