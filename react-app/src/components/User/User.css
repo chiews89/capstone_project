@@ -5,12 +5,13 @@
 
 .home-button-icon {
   color: black;
-  font-size: 30px;
+  font-size: 34px;
+
 }
 .user-icon-button {
   cursor: pointer;
   border: none;
-  font-size: 30px;
+  font-size: 29px;
   background-color: white;
 }
 

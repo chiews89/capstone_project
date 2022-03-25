@@ -9,11 +9,11 @@ const NavBar = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
   return (
-    <nav className="navbar-container">
-      {sessionUser && (
-        <ul className="navbar-main">
-          <div className="nav-bar-content">
-            <li className="navbar-name">
+    <nav className="navbar-main-container">
+      <div className="navbar-container">
+        {sessionUser && (
+          <div className="navbar-content">
+            <div className="navbar-name">
               <NavLink to="/" exact={true} activeClassName="active">
                 <img
                   className="site-logo"
@@ -21,21 +21,23 @@ const NavBar = () => {
                   alt="/static/Instagame-Logo.png"
                 />
               </NavLink>
-            </li>
-            <li className="home-button-icon">
+            </div>
+            <div className="home-button-icon">
               <NavLink to="/" exact={true} activeClassName="active">
-                <i className="user-icon" class="fa-solid fa-house"></i>
+                <div className="navbar-profile-button">
+                  <i class="fa-solid fa-house"></i>
+                </div>
               </NavLink>
-            </li>
-            <li className="create-post-modal">
+            </div>
+            <div className="create-post-modal">
               <CreatePostModal />
-            </li>
-            <li className="navbar-profile">
+            </div>
+            <div className="navbar-profile">
               <ProfileButton user={sessionUser} />
-            </li>
+            </div>
           </div>
-        </ul>
-      )}
+        )}
+      </div>
     </nav>
   );
 };

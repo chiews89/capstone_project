@@ -1,34 +1,32 @@
-.navbar-main {
+.navbar-main-container {
   box-sizing: border-box;
   border-bottom: 1px solid rgb(214,214,214);
   background-color: white;
   position: fixed;
   width: 100%;
   top: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin:auto;
+  z-index: 10;
   height: 37px;
 }
 
-.nav-bar-content {
-  box-sizing: border-box;
-  border-bottom: 1px solid rgb(214,214,214);
-  background-color: white;
-  position: fixed;
-  width: 60%;
-  top: 0;
+.navbar-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin:auto;
+  justify-content: space-around;
+  height: 37px;
+
+}
+.navbar-content {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   height: 37px;
 }
 
 .navbar-name {
   text-decoration: none;
-  font-size: 30px;
 }
 
 .create-post-modal {
