@@ -26,10 +26,8 @@ export const ThreeComments = ({ post }) => {
           <div className="comments-container">
             <i className="fa-solid fa-circle-user"></i>
             <div className="comments-container-username-display">
-              {comment.username}
-            </div>
-            <div className="comments-container-comments-display">
-              {comment.comment}
+              <span className="username">{comment.username}</span>
+              <span className="comment">{comment.comment}</span>
             </div>
           </div>
         </div>

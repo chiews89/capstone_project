@@ -50,32 +50,24 @@ flex-direction: row;
   display: flex;
   flex-direction: row;
   margin-top: 10px;
-  width: 525px;
   margin-left: 5px;
 }
+
+.home-page-user-icon {
+margin-right: 5px;
+}
+
 .post-d-user {
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  width: 645px;
-  font-weight: 600;
-  font-size: 18px;
 }
 
-.post-d-username-display {
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 2px;
-}
-
-.post-description-u {
-  background-color: #ffffff;
-  font-weight: 400;
-  margin: 6px 0px 10px 0px;
+.description {
+  font-weight: 200;
+  margin-left: 10px;
   font-size: 14px;
-  width: 570px;
-  inline-size: 570px;
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .add-comment-container {
@@ -89,11 +81,8 @@ flex-direction: row;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 5px;
-  width: 420px;
 }
-.comments-main-limit {
-  width: 630px;
-}
+
 
 .post-detail-container {
   width: 100%;
@@ -106,20 +95,18 @@ flex-direction: row;
   margin-top: 5px;
   margin-bottom: 15px;
   margin-left: 5px;
-  overflow-wrap: break-word;
-  width: 640px;
 }
 
 .comments-container-username-display {
-  font-weight: 600;
   margin-left: 5px;
   margin-top: 2px;
   margin-right: 5px;
+  word-break: break-word;
 }
 
 .comments-container-comments-display {
-  width: 560px;
-  inline-size: 560px;
+  inline-size: fit-content;
+  word-break: break-word;
   margin-top: 2px;
 }
 .comment-input {
@@ -145,7 +132,7 @@ flex-direction: row;
   font-size: 18px;
   width: 400px;
   inline-size: 400px;
-  overflow-wrap: break-word;
+   word-break: break-word;
 }
 
 .profile-post-image {
@@ -174,20 +161,16 @@ flex-direction: row;
 
 .post-description {
   display: flex;
+  flex-direction: row;
   margin-top: 5px;
-  width: 400px;
-  inline-size: 400px;
 }
 .post-description-text {
   margin-bottom: 10px;
-  width: 330px;
-  inline-size: 330px;
   margin-top: 5px;
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .post-description-username-display {
-  font-weight: 600;
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
@@ -409,24 +392,31 @@ flex-direction: row;
   display: flex;
   flex-direction: row;
   margin-top: 5px;
-  width: 380px;
-  inline-size: 370px;
-  overflow-wrap: break-word;
   margin-bottom: 10px;
 }
 
 .single-post-comment-username-display {
-  font-weight: 600;
+
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
+  word-break: break-word;
 }
 
 .single-post-comment {
-  width: 350px;
   margin-top: 5px;
   inline-size: 300px;
-  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.comment {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400px;
 }
 
 .home-page-username {
@@ -517,4 +507,12 @@ flex-direction: row;
 
 .edit-post {
   width: 400px;
+}
+
+.last-three-comments >  {
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  inline-size: fit;
+  word-break: break-word;
 }

@@ -25,9 +25,9 @@ export const GetAllComments = ({ post }) => {
           <div className="single-post-comments-container">
             <i className="fa-solid fa-circle-user"></i>{" "}
             <div className="single-post-comment-username-display">
-              {comment.username}
+              <span className="username">{comment.username}</span>
+              <span className="comment">{comment.comment}</span>
             </div>
-            <div className="single-post-comment">{comment.comment}</div>
             {user.id === comment.user_id && (
               <EditCommentModal post={post} commentId={comment} />
             )}

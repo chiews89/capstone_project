@@ -44,10 +44,14 @@ export const AllPosts = () => {
             </div>
           </div>
           <div className="post-user-description">
-            <div className="post-d-user">
+            <div className="home-page-user-icon">
               <i className="fa-solid fa-circle-user"></i>
-              <div className="post-d-username-display">{post?.username}</div>
-              <div className="post-description-u">{post?.description}</div>
+            </div>
+            <div className="post-d-user">
+              <span className="username">
+                {post?.username}
+                <span className="description">{post?.description}</span>
+              </span>
             </div>
           </div>
           <div className="post-details">
