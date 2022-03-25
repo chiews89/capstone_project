@@ -12,7 +12,7 @@ const EditPostModal = ({ post, setShowModal }) => {
       </button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
-          <EditPost post={post} setShowModal={setShowModal}onClose={() => setModal(false)} />
+          <EditPost post={post} setModal={setModal} setShowModal={setShowModal} onClose={() => setModal(false)} />
         </Modal>
       )}
     </>

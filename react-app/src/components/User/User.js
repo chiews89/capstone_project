@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import SinglePostModal from "../Post/GetSinglePost";
+import SingleProfilePostModal from "../Post/SinglePostProfile";
 import "./User.css";
 
 export const UserProfile = () => {
@@ -16,7 +17,7 @@ export const UserProfile = () => {
     <div className="profile-page-container">
       <div className="profile-page-header">
         <div className="profile-user-picture">
-        <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user"></i>
         </div>
         <div className="profile-page-name">{user.username}</div>
         <div className="post-count">{filteredPost?.length}</div>
@@ -27,18 +28,8 @@ export const UserProfile = () => {
           <div className="user-posts-container">
             <div key={`user-single-post ${post?.id}`} to={`/posts/${post?.id}`}>
               <div className="profile-post-image">
-                <img
-                  height={400}
-                  width={400}
-                  alt={post?.image_url}
-                  src={post?.image_url}
-                  onError={(e) =>
-                    (e.target.src =
-                      "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
-                  }
-                />
+                <SingleProfilePostModal post={post} />
               </div>
-              <SinglePostModal post={post} />
             </div>
           </div>
         ))}

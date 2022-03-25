@@ -132,6 +132,21 @@ flex-direction: row;
   margin-bottom: 10px;
 }
 
+.view-profile-post {
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.profile-page-description {
+  font-size: 18px;
+}
+
+.profile-post-image {
+  margin-bottom: 5px;
+}
+
 .create-post-button {
   line-height: 18px;
   box-sizing: border-box;

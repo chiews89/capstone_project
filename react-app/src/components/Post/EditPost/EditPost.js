@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { editSinglePost } from "../../../store/posts";
 
-export const EditPost = ({ onClose, post, setShowModal }) => {
+export const EditPost = ({ onClose, post, setShowModal, setModal }) => {
   const dispatch = useDispatch();
 
   const [errorValidator, setErrorValidator] = useState([]);
@@ -33,6 +33,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
     if (updatedPost) {
       onClose(false);
       setShowModal(false)
+      // setModal(false)
     }
   };
 
