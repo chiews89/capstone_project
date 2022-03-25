@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import { Modal } from "../../context/Modal";
 import { SinglePost } from "../GetSinglePost/SinglePost";
 
 const SingleProfilePostModal = ({ post }) => {
-  console.log("post", post);
 
   const [showModal, setShowModal] = useState(false);
 
