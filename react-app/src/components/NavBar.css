@@ -1,21 +1,22 @@
 .navbar-main-container {
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(214,214,214);
   background-color: white;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 10;
-  height: 37px;
+  height: 50px;
+
 }
 
 .navbar-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   height: 37px;
-
-
 }
 .navbar-content {
   width: 100%;
@@ -24,6 +25,10 @@
   justify-content: space-around;
   height: 37px;
 
+}
+
+.circle-user-button  > .fa-solid.fa-circle-user {
+  font-size: 40px;
 }
 
 .navbar-name {
@@ -36,6 +41,6 @@
   background-color: white;
 }
 
-.navbar-profile {
-  text-decoration: none;
+.fa-solid.fa-circle-user {
+
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import LogoutButton from "./auth/LogoutButton";
 import CreatePostModal from "./Post/CreatePost";
 import "./NavBar.css";
 import { ProfileButton } from "./User/ProfileButton";
@@ -25,6 +24,7 @@ const NavBar = () => {
             <div className="home-button-icon">
               <NavLink to="/" exact={true} activeClassName="active">
                 <div className="navbar-profile-button">
+            
                   <i class="fa-solid fa-house"></i>
                 </div>
               </NavLink>

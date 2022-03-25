@@ -17,6 +17,8 @@
 
 .profile-dropdown {
   background-color: white;
+  position: absolute;
+  margin-top: 5px;
 }
 
 .profile-page-name {
@@ -90,10 +92,6 @@
   border-radius: 4px;
 }
 
-.profile-button-li {
-  margin-top: 10px;
-  background-color: none;
-}
 
 .fa-solid.fa-circle-user {
   font-size: 24px;
