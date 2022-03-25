@@ -143,6 +143,9 @@ flex-direction: row;
 }
 .profile-page-description {
   font-size: 18px;
+  width: 400px;
+  inline-size: 400px;
+  overflow-wrap: break-word;
 }
 
 .profile-post-image {
