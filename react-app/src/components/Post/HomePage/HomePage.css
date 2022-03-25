@@ -89,7 +89,7 @@ flex-direction: row;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 5px;
-  width: 400px;
+  width: 420px;
 }
 .comments-main-limit {
   width: 630px;
@@ -118,6 +118,8 @@ flex-direction: row;
 }
 
 .comments-container-comments-display {
+  width: 560px;
+  inline-size: 560px;
   margin-top: 2px;
 }
 .comment-input {
@@ -404,8 +406,8 @@ flex-direction: row;
   display: flex;
   flex-direction: row;
   margin-top: 5px;
-  width: 400px;
-  inline-size: 375px;
+  width: 380px;
+  inline-size: 370px;
   overflow-wrap: break-word;
   margin-bottom: 10px;
 }
