@@ -60,7 +60,7 @@ export const AllPosts = () => {
           <div className="last-three-comments">
             <ThreeComments post={post} />
           </div>
-          <div className="created-at">{post.created_at.slice(5, 17)}</div>
+          <div className="created-at">Posted on {post.created_at.slice(5, 17)}</div>
           <div className="add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>{" "}
             <CreateNewComment post={post} />
