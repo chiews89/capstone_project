@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import CreatePostModal from "./Post/CreatePost";
 import "./NavBar.css";
 import { ProfileButton } from "./User/ProfileButton";
+import { SearchBar } from "./Search/Search";
 const NavBar = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -21,10 +22,12 @@ const NavBar = () => {
                 />
               </NavLink>
             </div>
+            <div className="search-bar-nav">
+              <SearchBar />
+            </div>
             <div className="home-button-icon">
               <NavLink to="/" exact={true} activeClassName="active">
                 <div className="navbar-profile-button">
-            
                   <i class="fa-solid fa-house"></i>
                 </div>
               </NavLink>
