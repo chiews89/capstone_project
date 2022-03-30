@@ -12,6 +12,8 @@ import { AllPosts } from "./components/Post/HomePage/HomePage";
 import { getAllComments } from "./store/comments";
 import { getAllPosts } from "./store/posts";
 import { ErrorPage } from "./components/404Page/404Page";
+import { getAllUsers } from "./store/users";
+import { SearchPage } from "./components/Search/SearchPage";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -22,6 +24,7 @@ function App() {
       await dispatch(authenticate());
       await dispatch(getAllComments());
       await dispatch(getAllPosts());
+      await dispatch(getAllUsers())
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -40,9 +43,12 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/profile" exact={true}>
+        <ProtectedRoute path="/profile/:id" exact={true}>
           <UserProfile />
         </ProtectedRoute>
+        {/* <ProtectedRoute path="/profile/:id" exact={true}>
+          <SearchPage />
+        </ProtectedRoute> */}
         <ProtectedRoute path="/" exact={true}>
           <AllPosts />
         </ProtectedRoute>

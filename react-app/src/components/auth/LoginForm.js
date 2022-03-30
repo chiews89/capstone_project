@@ -6,11 +6,12 @@ import SignupFormModal from "./SignupModal";
 import "./LoginForm.css";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector((state) => state.session.user);
-  const dispatch = useDispatch();
+
 
   const mainImage = [
     "https://thumbor.granitemedia.com/super-smash-bros-ultimate/CRG67jof3fQmviP-nPPv0ypeZds=/480x360/filters:format(webp):quality(80)/granite-web-prod/06/b7/06b7d8be299e4d7ab097d20dd898763e.jpeg",
