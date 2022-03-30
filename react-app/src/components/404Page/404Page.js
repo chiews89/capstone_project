@@ -10,5 +10,5 @@ export const ErrorPage = () => {
         className="missing-page-message"
       ></img>
     </div>
-  );
+  )
 };
