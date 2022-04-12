@@ -4,32 +4,35 @@ import { createPost } from "../../../store/posts";
 
 export const CreatePost = ({ onClose }) => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session.user?.id);
 
-  const [image_url, setImageUrl] = useState("");
+  const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [errorValidator, setErrorValidator] = useState([]);
 
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+  };
 
   useEffect(() => {
     const errors = [];
-    if (!image_url.length) errors.push("Image file must end in a jpeg/jpg/gif/png format");
-    if (image_url.length > 0 && !image_url.match(/\.(jpeg|jpg|gif|png)$/))
-      errors.push("Image file must end in a jpeg jpg gif or png format");
     if (!description) errors.push("Please provide a description");
     if (description.length >= 100)
       errors.push("Description cannot be longer than 100 characters");
     setErrorValidator(errors);
-  }, [image_url, description]);
+  }, [description]);
 
   const newPostSubmit = async (e) => {
     e.preventDefault();
-    const payload = {
-      userId: user.id,
-      image_url,
-      description,
-    };
-    const newPost = await dispatch(createPost(payload));
+    const formData = new FormData();
+    formData.append("user_id", user);
+    formData.append("image", image);
+    formData.append("description", description);
+
+    console.log('5555555', Object.fromEntries(formData.entries()))
+
+    const newPost = await dispatch(createPost(formData));
     if (newPost) {
       onClose(false);
     }
@@ -46,12 +49,12 @@ export const CreatePost = ({ onClose }) => {
         ))}
       </ul>
       <div className="new-post-form">
-        {image_url && (
+        {image && (
           <img
             height={400}
             width={400}
-            alt={image_url}
-            src={image_url}
+            alt={image}
+            src={image}
             onError={(e) =>
               (e.target.src =
                 "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
@@ -61,10 +64,11 @@ export const CreatePost = ({ onClose }) => {
         <div>
           <label className="add-image-label"> Image </label>
           <input
-            id="form-label-image"
-            placeholder="Image"
-            value={image_url}
-            onChange={(e) => setImageUrl(e.target.value)}
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            name="image"
+            onChange={updateImage}
             className="create-post-image"
           />
         </div>

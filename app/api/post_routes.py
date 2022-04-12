@@ -19,9 +19,10 @@ def get_single_post(id):
 
 @post_routes.route('/new', methods=['POST'])
 def create_post():
+    # data = request.get_json()
+    # print('2222222', data)
     if "image" not in request.files:
         return {"errors": ["Error: Image required"]}, 400
-
     image = request.files["image"]
 
     if not allowed_file(image.filename):
@@ -33,6 +34,7 @@ def create_post():
 
 
     if "url" not in upload:
+        print('111111', upload)
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
         # so we send back that error message
@@ -47,7 +49,7 @@ def create_post():
     if form.validate_on_submit():
         new_post = Post(
             user_id = current_user.id,
-            image_url = form.data['image_url'],
+            image = form.data['image'],
             description = form.data['description'],
         )
         db.session.add(new_post)
@@ -62,7 +64,7 @@ def edit_post(id):
     if form.validate_on_submit():
         edit = Post.query.get(id)
         edit.user_id = current_user.id
-        edit.image_url = form.data['image_url']
+        edit.image = form.data['image']
         edit.description = form.data['description']
         db.session.commit()
         return edit.to_dict()
