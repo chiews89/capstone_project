@@ -55,6 +55,7 @@ flex-direction: row;
 
 .home-page-user-icon {
 margin-right: 5px;
+margin-bottom: 5px;
 }
 
 .post-d-user {
@@ -164,7 +165,12 @@ color: rgb(110, 110, 110);
   border: none;
 }
 
+.single-post-description-text-display {
+  border: 1px solid rgb(175, 170, 170);
+}
+
 .post-description {
+  margin-left: 5px;
   display: flex;
   flex-direction: row;
   margin-top: 5px;
@@ -412,6 +418,7 @@ color: rgb(110, 110, 110);
 
 .username {
   font-weight: 600;
+  font-size: 12px;
   text-transform: capitalize;
 }
 
