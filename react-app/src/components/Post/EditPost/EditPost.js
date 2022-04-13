@@ -2,30 +2,24 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { editSinglePost } from "../../../store/posts";
 
-export const EditPost = ({ onClose, post, setShowModal, setModal }) => {
+export const EditPost = ({ onClose, post, setShowModal }) => {
   const dispatch = useDispatch();
 
   const [errorValidator, setErrorValidator] = useState([]);
-
-  const [image_url, setImageUrl] = useState(post?.image_url || "");
   const [description, setDescription] = useState(post?.description || "");
 
   useEffect(() => {
     const errors = [];
-    if (!image_url.length) errors.push("Image file must end in a jpeg/jpg/gif/png format");
-    if (image_url.length > 0 && !image_url.match(/\.(jpeg|jpg|gif|png)$/))
-      errors.push("Image file must end in a jpeg/jpg/gif/png format");
     if (!description) errors.push("Please provide a description");
     if (description.length >= 100)
       errors.push("Description cannot be longer than 100 characters");
     setErrorValidator(errors);
-  }, [image_url, description]);
+  }, [description]);
 
   const handleEditPost = async (e) => {
     e.preventDefault();
     const payload = {
       ...post,
-      image_url,
       description,
     };
 
@@ -33,7 +27,6 @@ export const EditPost = ({ onClose, post, setShowModal, setModal }) => {
     if (updatedPost) {
       onClose(false);
       setShowModal(false)
-      // setModal(false)
     }
   };
 
@@ -47,28 +40,6 @@ export const EditPost = ({ onClose, post, setShowModal, setModal }) => {
         ))}
       </ul>
       <form className="edit-post" onSubmit={handleEditPost}>
-        {image_url && (
-          <img
-            height={400}
-            width={400}
-            alt={image_url}
-            src={image_url}
-            onError={(e) =>
-              (e.target.src =
-                "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
-            }
-          />
-        )}
-        <div>
-          <label className="add-image-label"> Image </label>
-          <input
-            id="form-label-image"
-            placeholder="Image"
-            value={image_url}
-            onChange={(e) => setImageUrl(e.target.value)}
-            className="edit-image_url-bar"
-          />
-        </div>
         <div>
           <label className="add-description-label"> Description </label>
           <textarea

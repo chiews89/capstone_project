@@ -41,7 +41,6 @@ def create_post():
     url = upload["url"]
     # flask_login allows us to get the current user from the request
 
-    print('111111')
 
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -63,7 +62,6 @@ def edit_post(id):
     if form.validate_on_submit():
         edit = Post.query.get(id)
         edit.user_id = current_user.id
-        edit.image = form.data['image']
         edit.description = form.data['description']
         db.session.commit()
         return edit.to_dict()

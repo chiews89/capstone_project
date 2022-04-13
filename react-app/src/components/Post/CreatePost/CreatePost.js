@@ -30,7 +30,7 @@ export const CreatePost = ({ onClose }) => {
     formData.append("image", image);
     formData.append("description", description);
 
-    console.log('5555555', Object.fromEntries(formData.entries()))
+
 
     const newPost = await dispatch(createPost(formData));
     if (newPost) {
@@ -40,7 +40,7 @@ export const CreatePost = ({ onClose }) => {
 
   return (
     <form className="new-post-container" onSubmit={newPostSubmit}>
-      <h2>Create a post</h2>
+      <h2>Create new post</h2>
       <ul>
         {errorValidator.map((error) => (
           <li className="create-errors" key={error}>
