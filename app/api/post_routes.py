@@ -19,8 +19,7 @@ def get_single_post(id):
 
 @post_routes.route('/new', methods=['POST'])
 def create_post():
-    # data = request.get_json()
-    # print('2222222', data)
+
     if "image" not in request.files:
         return {"errors": ["Error: Image required"]}, 400
     image = request.files["image"]
@@ -34,7 +33,6 @@ def create_post():
 
 
     if "url" not in upload:
-        print('111111', upload)
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
         # so we send back that error message
@@ -43,13 +41,14 @@ def create_post():
     url = upload["url"]
     # flask_login allows us to get the current user from the request
 
+    print('111111')
 
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_post = Post(
             user_id = current_user.id,
-            image = form.data['image'],
+            image = url,
             description = form.data['description'],
         )
         db.session.add(new_post)
