@@ -68,10 +68,9 @@
   margin: auto;
   text-align: center;
   width: 70px;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(62, 62, 62);
+  border: none;
 }
 
 .logout-button {
@@ -88,10 +87,9 @@
   margin: auto;
   text-align: center;
   width: auto;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(45, 45, 45);
+  border: none;
 }
 
 
