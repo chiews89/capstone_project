@@ -13,7 +13,7 @@ const SingleProfilePostModal = ({ post }) => {
         className="profile-post-image"
           height={400}
           width={400}
-          alt={'pet'}
+          alt={''}
           src={post?.image}
           onError={(e) =>
             (e.target.src =

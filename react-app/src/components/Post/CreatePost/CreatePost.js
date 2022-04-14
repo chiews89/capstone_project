@@ -54,7 +54,6 @@ export const CreatePost = ({ onClose }) => {
           />
         </div>
         <div>
-
           <textarea
             id="form-label-description"
             placeholder="Description"

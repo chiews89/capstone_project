@@ -23,7 +23,7 @@ export const DeletePost = ({ post, onClose, setShowModal }) => {
     <div className="edit-delete-post">
       <EditPostModal post={post} setShowModal={setShowModal} />
       <button className="delete-button" onClick={handleDelete}>
-        Delete Your Post
+        Delete Post
       </button>
     </div>
   );

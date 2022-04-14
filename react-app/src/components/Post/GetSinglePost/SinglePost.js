@@ -30,9 +30,10 @@ export const SinglePost = ({ post, setShowModal }) => {
         )}
       </div>
       <img
+        className="single-post-image"
         height={400}
         width={400}
-        alt={"pet"}
+        alt={""}
         src={post?.image}
         onError={(e) =>
           (e.target.src =
