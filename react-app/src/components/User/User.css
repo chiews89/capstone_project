@@ -17,8 +17,12 @@
 
 .profile-dropdown {
   background-color: white;
+  padding-right: 80px;
+  padding-bottom: 20px;
+  padding-top: 10px;
   position: absolute;
-  margin-top: 5px;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 6px;
 }
 
 .profile-page-name {
@@ -54,44 +58,29 @@
 }
 
 .profile-button {
-  line-height: 18px;
   box-sizing: border-box;
   cursor: pointer;
   text-decoration: none;
-  display: block;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: auto;
-  text-align: center;
-  width: 70px;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  color: rgb(62, 62, 62);
+  border: none;
 }
 
 .logout-button {
-  line-height: 18px;
   box-sizing: border-box;
   cursor: pointer;
-  display: block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: auto;
-  text-align: center;
+  margin-left: 15px;
+  text-align: left;
   width: auto;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(45, 45, 45);
+  border: none;
 }
 
 

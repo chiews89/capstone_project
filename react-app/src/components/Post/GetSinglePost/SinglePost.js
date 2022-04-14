@@ -30,28 +30,31 @@ export const SinglePost = ({ post, setShowModal }) => {
         )}
       </div>
       <img
+        className="single-post-image"
         height={400}
         width={400}
-        alt={'pet'}
+        alt={""}
         src={post?.image}
         onError={(e) =>
           (e.target.src =
             "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
         }
       />
-      <div className="post-description">
-        <i className="fa-solid fa-circle-user"></i>
-        <div className="post-description-username-display">
-          <span className="username">
-            {post?.username}
-            <span className="description">{post?.description}</span>
-          </span>
+      <div className="single-post-description-text-display">
+        <div className="post-description">
+          <i className="fa-solid fa-circle-user"></i>
+          <div className="post-description-username-display">
+            <span className="username">
+              {post?.username}
+              <span className="description">{post?.description}</span>
+            </span>
+          </div>
         </div>
-      </div>
-      <GetAllComments post={post} />
-      <div className="single-add-comment-container">
-        <i className="fa-solid fa-face-laugh-beam"></i>{" "}
-        <CreateNewComment post={post} />
+        <GetAllComments post={post} />
+        <div className="single-add-comment-container">
+          <i className="fa-solid fa-face-laugh-beam"></i>{" "}
+          <CreateNewComment post={post} />
+        </div>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ export const CreatePost = ({ onClose }) => {
     formData.append("image", image);
     formData.append("description", description);
 
-
+    console.log('5555555', Object.fromEntries(formData.entries()))
 
     const newPost = await dispatch(createPost(formData));
     if (newPost) {
@@ -40,29 +40,10 @@ export const CreatePost = ({ onClose }) => {
 
   return (
     <form className="new-post-container" onSubmit={newPostSubmit}>
-      <h2>Create new post</h2>
-      <ul>
-        {errorValidator.map((error) => (
-          <li className="create-errors" key={error}>
-            {error}
-          </li>
-        ))}
-      </ul>
+      <p className="create-new-post-title">Create new post</p>
+
       <div className="new-post-form">
-        {image && (
-          <img
-            height={400}
-            width={400}
-            alt={image}
-            src={image}
-            onError={(e) =>
-              (e.target.src =
-                "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=")
-            }
-          />
-        )}
         <div>
-          <label className="add-image-label"> Image </label>
           <input
             id="file-upload"
             type="file"
@@ -73,7 +54,6 @@ export const CreatePost = ({ onClose }) => {
           />
         </div>
         <div>
-          <label className="add-description-label"> Description </label>
           <textarea
             id="form-label-description"
             placeholder="Description"
@@ -89,7 +69,7 @@ export const CreatePost = ({ onClose }) => {
           type="submit"
           disabled={errorValidator.length > 0}
         >
-          Submit
+          Post
         </button>
         <button className="cancel-add-button" type="true" onClick={onClose}>
           Cancel

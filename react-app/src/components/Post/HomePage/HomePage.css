@@ -55,6 +55,7 @@ flex-direction: row;
 
 .home-page-user-icon {
 margin-right: 5px;
+margin-bottom: 5px;
 }
 
 .post-d-user {
@@ -140,6 +141,11 @@ margin-right: 5px;
   margin-bottom: 5px;
 }
 
+.create-new-post-title {
+color: rgb(110, 110, 110);
+
+}
+
 .create-post-button {
   line-height: 18px;
   box-sizing: border-box;
@@ -154,13 +160,15 @@ margin-right: 5px;
   margin: auto;
   text-align: left;
   width: auto;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+
+}
+
+.single-post-description-text-display {
+  border: 1px solid rgb(175, 170, 170);
 }
 
 .post-description {
+  margin-left: 5px;
   display: flex;
   flex-direction: row;
   margin-top: 5px;
@@ -191,10 +199,9 @@ margin-right: 5px;
   margin: auto;
   text-align: left;
   width: auto;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .edit-post-button {
@@ -211,10 +218,9 @@ margin-right: 5px;
   margin: auto;
   text-align: left;
   width: auto;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .edit-post-modal {
@@ -231,10 +237,9 @@ margin-right: 5px;
   margin: auto;
   text-align: center;
   width: 134px;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .delete-button {
@@ -251,10 +256,9 @@ margin-right: 5px;
   margin: auto;
   text-align: left;
   width: auto;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .edit-comment-button {
@@ -271,10 +275,9 @@ margin-right: 5px;
   margin: auto;
   text-align: center;
   width: 70px;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .delete-comment-button {
@@ -291,10 +294,9 @@ margin-right: 5px;
   margin: auto;
   text-align: center;
   width: 70px;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .cancel-edit-button {
@@ -311,10 +313,9 @@ margin-right: 5px;
   margin: auto;
   text-align: center;
   width: 70px;
-  background-color: rgb(49, 152, 232);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 }
 
 .sign-up-button {
@@ -394,6 +395,7 @@ margin-right: 5px;
   flex-direction: row;
   margin-top: 5px;
   margin-bottom: 10px;
+  margin-left: 5px;
 }
 
 .single-post-comment-username-display {
@@ -412,6 +414,7 @@ margin-right: 5px;
 
 .username {
   font-weight: 600;
+  font-size: 12px;
   text-transform: capitalize;
 }
 
@@ -424,6 +427,7 @@ margin-right: 5px;
 .home-page-username {
   margin-left: 5px;
   margin-top: 7px;
+  color: rgb(95, 94, 94);
 }
 
 .username-icon-home {
@@ -477,7 +481,7 @@ margin-right: 5px;
   padding: 5px;
   margin-bottom: 10px;
   resize: none;
-  border: 1px solid gray;
+  border: 1px solid grey;
 }
 #sign-up-form-inputs {
   width: 100%;

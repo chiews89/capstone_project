@@ -34,7 +34,7 @@ export const AllPosts = () => {
               <img
                 height={650}
                 width={650}
-                alt={'pet'}
+                alt={''}
                 src={post?.image}
                 onError={(e) =>
                   (e.target.src =

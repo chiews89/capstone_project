@@ -26,4 +26,5 @@
     max-width: 400px;
     padding: 32px 32px 32px 32px;
     position: absolute;
+    border-radius: 12px;
   }
