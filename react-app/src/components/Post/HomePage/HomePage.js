@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import SinglePostModal from "../GetSinglePost";
 import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
@@ -7,11 +7,11 @@ import "./HomePage.css";
 
 export const AllPosts = () => {
   const history = useHistory();
-  const user = useSelector((state) => state.session.user);
-
+  const user = useSelector((state) => state.users);
   const posts = useSelector((state) => state.posts);
-
   const postsArr = Object.values(posts).reverse();
+  console.log('posts', postsArr)
+
 
   window.scrollTo(0, 0);
 
@@ -27,14 +27,18 @@ export const AllPosts = () => {
             <div className="username-icon-home">
               <i className="fa-solid fa-circle-user"></i>
             </div>
-            <div className="home-page-username">{post?.username}</div>
+            <div className="home-page-username">
+              <NavLink to={`/users/${post.user_id}`}>
+                {post?.username}
+              </NavLink>
+            </div>
           </div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
               <img
                 height={650}
                 width={650}
-                alt={''}
+                alt={""}
                 src={post?.image}
                 onError={(e) =>
                   (e.target.src =
@@ -60,7 +64,9 @@ export const AllPosts = () => {
           <div className="last-three-comments">
             <ThreeComments post={post} />
           </div>
-          <div className="created-at">Posted on {post.created_at.slice(5, 17)}</div>
+          <div className="created-at">
+            Posted on {post.created_at.slice(5, 17)}
+          </div>
           <div className="add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>
             <CreateNewComment post={post} />

@@ -1,15 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import SingleProfilePostModal from "../Post/SinglePostProfile";
 import "./User.css";
 
 export const UserProfile = () => {
-  const user = useSelector((state) => state.session.user);
+  const {userId} = useParams()
+  const user = useSelector((state) => state.users[userId]);
   const posts = useSelector((state) => state.posts);
   const postsArr = Object.values(posts).reverse();
-
   const filteredPost = postsArr.filter((post) => {
-    return post.user_id === user.id;
+    return post.user_id === +userId;
   });
 
   return (

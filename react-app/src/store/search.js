@@ -1,31 +1,27 @@
 const GET_USERS = "search/GET_USERS";
 
-const getUsers = (users) => ({
+const search = (users) => ({
   type: GET_USERS,
   users,
 });
 
-export const searchUsers = (searchTerm) => async (dispatch) => {
-  const res = await fetch(`/api/users/search`, {
-    method: "POST",
+export const searchUsers = (input) => async (dispatch) => {
+  console.log('input', input)
+  const res = await fetch("/api/users/search", {
+    method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(searchTerm),
+    body: JSON.stringify(input),
   });
   const data = await res.json();
-  dispatch(getUsers(data));
+  console.log('data', data)
+  dispatch(search(data));
 };
 
 export const searchReducer = (state = {}, action) => {
-    let newState;
-    switch (action.type) {
-      case GET_USERS: {
-        newState = { ...state };
-        action.users.users.forEach((user) => {
-          newState[user.id] = user;
-        });
-        return newState;
-      }
-      default:
-        return state;
-    }
-  };
+  switch (action.type) {
+    case GET_USERS:
+      return { ...state, ...action.payload };
+    default:
+      return state;
+  }
+};

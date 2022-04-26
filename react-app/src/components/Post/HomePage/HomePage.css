@@ -153,13 +153,11 @@ color: rgb(110, 110, 110);
   display: block;
   font-size: 14px;
   font-weight: 600;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
   margin: auto;
-  text-align: left;
   width: auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
+  border: none;
 
 }
 
@@ -415,7 +413,6 @@ color: rgb(110, 110, 110);
 .username {
   font-weight: 600;
   font-size: 12px;
-  text-transform: capitalize;
 }
 
 .comment {

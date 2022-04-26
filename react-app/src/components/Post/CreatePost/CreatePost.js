@@ -30,7 +30,6 @@ export const CreatePost = ({ onClose }) => {
     formData.append("image", image);
     formData.append("description", description);
 
-    console.log('5555555', Object.fromEntries(formData.entries()))
 
     const newPost = await dispatch(createPost(formData));
     if (newPost) {
@@ -41,7 +40,6 @@ export const CreatePost = ({ onClose }) => {
   return (
     <form className="new-post-container" onSubmit={newPostSubmit}>
       <p className="create-new-post-title">Create new post</p>
-
       <div className="new-post-form">
         <div>
           <input

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 
 export const ProfileButton = () => {
+  const user = useSelector((state) => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
@@ -33,7 +35,7 @@ export const ProfileButton = () => {
         <div className="profile-dropdown">
           <ul>
             <li className="profile-button-li">
-              <NavLink to="/profile" exact={true} className="profile-button">
+              <NavLink to={`/users/${user.id}`} exact={true} className="profile-button">
                 Profile
               </NavLink>
             </li>
