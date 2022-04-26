@@ -10,8 +10,6 @@ export const AllPosts = () => {
   const user = useSelector((state) => state.users);
   const posts = useSelector((state) => state.posts);
   const postsArr = Object.values(posts).reverse();
-  console.log('posts', postsArr)
-
 
   window.scrollTo(0, 0);
 

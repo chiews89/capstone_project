@@ -1,37 +1,53 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { searchUsers } from "../../store/search";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 export const SearchBar = () => {
-  const user = useSelector(state => state.session?.user)
-  const users = useSelector(state => state.users)
-  const results = useSelector(state => state.search?.users)
-  const history = useHistory();
-  const dispatch = useDispatch()
-  const [input, setInput] = useState("");
+  const users = Object.values(useSelector((state) => state.users));
+  const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    if (input?.length > 0) {
-      dispatch(searchUsers(setInput));
-    }
-  }, [dispatch,input]);
 
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+
+  let count = 0
 
   return (
-    <div className="search-bar-container">
-        <input
-          className="search-bar-input-text"
-          type="text"
-          placeholder="Search..."
-          value={setInput}
-          onChange={(e) => setInput(e.target.value)}
-          required
-        ></input>
-        <button className="search-bar-button">
+    <div className="nnb-search-container">
+      <form className="search-form">
+        <div className="icon-container">
           <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+          <input
+            className="search-bar"
+            onChange={handleSearch}
+            placeholder="Search"
+            required
+          ></input>
+        </div>
+      </form>
+        <div  hidden = {!searchTerm}className="search-result-container">
+          <ul>
+            {users.map((user) => {
+              if (user?.username.toLowerCase().includes(searchTerm.toLowerCase())) {
+                count++
+                return (
+                  <li key={user.id}>
+                    <NavLink to={`/users/${user.id}`}
+                    onClick={() => setSearchTerm('')}>
+                      {user.username}
+                    </NavLink>
+                  </li>
+                )} else {
+                  return null
+
+              }
+            })}
+            {!count ? <li> No results found </li> : null}
+          </ul>
+        </div>
     </div>
   );
 };
