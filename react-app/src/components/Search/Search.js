@@ -50,7 +50,7 @@ export const SearchBar = () => {
               return null;
             }
           })}
-          {!count ? <> No results found </> : null}
+          {!count ? <a className="no-results"> No results found </a> : null}
         </ul>
       </div>
     </>

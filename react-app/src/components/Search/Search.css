@@ -35,7 +35,8 @@
 .search-results-container {
     position: absolute;
     z-index: 2;
-    width: 20rem;
+    width: 13.5rem;
+
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 darkgray;
@@ -63,4 +64,9 @@
 .search-results-container li:hover {
     background-color: rgba(211, 211, 211, 0.6);
     border-radius: 3px;
+}
+
+.no-results {
+    margin-top: 10px;
+    color: rgba(var(--f52,142,142,142),1);
 }

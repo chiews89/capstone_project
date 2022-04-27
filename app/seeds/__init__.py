@@ -3,6 +3,7 @@ from flask.cli import AppGroup
 from app.seeds.comments import seed_comments, undo_comments
 from .users import seed_users, undo_users
 from .posts import seed_posts, undo_posts
+from .likes import seed_likes, undo_likes
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`

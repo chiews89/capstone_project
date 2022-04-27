@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createPost } from "../../../store/posts";
 
-export const CreatePost = ({ onClose }) => {
+export const CreatePost = ({ onClose, post }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user?.id);
 

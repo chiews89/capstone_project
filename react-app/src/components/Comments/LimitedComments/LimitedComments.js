@@ -7,7 +7,6 @@ export const ThreeComments = ({ post }) => {
   const comments = useSelector((state) => state.comments);
 
   const commentsArr = Object.values(comments);
-  console.log("commentsArr", commentsArr);
 
   const filteredArr = commentsArr
     .filter((comment) => {
