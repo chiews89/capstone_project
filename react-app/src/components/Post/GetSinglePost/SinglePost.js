@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { GetAllComments } from "../../Comments/GetComments/GetComments";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import DeletePostModal from "../DeletePost";
@@ -21,7 +21,9 @@ export const SinglePost = ({ post, setShowModal }) => {
       <div className="single-post-username">
         <div className="single-post-user">
           <i className="fa-solid fa-circle-user"></i>
-          <div className="single-post-username-display">{post?.username}</div>
+          <div className="single-post-username-display">
+            <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
+          </div>
         </div>
         {user.id === post.user_id && (
           <div className="delete-post-icon">
@@ -45,12 +47,17 @@ export const SinglePost = ({ post, setShowModal }) => {
           <i className="fa-solid fa-circle-user"></i>
           <div className="post-description-username-display">
             <span className="username">
-              {post?.username}
+            <NavLink to={`/users/${post.user_id}`}>
+                {post?.username}
+              </NavLink>
               <span className="description">{post?.description}</span>
             </span>
           </div>
         </div>
         <GetAllComments post={post} />
+        <div className="created-at">
+          Posted on {post.created_at.slice(5, 17)}
+        </div>
         <div className="single-add-comment-container">
           <i className="fa-solid fa-face-laugh-beam"></i>{" "}
           <CreateNewComment post={post} />

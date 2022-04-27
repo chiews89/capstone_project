@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import EditCommentModal from "../EditComment";
 
 export const GetAllComments = ({ post }) => {
@@ -25,7 +25,9 @@ export const GetAllComments = ({ post }) => {
           <div className="single-post-comments-container">
             <i className="fa-solid fa-circle-user"></i>{" "}
             <div className="single-post-comment-username-display">
-              <span className="username">{comment.username}</span>
+              <span className="username">                <NavLink to={`/users/${comment.user_id}`}>
+                  {comment?.username}
+                </NavLink></span>
               <span className="comment">{comment.comment}</span>
             </div>
             {user.id === comment.user_id && (

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 export const ThreeComments = ({ post }) => {
   const history = useHistory();
@@ -7,6 +7,7 @@ export const ThreeComments = ({ post }) => {
   const comments = useSelector((state) => state.comments);
 
   const commentsArr = Object.values(comments);
+  console.log("commentsArr", commentsArr);
 
   const filteredArr = commentsArr
     .filter((comment) => {
@@ -26,7 +27,11 @@ export const ThreeComments = ({ post }) => {
           <div className="comments-container">
             <i className="fa-solid fa-circle-user"></i>
             <div className="comments-container-username-display">
-              <span className="username">{comment.username}</span>
+              <span className="username">
+                <NavLink to={`/users/${comment.user_id}`}>
+                  {comment?.username}
+                </NavLink>
+              </span>
               <span className="comment">{comment.comment}</span>
             </div>
           </div>

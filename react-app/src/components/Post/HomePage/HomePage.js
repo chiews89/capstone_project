@@ -51,7 +51,9 @@ export const AllPosts = () => {
             </div>
             <div className="post-d-user">
               <span className="username">
+              <NavLink to={`/users/${post.user_id}`}>
                 {post?.username}
+              </NavLink>
                 <span className="description">{post?.description}</span>
               </span>
             </div>
