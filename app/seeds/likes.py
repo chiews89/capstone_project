@@ -4,7 +4,7 @@ from app.models import db, Like
 # Adds a demo user, you can add other users here if you want
 def seed_likes():
     like1 = Like(user_id=1, post_id=2)
-    like2 = Like(user_id=2, post_id=1)
+    like2 = Like(user_id=1, post_id=1)
     like3 = Like(user_id=3, post_id=1)
     like4 = Like(user_id=4, post_id=1)
     like5 = Like(user_id=5, post_id=1)

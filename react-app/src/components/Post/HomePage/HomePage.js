@@ -9,6 +9,9 @@ export const AllPosts = () => {
   const history = useHistory();
   const user = useSelector((state) => state.users);
   const posts = useSelector((state) => state.posts);
+  const likes = Object.values(useSelector((state) => state.likes))
+  console.log('likes', likes)
+
   const postsArr = Object.values(posts).reverse();
 
   window.scrollTo(0, 0);

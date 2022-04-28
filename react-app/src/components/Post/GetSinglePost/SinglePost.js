@@ -18,23 +18,8 @@ export const SinglePost = ({ post, setShowModal }) => {
 
   return (
     <div className="post-detail-container">
-      <div className="single-post-username">
-        <div className="single-post-user">
-          <i className="fa-solid fa-circle-user"></i>
-          <div className="single-post-username-display">
-            <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
-          </div>
-        </div>
-        {user.id === post.user_id && (
-          <div className="delete-post-icon">
-            <DeletePostModal post={post} setShowModal={setShowModal} />
-          </div>
-        )}
-      </div>
       <img
         className="single-post-image"
-        height={400}
-        width={400}
         alt={""}
         src={post?.image}
         onError={(e) =>
@@ -43,24 +28,35 @@ export const SinglePost = ({ post, setShowModal }) => {
         }
       />
       <div className="single-post-description-text-display">
+        <div className="single-post-username ">
+          <div className="single-post-user">
+            <i className="fa-solid fa-circle-user"></i>
+            <div className="single-post-username-display">
+              <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
+            </div>
+          </div>
+          {user.id === post.user_id && (
+            <div className="delete-post-icon">
+              <DeletePostModal post={post} setShowModal={setShowModal} />
+            </div>
+          )}
+        </div>
         <div className="post-description">
           <i className="fa-solid fa-circle-user"></i>
           <div className="post-description-username-display">
             <span className="username">
-            <NavLink to={`/users/${post.user_id}`}>
-                {post?.username}
-              </NavLink>
+              <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
               <span className="description">{post?.description}</span>
             </span>
           </div>
         </div>
         <GetAllComments post={post} />
-        <div className="created-at">
-          Posted on {post.created_at.slice(5, 17)}
-        </div>
-        <div className="single-add-comment-container">
-          <i className="fa-solid fa-face-laugh-beam"></i>{" "}
-          <CreateNewComment post={post} />
+        <div className="created-at-comments-likes-container">
+          <div className="created-at-post">{post.created_at.slice(5, 17)}</div>
+          <div className="single-add-comment-container">
+            <i className="fa-solid fa-face-laugh-beam"></i>{" "}
+            <CreateNewComment post={post} />
+          </div>
         </div>
       </div>
     </div>

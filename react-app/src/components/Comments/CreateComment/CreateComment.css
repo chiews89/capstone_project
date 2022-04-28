@@ -1,30 +1,24 @@
 .new-comment-container input {
-    width: 99%;
     pointer-events: auto;
 }
 
-.comment-label {
-    width: 100%;
-}
+
 .single-add-comment-container {
     display: flex;
-    border: 1px solid rgb(214,214,214);
+    border-top: 1px solid rgb(214, 214, 214);
 }
 
 .new-comment-container {
-    width: 100%;
     display: flex;
     flex-direction: row;
 
 }
 
 .create-comment-button {
-    width: 20%;
     border: none;
     cursor: pointer;
     background-color: rgb(255, 255, 255);
     color: rgb(49, 152, 232);
-    border: none;
 }
 
 .comment-input {
@@ -34,4 +28,12 @@
 .fa-face-laugh-beam {
     margin: 5px;
     font-size: 30px;
+}
+
+.omments-likes-container {
+    position: absolute;
+    bottom: 0;
+    border-left: none;
+    width: 29.7%;
+    border: 1px solid rgb(214,214,214);
 }

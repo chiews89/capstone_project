@@ -13,6 +13,7 @@ import { getAllComments } from "./store/comments";
 import { getAllPosts } from "./store/posts";
 import { ErrorPage } from "./components/404Page/404Page";
 import { getAllUsers } from "./store/users";
+import { getAllLikes } from "./store/likes";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -24,6 +25,7 @@ function App() {
       await dispatch(getAllComments());
       await dispatch(getAllPosts());
       await dispatch(getAllUsers())
+      await dispatch(getAllLikes())
 
       setLoaded(true);
     })();

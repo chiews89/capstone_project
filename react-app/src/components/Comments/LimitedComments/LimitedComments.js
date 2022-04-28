@@ -34,6 +34,9 @@ export const ThreeComments = ({ post }) => {
               <span className="comment">{comment.comment}</span>
             </div>
           </div>
+          <div className="created-at">
+          {comment.created_at.slice(5, 17)}
+          </div>
         </div>
       ))}
     </main>
