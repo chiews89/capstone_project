@@ -32,7 +32,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
 
   return (
     <div className="edit-post-container">
-        <div className="add-description-label"> Description </div>
+        <div className="add-description-label"> Edit Info </div>
       <ul>
         {errorValidator.map((error) => (
           <li className="edit-errors" key={error}>
@@ -56,7 +56,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
             type="submit"
             disabled={errorValidator.length > 0}
           >
-            Submit
+            Done
           </button>
           <button className="cancel-add-button" type="true" onClick={onClose}>
             Cancel

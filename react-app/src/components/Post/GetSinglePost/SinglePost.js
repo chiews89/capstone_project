@@ -7,9 +7,19 @@ import DeletePostModal from "../DeletePost";
 export const SinglePost = ({ post, setShowModal }) => {
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
-  const likes = Object.values(useSelector((state) => state.likes))
+  const likes = Object.values(useSelector((state) => state.likes));
 
-  console.log('likes', likes)
+  const filteredLikes = likes.filter((like) => {
+    return like.post_id === post.id;
+  });
+
+  const userLiked = filteredLikes.filter((like) => {
+    return like.user_id === user.id
+  })
+
+  console.log('user likes', userLiked)
+
+  // {userLiked.length? heart onClick={dispatch remove like} : emptyheart onClick={dispatch add like}}
 
   if (!post) {
     return null;
@@ -50,12 +60,13 @@ export const SinglePost = ({ post, setShowModal }) => {
             <span className="username">
               <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
             </span>
-              <span className="description">{post?.description}</span>
+            <span className="description">{post?.description}</span>
           </div>
         </div>
         <GetAllComments post={post} />
         <div className="created-at-comments-likes-container">
           <div className="created-at-post">{post.created_at.slice(5, 17)}</div>
+          {filteredLikes.length}
           <div className="single-add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>
             <CreateNewComment post={post} />

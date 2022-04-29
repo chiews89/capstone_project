@@ -50,7 +50,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
         ))}
       </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
-        <input
+        <textarea
           id="comment-label"
           placeholder="Comment"
           value={comment}
