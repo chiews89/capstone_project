@@ -14,10 +14,10 @@ export const SinglePost = ({ post, setShowModal }) => {
   });
 
   const userLiked = filteredLikes.filter((like) => {
-    return like.user_id === user.id
-  })
+    return like.user_id === user.id;
+  });
 
-  console.log('user likes', userLiked)
+  console.log("user likes", filteredLikes);
 
   // {userLiked.length? heart onClick={dispatch remove like} : emptyheart onClick={dispatch add like}}
 
@@ -65,8 +65,14 @@ export const SinglePost = ({ post, setShowModal }) => {
         </div>
         <GetAllComments post={post} />
         <div className="created-at-comments-likes-container">
-          <div className="created-at-post">{post.created_at.slice(5, 17)}</div>
+          <span className="liked-by">
+            Liked by{" "}
+            <NavLink to={`/users/${userLiked.user_id}`}>
+              {userLiked.username}
+            </NavLink>
+          </span>
           {filteredLikes.length}
+          <div className="created-at-post">{post.created_at.slice(5, 17)}</div>
           <div className="single-add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>
             <CreateNewComment post={post} />

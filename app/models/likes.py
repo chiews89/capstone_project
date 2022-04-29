@@ -15,4 +15,5 @@ class Like(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'post_id': self.post_id,
+            'username': self.user.username if self.user else None
         }
