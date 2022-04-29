@@ -14,7 +14,8 @@ export const EditComment = ({ post, commentId, onClose }) => {
     const errors = [];
 
     if (!comment) errors.push("Please delete comment instead");
-    if (comment.length >= 100) errors.push("Comment cannot be longer than 100 characters");
+    if (comment.length >= 100)
+      errors.push("Comment cannot be longer than 100 characters");
     setErrorValidator(errors);
   }, [comment]);
 
@@ -40,6 +41,7 @@ export const EditComment = ({ post, commentId, onClose }) => {
 
   return (
     <div className="edit-comment-container">
+      <label className="add-comment-label">Comment</label>
       <ul>
         {errorValidator.map((error) => (
           <li className="comments-errors" key={error}>
@@ -48,14 +50,12 @@ export const EditComment = ({ post, commentId, onClose }) => {
         ))}
       </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
-        <label className="add-image-label">Comment
-        </label>
-          <input
-            id="comment-label"
-            placeholder="Comment"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
+        <input
+          id="comment-label"
+          placeholder="Comment"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
         <button
           className="edit-comment-button"
           type="submit"
@@ -63,15 +63,14 @@ export const EditComment = ({ post, commentId, onClose }) => {
         >
           Edit
         </button>
-        <button className="cancel-edit-button" type="true" onClick={onClose}>
-          Cancel
-        </button>
-
         <button
           className="delete-comment-button"
           onClick={(e) => handleCommentDeletion(e, commentId?.id)}
         >
           Delete
+        </button>
+        <button className="cancel-edit-button" type="true" onClick={onClose}>
+          Cancel
         </button>
       </form>
     </div>

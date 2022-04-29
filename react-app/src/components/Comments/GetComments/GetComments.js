@@ -25,7 +25,7 @@ export const GetAllComments = ({ post }) => {
           <div className="single-post-comments-container">
             <i className="fa-solid fa-circle-user"></i>{" "}
             <div className="single-post-comment-username-display">
-              <span className="username">
+              <span className="comments-username">
                 <NavLink to={`/users/${comment.user_id}`}>
                   {comment?.username}
                 </NavLink>
@@ -36,9 +36,7 @@ export const GetAllComments = ({ post }) => {
               <EditCommentModal post={post} commentId={comment} />
             )}
           </div>
-            <div className="created-at">
-          {comment.created_at.slice(5, 17)}
-          </div>
+          <div className="created-at">{comment.created_at.slice(5, 17)}</div>
         </div>
       ))}
     </main>

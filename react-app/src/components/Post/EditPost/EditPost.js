@@ -32,6 +32,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
 
   return (
     <div className="edit-post-container">
+        <div className="add-description-label"> Description </div>
       <ul>
         {errorValidator.map((error) => (
           <li className="edit-errors" key={error}>
@@ -41,7 +42,6 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
       </ul>
       <form className="edit-post" onSubmit={handleEditPost}>
         <div>
-          <label className="add-description-label"> Description </label>
           <textarea
             id="form-label-description"
             placeholder="Description"
@@ -50,7 +50,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
             className="edit_post_description_input-bar"
           />
         </div>
-        <div className="edit-post">
+        <div className="edit-post-submission">
           <button
             className="edit-post-button"
             type="submit"

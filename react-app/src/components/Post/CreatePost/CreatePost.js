@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createPost } from "../../../store/posts";
+import './CreatePost.css'
 
 export const CreatePost = ({ onClose, post }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user?.id);
 
   const [image, setImage] = useState("");
+  const [imagePreview, setImagePreview] = useState('')
   const [description, setDescription] = useState("");
   const [errorValidator, setErrorValidator] = useState([]);
 
   const updateImage = (e) => {
     const file = e.target.files[0];
     setImage(file);
+    setImagePreview(URL.createObjectURL(file))
   };
 
   useEffect(() => {
@@ -41,6 +44,8 @@ export const CreatePost = ({ onClose, post }) => {
     <form className="new-post-container" onSubmit={newPostSubmit}>
       <p className="create-new-post-title">Create new post</p>
       <div className="new-post-form">
+      <img className="image-preview" src={imagePreview} alt =''>
+      </img>
         <div>
           <input
             id="file-upload"

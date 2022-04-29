@@ -7,6 +7,9 @@ import DeletePostModal from "../DeletePost";
 export const SinglePost = ({ post, setShowModal }) => {
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
+  const likes = Object.values(useSelector((state) => state.likes))
+
+  console.log('likes', likes)
 
   if (!post) {
     return null;
@@ -46,8 +49,8 @@ export const SinglePost = ({ post, setShowModal }) => {
           <div className="post-description-username-display">
             <span className="username">
               <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
-              <span className="description">{post?.description}</span>
             </span>
+              <span className="description">{post?.description}</span>
           </div>
         </div>
         <GetAllComments post={post} />

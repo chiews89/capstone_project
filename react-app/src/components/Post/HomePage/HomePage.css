@@ -47,6 +47,7 @@
 .single-post-user {
 display: flex;
 flex-direction: row;
+margin-left: 5px;
 }
 
 .single-post-image {
@@ -74,9 +75,10 @@ margin-bottom: 5px;
 
 .description {
   font-weight: 200;
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 14px;
-  word-break: break-word;
+  margin-right: 5px;
+  word-break: break-all;
 }
 
 .add-comment-container {
@@ -95,6 +97,8 @@ margin-bottom: 5px;
 .post-detail-container {
   display: flex;
   flex-direction: row;
+  width: 65vw;
+  height: 70vh;
 }
 
 .comments-container {
@@ -109,12 +113,11 @@ margin-bottom: 5px;
   margin-left: 5px;
   margin-top: 2px;
   margin-right: 5px;
-  word-break: break-word;
+  word-break: break-all;
 }
 
 .comments-container-comments-display {
-  inline-size: fit-content;
-  word-break: break-word;
+
   margin-top: 2px;
 }
 .comment-input {
@@ -163,7 +166,6 @@ color: rgb(110, 110, 110);
   margin: auto;
   width: auto;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 
 }
@@ -196,9 +198,27 @@ color: rgb(110, 110, 110);
 }
 
 .post-description-username-display {
+  display: flex;
   margin-left: 5px;
   margin-top: 5px;
-  margin-right: 5px;
+}
+
+.edit-post-button {
+    line-height: 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    text-align: left;
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    border: none;
 }
 
 .cancel-add-button {
@@ -216,7 +236,6 @@ color: rgb(110, 110, 110);
   text-align: left;
   width: auto;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 }
 
@@ -225,6 +244,8 @@ color: rgb(110, 110, 110);
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 10vh;
+  width: 10vw;
 }
 
 .post-button {
@@ -253,15 +274,9 @@ color: rgb(110, 110, 110);
   display: block;
   font-size: 14px;
   font-weight: 600;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
   margin: auto;
   text-align: center;
-  width: 134px;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 }
 
@@ -272,15 +287,10 @@ color: rgb(110, 110, 110);
   display: block;
   font-size: 14px;
   font-weight: 600;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
   margin: auto;
   text-align: left;
-  width: auto;
+  color: red;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 }
 
@@ -299,7 +309,6 @@ color: rgb(110, 110, 110);
   text-align: center;
   width: 70px;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 }
 
@@ -317,8 +326,8 @@ color: rgb(110, 110, 110);
   margin: auto;
   text-align: center;
   width: 70px;
+  color: red;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 }
 
@@ -337,7 +346,6 @@ color: rgb(110, 110, 110);
   text-align: center;
   width: 70px;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
   border: none;
 }
 
@@ -400,6 +408,7 @@ color: rgb(110, 110, 110);
   border: none;
   background-color: white;
   margin-right: 3px;
+  margin-top: 5px;
 }
 
 .edit-comment-modal {
@@ -410,7 +419,6 @@ color: rgb(110, 110, 110);
   margin-right: 5px;
   background-color: white;
   margin-left: 5px;
-  margin-top: 2px;
 }
 
 .single-post-comments-container {
@@ -421,13 +429,17 @@ color: rgb(110, 110, 110);
   margin-left: 5px;
 }
 
-.single-post-comment-username-display {
+.-username-display {
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
   word-break: break-word;
 }
 
+.single-post-comment-username-display {
+  display: flex;
+  flex-direction: row;
+}
 .single-post-comment {
   margin-top: 5px;
   inline-size: 300px;
@@ -439,15 +451,22 @@ color: rgb(110, 110, 110);
   font-size: 12px;
 }
 
+.comments-username {
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
 .comment {
-  margin-left: 10px;
-  font-size: 14px;
-  font-weight: 400px;
+  margin-left: 5px;
+  font-size: 12px;
+  word-break: break-word;
 }
 
 .home-page-username {
   margin-left: 5px;
   margin-top: 7px;
+  font-weight: 200px;
   color: rgb(95, 94, 94);
 }
 
@@ -461,21 +480,21 @@ color: rgb(110, 110, 110);
   margin-left: 5px;
 }
 
-.add-image-label {
+.add-comment-label {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: bold;
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-top: 8px;
 }
 .add-description-label {
   font-size: 16px;
-  font-weight: 400;
-  align-items: center;
+  font-weight: bold;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  align-content: center;
+  justify-content: center;
+  margin-top: 5px;
 }
 .sign-up-labels {
   font-size: 16px;
@@ -494,20 +513,35 @@ color: rgb(110, 110, 110);
   border: 1px solid gray;
 }
 #form-label-description {
-  width: 100%;
-  height: 30px;
-  padding: 5px;
+  width: 29.5vw;
+  height: 40px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
   resize: none;
-  border: 1px solid gray;
+  border-right: none;
+  border-top: 1px solid rgb(214,214,214);
+  border-bottom: 1px solid rgb(214,214,214);
+
 }
 #comment-label {
-  width: 100%;
-  height: 20px;
-  padding: 5px;
+  width: 29.5vw;
+  height: 40px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
   resize: none;
-  border: 1px solid grey;
+  word-break: break-all;
+  border-right: none;
+  border-left:none ;
+  border-top: 1px solid rgb(214,214,214);
+  border-bottom: 1px solid rgb(214,214,214);
 }
 #sign-up-form-inputs {
   width: 100%;
@@ -529,17 +563,32 @@ color: rgb(110, 110, 110);
   width: 400px;
 }
 
+.edit-comment-container {
+  width: 30vw;
+  height: 23vh;
+}
+
 .edit-comment {
-  width: 350px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
 }
 
 .edit-post-container {
-  width: 400px;
+  width: 30vw;
+  height: 20vh;
 }
 
 .edit-post {
-  width: 400px;
+  position: absolute;
+  bottom: 0;
 }
+
+.edit-post-submission {
+  margin-bottom: 8px;
+}
+
 
 .last-three-comments >  {
   display: flex;
