@@ -56,7 +56,8 @@ export const CreatePost = ({ onClose, post }) => {
             className="create-post-image"
           />
         </div>
-        <div>
+      </div>
+      <div className="create-post">
           <textarea
             id="form-label-description"
             placeholder="Description"
@@ -64,9 +65,6 @@ export const CreatePost = ({ onClose, post }) => {
             onChange={(e) => setDescription(e.target.value)}
             className="create-post-description"
           />
-        </div>
-      </div>
-      <div className="create-post">
         <button
           className="create-post-button"
           type="submit"
