@@ -33,17 +33,18 @@ export const CreateNewComment = ({ post }) => {
 
   return (
     <form className="new-comment-container" onSubmit={newCommentSubmit}>
-      <ul>
+      {/* <ul>
         {errorValidator.map((error) => (
           <li className="comment-errors" key={error}>
             {error}
           </li>
         ))}
-      </ul>
+      </ul> */}
       <label className="comment-label">
         <input
           placeholder="Add a comment..."
           className="comment-input"
+          maxLength='100'
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />

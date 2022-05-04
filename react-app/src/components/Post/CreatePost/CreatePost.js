@@ -61,6 +61,7 @@ export const CreatePost = ({ onClose, post }) => {
           <textarea
             id="form-label-description"
             placeholder="Description"
+            maxLength='100'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="create-post-description"
