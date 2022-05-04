@@ -4,6 +4,7 @@ import { GetAllComments } from "../../Comments/GetComments/GetComments";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import DeletePostModal from "../DeletePost";
 import { AllLikes } from "../../Likes";
+import { FiSmile } from "react-icons/fi";
 import "./SinglePost.css";
 
 
@@ -49,7 +50,9 @@ export const SinglePost = ({ post, setShowModal }) => {
           <AllLikes post={post}/>
           <div className="created-at-post">{post.created_at.slice(5, 17)}</div>
           <div className="single-add-comment-container">
-            <i className="fa-solid fa-face-laugh-beam"></i>
+          <span className="smiley-face">
+                <FiSmile />
+              </span>
             <CreateNewComment post={post} />
           </div>
         </div>

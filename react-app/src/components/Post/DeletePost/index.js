@@ -13,7 +13,6 @@ const DeletePostModal = ({ post, setShowModal }) => {
       {showModal && (
         <Modal onClose={() => openModal(false)}>
           <DeletePost
-            
             post={post}
             setShowModal={setShowModal}
             onClose={() => openModal(false)}

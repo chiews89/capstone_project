@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { deleteSinglePost } from "../../../store/posts";
 import EditPostModal from "../EditPost";
 
-export const DeletePost = ({ post, onClose, setShowModal }) => {
+export const DeletePost = ({ post, onClose }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
@@ -16,12 +16,11 @@ export const DeletePost = ({ post, onClose, setShowModal }) => {
     e.preventDefault();
     await dispatch(deleteSinglePost(post));
     onClose(false);
-    setShowModal(false);
   };
 
   return (
     <div className="edit-delete-post">
-      <EditPostModal post={post} setShowModal={setShowModal} />
+      <EditPostModal post={post} />
       <button className="delete-button" onClick={handleDelete}>
         Delete Post
       </button>

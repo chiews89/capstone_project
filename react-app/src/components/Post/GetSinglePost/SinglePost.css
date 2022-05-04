@@ -23,7 +23,7 @@
 .heart-container {
   margin-top: 5px;
   margin-left: 5px;
-  font-size: 24px;
+  font-size: 26px;
   color: rgb(110, 110, 110);
 }
 
@@ -51,8 +51,8 @@
 }
 
 .created-at {
-    margin-left: 5px;
-    margin-top: 7px;
+    margin-left: 35px;
+
     margin-bottom: 20px;
     font-size: 0.7em;
     color: rgb(110, 110, 110);
@@ -74,7 +74,7 @@
 }
 
 .comments-main {
-  max-height: 520px;
+  max-height: 52vh;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 5px;

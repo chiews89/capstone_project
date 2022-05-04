@@ -1,22 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createNewComment } from "../../../store/comments";
 import "./CreateComment.css";
 
 export const CreateNewComment = ({ post }) => {
   const dispatch = useDispatch();
-
   const user = useSelector((state) => state.session.user?.id);
-  // const [errorValidator, setErrorValidator] = useState([]);
 
   const [comment, setComment] = useState("");
-
-  // useEffect(() => {
-  //   const errors = [];
-  //   if (comment.length >= 100)
-  //     errors.push("Comments cannot be longer than 100 characters");
-  //   setErrorValidator(errors);
-  // }, [comment]);
 
   const newCommentSubmit = async (e) => {
     e.preventDefault();
@@ -33,13 +24,6 @@ export const CreateNewComment = ({ post }) => {
 
   return (
     <form className="new-comment-container" onSubmit={newCommentSubmit}>
-      {/* <ul>
-        {errorValidator.map((error) => (
-          <li className="comment-errors" key={error}>
-            {error}
-          </li>
-        ))}
-      </ul> */}
       <label className="comment-label">
         <input
           placeholder="Add a comment..."

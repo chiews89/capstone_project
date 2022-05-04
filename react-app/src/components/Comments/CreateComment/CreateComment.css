@@ -23,6 +23,12 @@
     margin-left: 5px;
 }
 
+.smiley-face {
+  font-size: 28px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
 .new-comment-container {
   display: flex;
   flex-direction: row;
@@ -35,15 +41,15 @@
   font-size: 14px;
   position: relative;
   margin-top: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
-  color: rgb(49, 152, 232);
+  color: rgb(119, 190, 245);
 }
 
 .comment-input {
   border: none;
-  width: 100%;
+  width: 93%;
   padding-top: 12px;
   padding-left: 10px;
 }

@@ -5,6 +5,8 @@ import SinglePostModal from "../GetSinglePost";
 import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
 import { useEffect } from "react";
 import { AllLikes } from "../../Likes";
+import DeletePostModal from "../DeletePost";
+import { FiSmile } from "react-icons/fi";
 import "./HomePage.css";
 
 export const AllPosts = () => {
@@ -26,14 +28,19 @@ export const AllPosts = () => {
     <main className="posts-main">
       {postsArr.map((post) => (
         <div className="all-posts-container">
-          <div className="post-username">
-            <div className="username-icon-home">
-              <i className="fa-solid fa-circle-user"></i>
-            </div>
-            <div className="home-page-username">
+        <div className="single-post-username ">
+          <div className="single-post-user">
+            <i className="fa-solid fa-circle-user"></i>
+            <div className="single-post-username-display">
               <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
             </div>
           </div>
+          {user.id === post.user_id && (
+            <div className="delete-post-icon">
+              <DeletePostModal post={post}  />
+            </div>
+          )}
+        </div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
             <div className="post-images">
               <img
@@ -70,12 +77,14 @@ export const AllPosts = () => {
               {post.created_at.slice(5, 17)}
             </div>
           </div>
-            <div className="add-comment-container">
-              <div className="add-comment-user-icon">
-              <i className="fa-solid fa-face-laugh-beam"></i>
+          <div className="add-comment-container">
+            <div className="add-comment-user-icon">
+              <span className="smiley-face">
+                <FiSmile />
+              </span>
               <CreateNewComment post={post} />
-              </div>
             </div>
+          </div>
         </div>
       ))}
     </main>

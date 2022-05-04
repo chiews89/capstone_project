@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import { EditPost } from "./EditPost";
 
-const EditPostModal = ({ post, setShowModal }) => {
+const EditPostModal = ({ post }) => {
   const [showModal, setModal] = useState(false);
+  const setShowModal = useState(false)
 
   return (
     <>
