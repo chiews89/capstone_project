@@ -20,7 +20,7 @@ def add_like():
     db.session.commit()
     return like.to_dict()
 
-@like_routes.route('/<int:id>', methods=["DELETE"])
+@like_routes.route('/delete/<int:id>', methods=["DELETE"])
 @login_required
 def delete_like(id):
     delete_like = Like.query.get(id)

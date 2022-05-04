@@ -7,8 +7,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  height: 50px;
-
+  height: 55px;
 }
 
 .navbar-container {
@@ -16,7 +15,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 37px;
+  height: 45px;
 }
 .navbar-content {
   width: 100%;
@@ -40,4 +39,3 @@
   cursor: pointer;
   background-color: white;
 }
-

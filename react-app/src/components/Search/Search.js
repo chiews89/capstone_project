@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { FiSearch } from "react-icons/fi";
 import "./Search.css";
 
 export const SearchBar = () => {
@@ -17,8 +18,10 @@ export const SearchBar = () => {
   return (
     <>
       <form className="search-form">
-        <label>
-          <i className="fas fa-search"></i>
+        <label className="fi-search">
+          <span className="search-icon">
+            <FiSearch />
+          </span>
         </label>
         <input
           type="text"
