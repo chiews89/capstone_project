@@ -4,16 +4,19 @@ import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import SinglePostModal from "../GetSinglePost";
 import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
 import "./HomePage.css";
+import { useEffect } from "react";
 
 export const AllPosts = () => {
   const history = useHistory();
   const user = useSelector((state) => state.users);
   const posts = useSelector((state) => state.posts);
-  const likes = Object.values(useSelector((state) => state.likes))
+  const likes = Object.values(useSelector((state) => state.likes));
 
   const postsArr = Object.values(posts).reverse();
 
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
 
   if (!user) {
     history.push(`/login`);
@@ -28,9 +31,7 @@ export const AllPosts = () => {
               <i className="fa-solid fa-circle-user"></i>
             </div>
             <div className="home-page-username">
-              <NavLink to={`/users/${post.user_id}`}>
-                {post?.username}
-              </NavLink>
+              <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
             </div>
           </div>
           <div key={`single-post-link ${post?.id}`} to={`/posts/${post?.id}`}>
@@ -53,9 +54,9 @@ export const AllPosts = () => {
             </div>
             <div className="post-d-user">
               <span className="username">
-              <NavLink to={`/users/${post.user_id}`}>
-                {post?.username}
-              </NavLink>
+                <NavLink to={`/users/${post.user_id}`}>
+                  {post?.username}
+                </NavLink>
                 <span className="description">{post?.description}</span>
               </span>
             </div>
@@ -66,9 +67,7 @@ export const AllPosts = () => {
           <div className="last-three-comments">
             <ThreeComments post={post} />
           </div>
-          <div className="created-at">
-            {post.created_at.slice(5, 17)}
-          </div>
+          <div className="created-at">{post.created_at.slice(5, 17)}</div>
           <div className="add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>
             <CreateNewComment post={post} />

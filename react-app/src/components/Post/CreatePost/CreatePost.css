@@ -1,4 +1,25 @@
 .image-preview {
     width: 100%;
-    height: 300px;
+    height: 275px;
 }
+
+#create-form-label-description {
+    width: 29.4vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 2px;
+    resize: none;
+    border-right: none;
+    border-top: 1px solid rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(214, 214, 214);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #create-form-label-description::-webkit-scrollbar {
+    display: none;
+  }

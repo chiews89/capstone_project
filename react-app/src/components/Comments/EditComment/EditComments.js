@@ -42,13 +42,13 @@ export const EditComment = ({ post, commentId, onClose }) => {
   return (
     <div className="edit-comment-container">
       <label className="add-comment-label">Comment</label>
-      {/* <ul>
+      <ul>
         {errorValidator.map((error) => (
           <li className="comments-errors" key={error}>
             {error}
           </li>
         ))}
-      </ul> */}
+      </ul>
       <form className="edit-comment" onSubmit={handleEditComment}>
         <textarea
           id="comment-label"

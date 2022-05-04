@@ -45,6 +45,7 @@ export const EditPost = ({ onClose, post, setShowModal }) => {
           <textarea
             id="form-label-description"
             placeholder="Description"
+            maxLength='100'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="edit_post_description_input-bar"

@@ -9,7 +9,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { addALike, removeALike } from "../../../store/likes";
 
 export const SinglePost = ({ post, setShowModal }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const likes = Object.values(useSelector((state) => state.likes));
@@ -19,8 +19,8 @@ export const SinglePost = ({ post, setShowModal }) => {
   });
 
   const userLiked = filteredLikes.filter((like) => {
-    return like.user_id === user.id
-  })
+    return like.user_id === user.id;
+  });
 
   const slicedFilter = filteredLikes.slice(0, 1);
 
@@ -33,18 +33,18 @@ export const SinglePost = ({ post, setShowModal }) => {
   }
 
   const newLikeSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const payload = {
       user_id: user.id,
       post_id: post.id,
-    }
-    dispatch(addALike(payload))
-  }
+    };
+    dispatch(addALike(payload));
+  };
 
   const removeLikeSubmit = async (e) => {
-    e.preventDefault()
-    dispatch(removeALike(userLiked[0].id))
-  }
+    e.preventDefault();
+    dispatch(removeALike(userLiked[0].id));
+  };
 
   return (
     <div className="post-detail-container">
@@ -71,22 +71,22 @@ export const SinglePost = ({ post, setShowModal }) => {
             </div>
           )}
         </div>
-
-            
         <GetAllComments post={post} />
         <div className="created-at-comments-likes-container">
           <div className="heart-container">
-            {userLiked.length < 1 && (<AiOutlineHeart onClick={newLikeSubmit}/>)}
-            {userLiked.length > 0 && (<span className="filled-heart">
-              <AiFillHeart onClick={removeLikeSubmit}/>
-              </span>)}
+            {userLiked.length < 1 && <AiOutlineHeart onClick={newLikeSubmit} />}
+            {userLiked.length > 0 && (
+              <span className="filled-heart">
+                <AiFillHeart onClick={removeLikeSubmit} />
+              </span>
+            )}
           </div>
           {slicedFilter.length > 0 && (
             <span className="liked-by">
               Liked by{" "}
               <NavLink to={`/users/${slicedFilter[0].user_id}`}>
                 <span className="like-username">
-                {" "}
+                  {" "}
                   {slicedFilter[0].username}
                 </span>
               </NavLink>{" "}

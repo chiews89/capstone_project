@@ -57,9 +57,16 @@ export const CreatePost = ({ onClose, post }) => {
           />
         </div>
       </div>
+      <ul>
+        {errorValidator.map((error) => (
+          <li className="edit-errors" key={error}>
+            {error}
+          </li>
+        ))}
+      </ul>
       <div className="create-post">
           <textarea
-            id="form-label-description"
+            id="create-form-label-description"
             placeholder="Description"
             maxLength='100'
             value={description}
