@@ -1,43 +1,66 @@
 .new-comment-container input {
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
-
 .single-add-comment-container {
+  display: flex;
+  border-top: 1px solid rgb(214, 214, 214);
+}
+
+.add-comment-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid rgb(214, 214, 214);
+}
+
+.add-comment-user-icon {
     display: flex;
-    border-top: 1px solid rgb(214, 214, 214);
+    flex-direction: row;
+    width: 100%;
+    margin-left: 5px;
 }
 
 .new-comment-container {
-    display: flex;
-    flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-right: none;
 }
 
 .create-comment-button {
-    border: none;
-    position: absolute;
-    right: 0;
-    margin-top:10px;
-    margin-right: 5px;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(49, 152, 232);
+  border: none;
+  font-size: 14px;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(49, 152, 232);
 }
 
 .comment-input {
-    padding: 10px 0px 10px 0px;
+  border: none;
+  width: 100%;
+  padding-top: 12px;
+  padding-left: 10px;
+}
+
+.comment-label {
+  width: 95%;
 }
 
 .fa-face-laugh-beam {
-    margin: 5px;
-    font-size: 30px;
+  margin: 5px;
+  font-size: 30px;
 }
 
 .omments-likes-container {
-    position: absolute;
-    bottom: 0;
-    border-left: none;
-    width: 29.7%;
-    border: 1px solid rgb(214,214,214);
+  position: absolute;
+  bottom: 0;
+  border-left: none;
+  width: 29.7%;
+  border: 1px solid rgb(214, 214, 214);
 }

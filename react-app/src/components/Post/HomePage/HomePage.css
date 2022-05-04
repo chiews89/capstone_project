@@ -22,6 +22,7 @@
   height: 30px;
   flex-direction: row;
   inline-size: 600px;
+
   width: 650px;
   font-weight: 600;
   font-size: 18px;
@@ -81,14 +82,6 @@
   word-break: break-all;
 }
 
-.add-comment-container {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid rgb(214, 214, 214);
-  width: 649px;
-}
-
-
 .post-detail-container {
   display: flex;
   flex-direction: row;
@@ -99,9 +92,8 @@
 .comments-container {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  margin-left: 5px;
+  margin-bottom: 5px;
+
 }
 
 .comments-container-username-display {
@@ -114,11 +106,11 @@
 .comments-container-comments-display {
   margin-top: 2px;
 }
-.comment-input {
-  border: none;
-  padding-bottom: 12px;
-  padding-left: 2px;
+
+.comments-main-limit {
+  margin-bottom: 5px;
 }
+
 .number-comments {
   color: rgba(var(--f52, 142, 142, 142), 1);
   margin-left: 5px;
@@ -410,7 +402,7 @@
 
 .username {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .comments-username {
@@ -540,7 +532,7 @@
 
 .edit-comment-container {
   width: 25vw;
-  height: 23vh;
+  height: 24vh;
 }
 
 .edit-comment {
@@ -577,4 +569,8 @@
   width: 30%;
   bottom: 0;
   border-top: 1px solid rgb(214, 214, 214);
+}
+
+.likes-comments-post {
+  margin-left: 5px;
 }

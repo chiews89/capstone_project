@@ -48,7 +48,6 @@ export const addALike = (like) => async (dispatch) => {
 };
 
 export const removeALike = (id) => async (dispatch) => {
-  console.log('id', id)
   const res = await fetch(`/api/likes/delete/${id}`, {
     method: "DELETE",
   });

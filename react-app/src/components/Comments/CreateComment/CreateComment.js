@@ -7,16 +7,16 @@ export const CreateNewComment = ({ post }) => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.session.user?.id);
-  const [errorValidator, setErrorValidator] = useState([]);
+  // const [errorValidator, setErrorValidator] = useState([]);
 
   const [comment, setComment] = useState("");
 
-  useEffect(() => {
-    const errors = [];
-    if (comment.length >= 100)
-      errors.push("Comments cannot be longer than 100 characters");
-    setErrorValidator(errors);
-  }, [comment]);
+  // useEffect(() => {
+  //   const errors = [];
+  //   if (comment.length >= 100)
+  //     errors.push("Comments cannot be longer than 100 characters");
+  //   setErrorValidator(errors);
+  // }, [comment]);
 
   const newCommentSubmit = async (e) => {
     e.preventDefault();
@@ -49,6 +49,7 @@ export const CreateNewComment = ({ post }) => {
           onChange={(e) => setComment(e.target.value)}
         />
       </label>
+      <div className="button-div">
       <button
         className="create-comment-button"
         type="submit"
@@ -56,6 +57,7 @@ export const CreateNewComment = ({ post }) => {
       >
         Post
       </button>
+      </div>
     </form>
   );
 };

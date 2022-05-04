@@ -24,7 +24,6 @@ export const ThreeComments = ({ post }) => {
       {slicedArr.map((comment) => (
         <div key={comment?.id}>
           <div className="comments-container">
-            <i className="fa-solid fa-circle-user"></i>
             <div className="comments-container-username-display">
               <span className="username">
                 <NavLink to={`/users/${comment.user_id}`}>
@@ -33,9 +32,6 @@ export const ThreeComments = ({ post }) => {
               </span>
               <span className="comment">{comment.comment}</span>
             </div>
-          </div>
-          <div className="created-at">
-          {comment.created_at.slice(5, 17)}
           </div>
         </div>
       ))}

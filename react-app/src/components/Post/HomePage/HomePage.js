@@ -3,20 +3,20 @@ import { NavLink, useHistory } from "react-router-dom";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import SinglePostModal from "../GetSinglePost";
 import { ThreeComments } from "../../Comments/LimitedComments/LimitedComments";
-import "./HomePage.css";
 import { useEffect } from "react";
+import { AllLikes } from "../../Likes";
+import "./HomePage.css";
 
 export const AllPosts = () => {
   const history = useHistory();
-  const user = useSelector((state) => state.users);
+  const user = useSelector((state) => state.session.user);
   const posts = useSelector((state) => state.posts);
-  const likes = Object.values(useSelector((state) => state.likes));
 
   const postsArr = Object.values(posts).reverse();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  },[]);
+  }, []);
 
   if (!user) {
     history.push(`/login`);
@@ -48,30 +48,34 @@ export const AllPosts = () => {
               />
             </div>
           </div>
-          <div className="post-user-description">
-            <div className="home-page-user-icon">
-              <i className="fa-solid fa-circle-user"></i>
+          <div className="likes-comments-post">
+            <AllLikes post={post} />
+            <div className="post-user-description">
+              <div className="post-d-user">
+                <span className="username">
+                  <NavLink to={`/users/${post.user_id}`}>
+                    {post?.username}
+                  </NavLink>
+                  <span className="description">{post?.description}</span>
+                </span>
+              </div>
             </div>
-            <div className="post-d-user">
-              <span className="username">
-                <NavLink to={`/users/${post.user_id}`}>
-                  {post?.username}
-                </NavLink>
-                <span className="description">{post?.description}</span>
-              </span>
+            <div className="post-details">
+              <SinglePostModal post={post} />
+            </div>
+            <div className="last-three-comments">
+              <ThreeComments post={post} />
+            </div>
+            <div className="created-at-post">
+              {post.created_at.slice(5, 17)}
             </div>
           </div>
-          <div className="post-details">
-            <SinglePostModal post={post} />
-          </div>
-          <div className="last-three-comments">
-            <ThreeComments post={post} />
-          </div>
-          <div className="created-at">{post.created_at.slice(5, 17)}</div>
-          <div className="add-comment-container">
-            <i className="fa-solid fa-face-laugh-beam"></i>
-            <CreateNewComment post={post} />
-          </div>
+            <div className="add-comment-container">
+              <div className="add-comment-user-icon">
+              <i className="fa-solid fa-face-laugh-beam"></i>
+              <CreateNewComment post={post} />
+              </div>
+            </div>
         </div>
       ))}
     </main>

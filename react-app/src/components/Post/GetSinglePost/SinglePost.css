@@ -6,8 +6,8 @@
 
 .created-at-post {
   margin-left: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 0.7em;
   color: rgb(110, 110, 110);
 }
@@ -51,10 +51,11 @@
 }
 
 .created-at {
-  font-size: 0.7em;
-  margin-left: 5px;
-  margin-bottom: 10px;
-  color: rgba(var(--f52, 142, 142, 142), 1);
+    margin-left: 5px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+    font-size: 0.7em;
+    color: rgb(110, 110, 110);
 }
 
 .post-description {
