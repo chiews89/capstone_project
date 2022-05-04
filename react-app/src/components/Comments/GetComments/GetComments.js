@@ -20,6 +20,16 @@ export const GetAllComments = ({ post }) => {
 
   return (
     <main className="comments-main">
+      <div className="post-description">
+        <i className="fa-solid fa-circle-user"></i>
+        <div className="post-description-username-display">
+          <span className="username">
+            <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
+          </span>
+          <span className="description">{post?.description}</span>
+        </div>
+      </div>
+      <div className="created-at-post-description">{post.created_at.slice(5, 17)}</div>
       {filteredArr.map((comment) => (
         <div key={comment?.id}>
           <div className="single-post-comments-container">

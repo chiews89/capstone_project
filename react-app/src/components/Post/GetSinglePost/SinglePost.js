@@ -6,7 +6,6 @@ import DeletePostModal from "../DeletePost";
 import "./SinglePost.css";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
-import { useState } from "react";
 import { addALike, removeALike } from "../../../store/likes";
 
 export const SinglePost = ({ post, setShowModal }) => {
@@ -23,7 +22,7 @@ export const SinglePost = ({ post, setShowModal }) => {
     return like.user_id === user.id
   })
 
-  const slicedFilter = filteredLikes.reverse().slice(0, 1);
+  const slicedFilter = filteredLikes.slice(0, 1);
 
   if (!user) {
     history.push("/login");
@@ -72,15 +71,8 @@ export const SinglePost = ({ post, setShowModal }) => {
             </div>
           )}
         </div>
-        <div className="post-description">
-          <i className="fa-solid fa-circle-user"></i>
-          <div className="post-description-username-display">
-            <span className="username">
-              <NavLink to={`/users/${post.user_id}`}>{post?.username}</NavLink>
-            </span>
-            <span className="description">{post?.description}</span>
-          </div>
-        </div>
+
+            
         <GetAllComments post={post} />
         <div className="created-at-comments-likes-container">
           <div className="heart-container">
