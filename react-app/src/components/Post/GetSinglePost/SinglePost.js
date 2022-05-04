@@ -1,10 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { GetAllComments } from "../../Comments/GetComments/GetComments";
 import { CreateNewComment } from "../../Comments/CreateComment/CreateComment";
 import DeletePostModal from "../DeletePost";
+import "./SinglePost.css";
+import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
+import { useState } from "react";
+import { addALike, removeALike } from "../../../store/likes";
 
 export const SinglePost = ({ post, setShowModal }) => {
+  const dispatch = useDispatch()
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const likes = Object.values(useSelector((state) => state.likes));
@@ -14,19 +20,31 @@ export const SinglePost = ({ post, setShowModal }) => {
   });
 
   const userLiked = filteredLikes.filter((like) => {
-    return like.user_id === user.id;
-  });
+    return like.user_id === user.id
+  })
 
-  console.log("user likes", filteredLikes);
+  const slicedFilter = filteredLikes.reverse().slice(0, 1);
 
-  // {userLiked.length? heart onClick={dispatch remove like} : emptyheart onClick={dispatch add like}}
+  if (!user) {
+    history.push("/login");
+  }
 
   if (!post) {
     return null;
   }
 
-  if (!user) {
-    history.push(`/login`);
+  const newLikeSubmit = async (e) => {
+    e.preventDefault()
+    const payload = {
+      user_id: user.id,
+      post_id: post.id,
+    }
+    dispatch(addALike(payload))
+  }
+
+  const removeLikeSubmit = async (e) => {
+    e.preventDefault()
+    dispatch(removeALike(userLiked[0].id))
   }
 
   return (
@@ -65,13 +83,27 @@ export const SinglePost = ({ post, setShowModal }) => {
         </div>
         <GetAllComments post={post} />
         <div className="created-at-comments-likes-container">
-          <span className="liked-by">
-            Liked by{" "}
-            <NavLink to={`/users/${userLiked.user_id}`}>
-              {userLiked.username}
-            </NavLink>
-          </span>
-          {filteredLikes.length}
+          <div className="heart-container">
+            {userLiked.length < 1 && (<AiOutlineHeart onClick={newLikeSubmit}/>)}
+            {userLiked.length > 0 && (<span className="filled-heart">
+              <AiFillHeart onClick={removeLikeSubmit}/>
+              </span>)}
+          </div>
+          {slicedFilter.length > 0 && (
+            <span className="liked-by">
+              Liked by{" "}
+              <NavLink to={`/users/${slicedFilter[0].user_id}`}>
+                <span className="like-username">
+                {" "}
+                  {slicedFilter[0].username}
+                </span>
+              </NavLink>{" "}
+              and{" "}
+              <span className="like-others">
+                {filteredLikes.length - 1} others
+              </span>
+            </span>
+          )}
           <div className="created-at-post">{post.created_at.slice(5, 17)}</div>
           <div className="single-add-comment-container">
             <i className="fa-solid fa-face-laugh-beam"></i>

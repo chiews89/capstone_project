@@ -10,7 +10,6 @@ export const AllPosts = () => {
   const user = useSelector((state) => state.users);
   const posts = useSelector((state) => state.posts);
   const likes = Object.values(useSelector((state) => state.likes))
-  console.log('likes', likes)
 
   const postsArr = Object.values(posts).reverse();
 

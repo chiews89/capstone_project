@@ -185,11 +185,7 @@ margin-bottom: 5px;
 
 }
 
-.created-at-post{
-  margin-left: 5px;
-  font-size: 0.7em;
-  color: rgb(110, 110, 110);
-}
+
 .post-description {
   margin-left: 5px;
   display: flex;
