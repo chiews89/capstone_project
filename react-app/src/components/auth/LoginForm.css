@@ -154,21 +154,66 @@
   background-color: rgb(250, 250, 250);
 }
 
+.create-errors {
+  color: #f40b0b;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
+    Arial, sans-serif;
+  transition: opacity 200ms ease-in;
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
 .errors {
-  color: #000000;
+  color: #f40b0b;
   font-weight: 400;
   font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
     Arial, sans-serif;
   transition: opacity 200ms ease-in;
+  font-size: 14px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .login-form-errors {
-  color: #000000;
+  color: #f40b0b;
+  font-size: 14px;
   font-weight: 400;
   font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
     Arial, sans-serif;
   transition: opacity 200ms ease-in;
   margin-left: 70px;
+}
+
+.sign-up-form-inputs {
+  box-sizing: border-box;
+  border: 1px solid rgb(214, 214, 214);
+  background: rgba(var(--b3f, 250, 250, 250), 1);
+  padding: 5px;
+  border-radius: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 97%;
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.sign-up-inputs-container {
+  margin-top: 20px;
+}
+
+.sign-up-form-modal {
+  width: 300px;
+  height: 475px;
+}
+
+.have-account-log-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(49, 152, 232);
+  font-weight: bold;
 }
