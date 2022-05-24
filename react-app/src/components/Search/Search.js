@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import "./Search.css";
 
@@ -41,12 +41,12 @@ export const SearchBar = () => {
               count++;
               return (
                 <li key={user.id}>
-                  <NavLink
+                  <Link
                     to={`/users/${user.id}`}
                     onClick={() => setSearchTerm("")}
                   >
                     {user.username}
-                  </NavLink>
+                  </Link>
                 </li>
               );
             } else {
