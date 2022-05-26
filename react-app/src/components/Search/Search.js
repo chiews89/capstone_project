@@ -28,6 +28,7 @@ export const SearchBar = () => {
           className="search-bar"
           onChange={handleSearch}
           placeholder="Search"
+          value={searchTerm}
           required
         ></input>
       </form>
