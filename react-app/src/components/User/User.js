@@ -5,7 +5,7 @@ import SingleProfilePostModal from "../Post/SinglePostProfile";
 import "./User.css";
 
 export const UserProfile = () => {
-  const {userId} = useParams()
+  const { userId } = useParams();
   const user = useSelector((state) => state.users[userId]);
   const posts = useSelector((state) => state.posts);
   const postsArr = Object.values(posts).reverse();
